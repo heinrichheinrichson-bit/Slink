@@ -19,3 +19,6 @@ Die Studie zeigt jeden Stein vergrößert und zweimal in einem identischen klein
 
 
 Revision: C (`pebble`) vom Nutzer vorgemerkt, noch nicht ins Hauptspiel integriert. Wolkige Farbschwankung und Mikro-Bump stark reduziert; Seiten werden mit sauberem Grundmaterial dargestellt, damit planare UVs dort keine gestreckten Muster erzeugen. B-Spalte schmaler und heller. Neue Varianten: `plain` (E, ohne Motiv), `strata` (F, zwei Quarzadern), `dimples` (G, drei geometrische Mulden), `rosette` (H, sechs geometrisch vertiefte Blaetter). C und E-H verwenden identische Basisform, Grundfarbe und Hoehenwoelbung; nur die Oberflaechendetails variieren.
+
+
+Aktuelle Entscheidung nach der Felsgruppenstudie (2026-10-13): Einzelsteine bevorzugt; verschmolzene Gruppen wirken zu wuchtig. Einzelne Silhouetten und Fugen erhalten. Bei Nachbarschaft harmonische Materialien und wenige Akzente statt Verschmelzung. Dies ersetzt den zuvor vorgeschlagenen Einsatz gemeinsamer Felskoerper.

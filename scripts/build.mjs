@@ -1,5 +1,6 @@
 import {build} from 'esbuild';
 const entries={
+ 'rock-group-study':'rock-group-study',
  'stone-study':'stone-study',
  'ivory-study':'ivory-study',
  'world-catalogue-entry':'slink-world-3d',
