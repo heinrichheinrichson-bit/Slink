@@ -1,5 +1,6 @@
 import {build} from 'esbuild';
 const entries={
+ 'flower-study':'flower-study',
  'rock-group-study':'rock-group-study',
  'stone-study':'stone-study',
  'ivory-study':'ivory-study',
@@ -13,4 +14,5 @@ const entries={
  'living-liquid-entry':'living-liquid-3d'
 };
 for(let [entry,name]of Object.entries(entries))await build({entryPoints:['src/renderer/'+entry+'.js'],bundle:true,minify:true,format:'iife',outfile:'public/'+name+'.js'});
+await build({entryPoints:['src/renderer/flower-goals.js'],bundle:true,format:'esm',external:['three','three/*'],outfile:'public/flower-goals.mjs'});
 console.log('Built '+Object.keys(entries).length+' local renderer/study bundles.');

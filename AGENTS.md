@@ -17,3 +17,5 @@
 - A separate fused-rock prototype now exists in `public/felsgruppen.html` and `src/renderer/rock-groups.js`, showing pair, L and 2x2 shapes with a single mesh and restrained motifs, plus an individual-stone comparison toggle. Still awaiting user review and not integrated in gameplay. See `docs/rock-groups.md` for scope and limitations.
 
 - Latest stone decision (2026-10-13): after viewing fused groups, the user prefers INDIVIDUAL stones; fused rocks feel too bulky. Retain seams and individual silhouettes, using harmonized materials and restrained motifs for touching stones. Do not integrate fusion. Preserve `felsgruppen.html` only as an archived comparison study. This supersedes the earlier proposed fused-group direction.
+
+- Flower study: `public/blumenwerkstatt.html`, reusable `createFlowerGoal` in `src/renderer/flower-goals.js`, four species (daisy, buttercup, meadow, poppy), existing identical golden bud/number marker and a small interactive puzzle. User praised the visuals and requested bee/bumblebee visitors only after blooming; optional, bounded and reversible. Preserve study; no main-catalogue integration yet. See `docs/flower-goals.md`.

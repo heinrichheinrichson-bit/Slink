@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node scripts/serve.cjs",
     "build": "node scripts/build.mjs",
-    "test": "node tests/solver-reference.cjs && node tests/catalogue.cjs && node tests/game.cjs && node tests/materials.mjs && node tests/meadows.mjs && node tests/liquids.mjs && node tests/ivory-frame.mjs && node tests/stones.mjs && node tests/rock-groups.mjs",
+    "test": "node tests/solver-reference.cjs && node tests/catalogue.cjs && node tests/game.cjs && node tests/materials.mjs && node tests/meadows.mjs && node tests/liquids.mjs && node tests/ivory-frame.mjs && node tests/stones.mjs && node tests/rock-groups.mjs && node tests/flowers.mjs",
     "catalogue:generate": "node scripts/generate-catalogue.cjs"
   },
   "dependencies": {
