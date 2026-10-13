@@ -17,4 +17,7 @@ for(const style of Object.keys(STONE_STYLES))for(const seed of [73,108]){
  }
  let disposed=false;mesh.geometry.addEventListener('dispose',()=>disposed=true);tile.dispose();assert(disposed,'Geometry leak');
 }
-console.log('PASS: four stone styles, two seeds, shared footprint/base, height clearance, finite normals, solid surface, carved relief and disposal.');
+const rounded=['pebble','plain','strata'].map(style=>createStoneTile(style));
+for(const tile of rounded.slice(1))assert.deepEqual(tile.group.children[0].geometry.attributes.position.array,rounded[0].group.children[0].geometry.attributes.position.array,'Surface-only variants must share the Findling geometry');
+rounded.forEach(tile=>tile.dispose());
+console.log('PASS: '+Object.keys(STONE_STYLES).length+' stone styles, two seeds, shared footprint/base, height clearance, finite normals, solid surface, carved relief and disposal.');
