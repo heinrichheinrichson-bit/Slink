@@ -41,3 +41,6 @@ Facial coverage now uses small eye/muzzle exclusion masks and short facial fibre
 
 ## Longer, gently curved antennae
 Antennae use tapered cubic Bezier stems, rising from the unchanged head attachments and curling softly outward/forward. Tips rise about 10.2 units versus 7.4 previously. Stem radius tapers from .44 to .23. Small independent control-point motions flex the upper stem instead of pivoting a rigid stick; rounded cream tips follow the curve. No change to body proportions, fur or navigation. Tests check fixed roots within numerical tolerance, moving tips and clearance up to45 units.
+
+## Completion gesture study
+Separate study only: replay and nine-cell solve buttons trigger the joy gesture after centred arrival. Two differently timed lifts use smooth zero-velocity endpoints, overlapping body anticipation/landing, asymmetric paw tuck and antenna rebound. A slower quintic turn faces the player; the figure stays facing the player after completion, rather than restoring its previous heading. New valid movement cancels the gesture. Pollen and delayed completion text remain. Original body/fur shapes unchanged. Visual feel is awaiting user judgement; tests check finite poses, two peaks, cancellation and original geometry.
