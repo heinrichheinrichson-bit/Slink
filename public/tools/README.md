@@ -22,7 +22,7 @@ node puzzle-tool.cjs --check
 node puzzle-tool.cjs
 ```
 
-`--check` prüft den gespeicherten Katalog. Ohne Argument wird der Katalog reproduzierbar neu erzeugt und überschreibt `../slink-levels.js` und `../catalogue-report.json`. Die ursprünglichen zehn stammen aus `original-ten.js`. Nach einer Neuerzeugung die Webseite neu laden. Die separate Einzeldatei `SLINK-Welt-1.html` wird dadurch nicht aktualisiert.
+`--check` prüft den gespeicherten Katalog. Ohne Argument wird der Katalog reproduzierbar neu erzeugt und überschreibt `../legacy-generated-levels.js` und `../legacy-generated-report.json`. Die ursprünglichen zehn stammen aus `original-ten.js`. Nach einer Neuerzeugung die Webseite neu laden. Die separate Einzeldatei `SLINK-Welt-1.html` wird dadurch nicht aktualisiert.
 
 Der Generator verändert zusammenhängende, vollständige Pfade mit Backbite-Schritten, kürzt die Enden für unterschiedliche Umrisse und verteilt Hindernisse. Ein unabhängiger Tiefensuchsolver zählt gültige Lösungen unter Beachtung der nummerierten Ziele. Er verwirft abgetrennte Restflächen und unmögliche Sackgassen. Bei mehreren Lösungen werden Zwischenziele ergänzt. Kandidaten werden nur übernommen, wenn genau eine Lösung ohne Erreichen des Suchlimits bewiesen ist. Spiegelungen und Drehungen derselben Feld-/Zielkonfiguration werden aussortiert. Materialwechsel allein gelten nicht als neues Rätsel.
 

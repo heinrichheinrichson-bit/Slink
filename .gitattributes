@@ -2,3 +2,9 @@
 *.png binary
 *.jpg binary
 *.webp binary
+
+public/*-3d.js linguist-generated=true -whitespace
+public/*-world.js linguist-generated=true -whitespace
+public/*-study.js linguist-generated=true -whitespace
+public/slink-levels.js linguist-generated=true
+public/*report.json linguist-generated=true

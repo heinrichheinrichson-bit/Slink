@@ -21,6 +21,8 @@ Ein spielbarer Browser-Prototyp für ein Smartphone-Puzzlespiel: Ein durchgehend
 
 Die Reihenfolge beruht auf Entscheidungsmöglichkeiten, verzögerten Fehlwegen, vorgegebenen Schritten und Suchaufwand. Das Engstellen-Kapitel enthält 50 echte Verbindungen zwischen jeweils mindestens vier Felder großen Bereichen. Die menschliche Schwierigkeit ist noch nicht kalibriert; die Auswahl benötigt weitere Spieltests.
 
+![Spielansicht des Katalogs](docs/screenshots/catalogue-500.png)
+
 ## Spielen
 
 Die bereits gebauten Browserdateien in `public` funktionieren ohne Build:
