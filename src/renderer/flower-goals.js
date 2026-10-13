@@ -7,12 +7,18 @@ export const FLOWER_SPECIES={
  poppy:{name:'Kleiner Mohn',petals:4,colors:['#f16d51','#ff8a68'],center:'#50343c',width:8.7,length:9.2,radius:8.8,heart:4.1}
 };
 const flightHash=(step,seed)=>THREE.MathUtils.euclideanModulo(Math.sin(step*127.1+seed*311.7)*43758.5453,1);
-/** Seeded, bounded wandering with eased trips and brief hovering; no circular orbit. */
+/** Continuous cubic B-spline through seeded controls: curved, C2 continuous and bounded.
+ * A monotone time warp varies speed without stop/go waypoint motion. */
 export function sampleVisitorFlight(time,seed,out=new THREE.Vector3()){
- const period=3.4+flightHash(0,seed)*1.5,t=Math.max(0,time)/period,step=Math.floor(t),phase=t-step;
- const waypoint=k=>{const near=k%4===2?.4:1;return[ (flightHash(k*3+1,seed)*2-1)*14*near,21.5+flightHash(k*3+2,seed)*3.5,(flightHash(k*3+3,seed)*2-1)*9*near ]};
- const a=waypoint(step),b=waypoint(step+1),u=THREE.MathUtils.clamp((phase-.12)/.73,0,1),s=u*u*u*(u*(u*6-15)+10);
- return out.set(THREE.MathUtils.lerp(a[0],b[0],s)+Math.sin(time*1.7+seed)*.3,THREE.MathUtils.lerp(a[1],b[1],s)+Math.sin(time*2.1+seed)*.35,THREE.MathUtils.lerp(a[2],b[2],s)+Math.sin(time*1.3+seed)*.25);
+ const clock=Math.max(0,time),phase=flightHash(0,seed)*6.28,t=clock*.52+.6*Math.sin(clock*.43+phase)+.18*Math.sin(clock*.97+phase*1.7)+2,step=Math.floor(t),u=t-step;
+ const weights=[(1-u)**3/6,(3*u**3-6*u*u+4)/6,(-3*u**3+3*u*u+3*u+1)/6,u**3/6];out.set(0,0,0);
+ for(let j=0;j<4;j++){
+  const k=Math.floor((step+j-1)/2),w=weights[j];let x=-16+flightHash(k*3+1,seed)*40,z=-14+flightHash(k*3+3,seed)*36;
+  // A convex flight area covers more of the tile while excluding the front-right tag.
+  const excess=Math.max(0,(x+z-14)/2);x-=excess;z-=excess;
+  out.x+=x*w;out.y+=(21.5+flightHash(k*3+2,seed)*5)*w;out.z+=z*w;
+ }
+ out.y+=Math.sin(clock*3.3+phase)*.18;return out;
 }
 /** Same Y-up anchor, states, marker sizes and API as createGardenGoal.
  * Rotate group.x by PI/2 in the Z-up terrain renderer. Decorative, no input targets.
@@ -39,7 +45,19 @@ export function createFlowerGoal({species='daisy',number=1,state='closed',layout
  const visitors=new THREE.Group();visitors.name='flower-visitors';blossom.add(visitors);
  const honey=material('#e9ad32'),fluff=material('#d6af50'),dark=material('#60452b'),wingMat=material('#fff6df');fluff.roughness=.95;wingMat.transparent=true;wingMat.opacity=.72;wingMat.depthWrite=false;
  const flights=[];for(let k=0;k<2;k++){
-  const insect=new THREE.Group();insect.name=k?'bumblebee':'bee';insect.scale.setScalar(1.8);visitors.add(insect);const width=k?.95:.7,height=k?.86:.65;ball(insect,k?fluff:honey,0,0,0,width,height,1.2);ball(insect,dark,0,0,1.05,.48,.48,.48);for(const z of [-.55,.15])ball(insect,dark,0,0,z,width*1.02,height*1.02,.18);
+  const insect=new THREE.Group();insect.name=k?'bumblebee':'bee';insect.scale.setScalar(1.8);visitors.add(insect);const width=k?1.08:.7,height=k?.98:.65;ball(insect,k?fluff:honey,0,0,0,width,height,1.2);ball(insect,dark,0,0,1.05,k?.56:.48,k?.54:.48,.48);for(const z of [-.55,.15])ball(insect,dark,0,0,z,width*1.02,height*1.02,.18);
+  if(k){
+   const cream=material('#f4e4b9');cream.roughness=1;ball(insect,cream,0,0,-.98,.72,.65,.38);
+   const positions=[],colors=[],count=260;
+   for(let j=0;j<count;j++){
+    const y=1-2*(j+.5)/count,r=Math.sqrt(1-y*y),a=j*2.39996323,x=Math.cos(a)*r,z=Math.sin(a)*r;
+    const root=new THREE.Vector3(x*width*1.015,y*height*1.015,z*1.215),normal=new THREE.Vector3(x/width,y/height,z/1.2).normalize(),length=.12+flightHash(j,91)*.12;
+    const tip=root.clone().addScaledVector(normal,length);tip.z-=.045;positions.push(...root.toArray(),...tip.toArray());
+    const c=new THREE.Color(z<-.72?'#f4e4b9':Math.abs(z+.46)<.18||Math.abs(z-.12)<.17?'#635238':j%3?'#d6af50':'#e7c776');colors.push(...c.toArray(),...c.toArray());
+   }
+   const hairGeo=new THREE.BufferGeometry();hairGeo.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));hairGeo.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometries.push(hairGeo);
+   const hairMat=new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.82,depthWrite:false});materials.push(hairMat);const fur=new THREE.LineSegments(hairGeo,hairMat);fur.name='bumblebee-fur';insect.add(fur);
+  }
   const wings=[];for(const side of [-1,1]){const wing=ball(insect,wingMat,side*.95,.5,-.1,1.5,.16,.65);wing.castShadow=false;wings.push(wing)}flights.push({insect,wings,seed:number*17+k*31+Object.keys(FLOWER_SPECIES).indexOf(species)*7,phase:k*2.7,a:new THREE.Vector3(),b:new THREE.Vector3()});
  }
  let insectsEnabled=Boolean(insects);function setInsects(enabled){insectsEnabled=Boolean(enabled);group.userData.insects=insectsEnabled}
@@ -56,7 +74,7 @@ export function createFlowerGoal({species='daisy',number=1,state='closed',layout
   bud.scale.multiplyScalar(1-o);bud.visible=o<.999;
   blossom.visible=o>.001;blossom.scale.setScalar(o);for(const hinge of petals)hinge.rotation.x=-(1-o)*1.1;heart.scale.y=2.7*(.8+.2*o);
   visitors.visible=insectsEnabled&&current==='bloom'&&o>.94;
-  for(const f of flights){sampleVisitorFlight(time,f.seed,f.a);sampleVisitorFlight(time+.08,f.seed,f.b);f.insect.position.copy(f.a);const vx=f.b.x-f.a.x,vz=f.b.z-f.a.z;if(Math.hypot(vx,vz)>.012){const heading=Math.atan2(vx,vz),turn=Math.atan2(Math.sin(heading-f.insect.rotation.y),Math.cos(heading-f.insect.rotation.y));f.insect.rotation.y+=turn*Math.min(1,delta*4)}f.insect.rotation.z=THREE.MathUtils.clamp(-vx*.18,-.18,.18);f.wings.forEach((w,k)=>w.rotation.z=Math.sin(time*30+f.phase)*(k?1:-1)*.5)}
+  for(const f of flights){sampleVisitorFlight(time,f.seed,f.a);sampleVisitorFlight(time+.08,f.seed,f.b);f.insect.position.copy(f.a);const vx=f.b.x-f.a.x,vz=f.b.z-f.a.z;if(Math.hypot(vx,vz)>.004){const heading=Math.atan2(vx,vz),turn=Math.atan2(Math.sin(heading-f.insect.rotation.y),Math.cos(heading-f.insect.rotation.y));f.insect.rotation.y+=turn*Math.min(1,delta*7);f.insect.rotation.z=THREE.MathUtils.clamp(-turn*.18,-.2,.2)}f.insect.rotation.x=-Math.min(.14,Math.hypot(vx,vz)*.25);f.wings.forEach((w,k)=>w.rotation.z=Math.sin(time*30+f.phase)*(k?1:-1)*.5)}
  }
  setInsects(insects);update(0,1);group.userData.species=species;group.userData.decorative=true;
  return{group,setState,setInsects,setVisitorSize,setSize:marker.setSize,update,get state(){return current},dispose(){marker.dispose();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose())}};

@@ -21,3 +21,5 @@
 - Flower study: `public/blumenwerkstatt.html`, reusable `createFlowerGoal` in `src/renderer/flower-goals.js`, four species (daisy, buttercup, meadow, poppy), existing identical golden bud/number marker and a small interactive puzzle. User praised the visuals and requested bee/bumblebee visitors only after blooming; optional, bounded and reversible. Preserve study; no main-catalogue integration yet. See `docs/flower-goals.md`.
 
 - User rejected the current flower visitor flight pattern as unnatural. Do not describe it as approved/natural. `blumenwerkstatt.html` now has separate 50-300% bee and bumblebee size sliders (100% = prior 1.8 model scale), immediate preview, study-only persisted values and reset. Species changes retain these test sizes. Main game remains unchanged.
+
+- Latest visitor study revision: rounder bumblebee with cream tail and short coloured fur fibres; continuous curved B-spline flight instead of eased straight waypoint legs; enlarged own-cell flight region excluding number-tag corner. Size test values remain preserved. Await user judgement on the new motion; do not label it approved.
