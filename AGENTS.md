@@ -37,3 +37,5 @@
 - Latest correction: user rejected extra undercoat/nap and rubbery continuous legs. Coat restored to 728db34 appearance. Fixed-length two-bone limbs replace elastic lofts. Real pointer movement is synchronous via DirectGridFollower, with no animation queue; Demo-Tempo only affects automated preview. Keep this distinction and do not reintroduce a fixed movement duration for player input.
 
 - Latest input requirement: figure MUST stay at the centre of the last entered/coloured cell, never between cells. Position and colour change together. Heading is the last valid cardinal cell step, preserved on release and same-cell pointer motion. DirectGridFollower now implements discrete centred input; this supersedes the prior fractional pointer-following behaviour.
+
+- Clarification superseding instant visual snapping: user allows visible travel BETWEEN cells, but rest must be at a cell centre. Do not teleport. CentreTransition provides short replaceable travel with no input queue, retaining last valid step heading. Logical target changes synchronously; the rendered figure visibly arrives at its centre.

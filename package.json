@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node scripts/serve.cjs",
     "build": "node scripts/build.mjs",
-    "test": "node tests/solver-reference.cjs && node tests/catalogue.cjs && node tests/game.cjs && node tests/materials.mjs && node tests/meadows.mjs && node tests/liquids.mjs && node tests/ivory-frame.mjs && node tests/stones.mjs && node tests/rock-groups.mjs && node tests/flowers.mjs && node tests/decoration-plan.mjs && node tests/visitor-settings.cjs && node tests/worm.mjs && node tests/fuzzy-creature.mjs && node tests/paw-gait.mjs && node tests/direct-follow.mjs",
+    "test": "node tests/solver-reference.cjs && node tests/catalogue.cjs && node tests/game.cjs && node tests/materials.mjs && node tests/meadows.mjs && node tests/liquids.mjs && node tests/ivory-frame.mjs && node tests/stones.mjs && node tests/rock-groups.mjs && node tests/flowers.mjs && node tests/decoration-plan.mjs && node tests/visitor-settings.cjs && node tests/worm.mjs && node tests/fuzzy-creature.mjs && node tests/paw-gait.mjs && node tests/direct-follow.mjs && node tests/centre-transition.mjs",
     "catalogue:generate": "node scripts/generate-catalogue.cjs"
   },
   "dependencies": {
