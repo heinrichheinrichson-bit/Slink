@@ -63,6 +63,7 @@ Erzeugt reproduzierbar die Kandidatenpools in `work`, wählt den Katalog aus, pr
 
 Alle bisherigen Module und Varianten bleiben im Fundus. Einstiegspunkte:
 
+- `elfenbeinwerkstatt.html`: separate Studie mit dickeren, runderen Creme-Rahmen ([Modulhinweise](docs/ivory-frame.md)).
 - `materialwerkstatt.html`: ursprüngliche Terrainmodule und Rahmen.
 - `wachstumswerkstatt.html`, `materialvergleich.html`: Erd- und Wiesenkombinationen.
 - `fluessigkeitsvarianten.html`: ruhige Wasser- und Lavaanimationen.

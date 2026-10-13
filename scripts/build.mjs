@@ -1,5 +1,6 @@
 import {build} from 'esbuild';
 const entries={
+ 'ivory-study':'ivory-study',
  'world-catalogue-entry':'slink-world-3d',
  'bud-puzzle-entry':'bud-test-world',
  'marker-layout-study':'marker-layout-study',
