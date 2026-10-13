@@ -25,3 +25,6 @@ Die vorhandenen Module behalten ihre GrÃ¶ÃŸe; FlÃ¼ssigkeitsoberflÃ¤chen 
 Der Rahmen unterstÃ¼tzt unregelmÃ¤ÃŸige Umrisse, zusammenhÃ¤ngende Becken, mehrere getrennte Komponenten und Inseln innerhalb ringfÃ¶rmiger Becken. Ein gemeinsamer GrundkÃ¶rper und kontinuierliche gerundete Randkonturen bilden die CremeflÃ¤che. Wasser und Lava bleiben vertieft; Steine sind weiterhin eigene erhÃ¶hte Module.
 
 PrÃ¼fung: alle 500 aktuellen Grundrisse mit Variante B erzeugt; endliche Geometrie, freie Erdmittelpunkte und offene Wasser-/Lavamittelpunkte geprÃ¼ft. ZusÃ¤tzlich alle drei Stile mit verbundenen Becken, ringfÃ¶rmigen Becken und diagonal getrennten Komponenten geprÃ¼ft. B und C wurden in der Browserstudie visuell betrachtet. Ein vollstÃ¤ndiger Android-Leistungs- oder Integrationstest steht fÃ¼r dieses neue Modul noch aus.
+
+
+Materialrevision: B/C verwenden denselben prozeduralen Materialverlauf auf Deckflaeche, Rundung und Wand. Die Hoehe steuert Creme/Sand/Ocker, Hindernisnaehe eine dezente warme Vertiefung. Zweifrequente weiche Farbvariation und feine Poren vermeiden eine uniforme weisse Flaeche. Die Geometrie und Spielmechanik bleiben unveraendert. Browserpruefung: beide Shader ohne Konsolenfehler dargestellt.
