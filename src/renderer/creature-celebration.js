@@ -7,5 +7,5 @@ export function sampleCelebration(age=-1){
  const pulse=(start,duration)=>{const u=(age-start)/duration;return u>0&&u<1?Math.sin(u*Math.PI)**2:0};
  const settle=age>1.9?Math.sin((age-1.9)*10)*Math.exp(-(age-1.9)*3.5):0;
  const anticipation=pulse(.12,.4),secondLoad=pulse(.82,.32),landing=pulse(.84,.3)+pulse(1.8,.4);
- return {active:true,lift,tuck:Math.min(1,lift/3.5)*1.7,happy,look:smooth(age/1.05),squash:anticipation*.055+secondLoad*.035+landing*.065,pollen:smooth((age-1.9)/.3)*(1-smooth((age-2.9)/.7)),antenna:settle*.65+lift*.045,pitch:anticipation*.035-lift*.007-settle*.013,roll:lift*.005*Math.sin(age*3+.6)+settle*.012};
+ return {active:true,lift,tuck:Math.min(1,lift/3.5)*1.7,happy,look:.38*smooth((age-.43)/.4)+.62*smooth((age-1.1)/.63),squash:anticipation*.055+secondLoad*.035+landing*.065,pollen:smooth((age-1.9)/.3)*(1-smooth((age-2.9)/.7)),antenna:settle*.65+lift*.045,pitch:anticipation*.035-lift*.007-settle*.013,roll:lift*.005*Math.sin(age*3+.6)+settle*.012};
 }
