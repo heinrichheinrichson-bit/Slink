@@ -1,0 +1,5 @@
+# Korallfarbener Wurm: separate Figurenwerkstatt
+
+/wurmwerkstatt.html shows one reusable real THREE.Group from createWormCharacter. Not integrated into the main puzzle catalogue. Z up, local forward -Y, 100% body roughly half an 80-unit tile. The mesh deforms continuously for breathing and a 620ms stretch/contract step. Head has blink, eye glints, small smile and cheeks. Four directions rotate the same model; not separate painted images. Size 55–150% saved only under slink-worm-study-size. Nine real earth/clover modules, touch drag/click, direction buttons, demo, reset, top and oblique views, plus a live close-up of the identical scene. Short adjacent input queue during animation; no puzzle rules in this test.
+
+Visual prototype derived from approved coral concept, not an exact reproduction of the generated image. Main game, catalogue and approved module assets remain unchanged. Browser verified four direction steps and no captured console errors. Existing npm test passed, new worm geometry check passed. No real Android hardware test.

@@ -1,5 +1,6 @@
 import {build} from 'esbuild';
 const entries={
+ 'worm-study':'worm-study',
  'flower-study':'flower-study',
  'rock-group-study':'rock-group-study',
  'stone-study':'stone-study',
