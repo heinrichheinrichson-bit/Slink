@@ -1,5 +1,9 @@
 # Steinstudie
 
+## Freigegebener Fundus und Verteilung
+
+Alle acht Varianten wurden am 2026-10-13 zum Behalten freigegeben. C/E dienen als ruhige Basis; Risse, Adern und Reliefs werden sparsam als Akzente eingesetzt. Die Verteilung soll je Rätsel reproduzierbar bleiben. Zusammenhängende Steingruppen erhalten eine einheitliche Material- und Formensprache. Für große verschmolzene Felsen ist eine gemeinsame Außenform ohne innere Kachelränder mit wenigen durchgehenden Adern/Rissen und höchstens einem markanten Relief vorgesehen. Diese Gruppen-Geometrie ist noch nicht implementiert. Die bestehende Studie bleibt separat vom Hauptspiel.
+
 Separate Studie: `public/steinwerkstatt.html`. Hauptspiel und vorgemerktes Elfenbeinset bleiben unverändert.
 
 `createStoneTile(style, {seed})` aus `src/renderer/stone-modules.js` liefert `{group, dispose}`. Z ist oben, Ursprung ist der Feldmittelpunkt. Rasterabstand 80, Grundfläche 66 × 66, Unterkante -6.5. Oberkante der Grundform 26.5; Findling maximal unter 33. Alle Varianten sind unbegehbar und werfen/empfangen Schatten.
