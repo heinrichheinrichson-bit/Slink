@@ -53,6 +53,7 @@ export function createStoneTile(style='fossil',{seed=73}={}){
   shader.fragmentShader='varying float stoneTop;\n'+shader.fragmentShader;
   shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>\ndiffuseColor.rgb=mix(vec3(${base.r},${base.g},${base.b}),diffuseColor.rgb,stoneTop);`);
  };
+ material.customProgramCacheKey=()=>`slink-stone-top-${style}`;
  let geometry=new RoundedBoxGeometry(66,66,33,style==='reference'?5:6,rounded?12:8);
  // RoundedBox subdivides the bevel, but leaves a broad central cap. Subdivide that
  // cap as well so the grooves and dome are actual geometry, not just a texture.

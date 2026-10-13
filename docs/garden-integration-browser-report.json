@@ -1,0 +1,295 @@
+{
+  "passed": 14,
+  "errors": [],
+  "cases": [
+    {
+      "level": 1,
+      "textures": 30,
+      "geometries": 589,
+      "programs": 9,
+      "flowers": [
+        "poppy",
+        "poppy",
+        "daisy",
+        "poppy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 7,
+      "textures": 40,
+      "geometries": 804,
+      "programs": 11,
+      "flowers": [
+        "buttercup",
+        "buttercup"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "pebble"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 13,
+      "textures": 44,
+      "geometries": 860,
+      "programs": 11,
+      "flowers": [
+        "daisy",
+        "daisy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "plain",
+        "dimples",
+        "plain"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 50,
+      "textures": 42,
+      "geometries": 857,
+      "programs": 10,
+      "flowers": [
+        "buttercup",
+        "buttercup"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "pebble"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 100,
+      "textures": 58,
+      "geometries": 1143,
+      "programs": 13,
+      "flowers": [
+        "poppy",
+        "poppy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "plain",
+        "rosette",
+        "plain",
+        "strata"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 150,
+      "textures": 50,
+      "geometries": 1048,
+      "programs": 11,
+      "flowers": [
+        "meadow",
+        "meadow"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "strata"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 200,
+      "textures": 78,
+      "geometries": 1608,
+      "programs": 13,
+      "flowers": [
+        "meadow",
+        "meadow"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "plain",
+        "dimples",
+        "plain",
+        "plain",
+        "strata"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 250,
+      "textures": 94,
+      "geometries": 1984,
+      "programs": 12,
+      "flowers": [
+        "poppy",
+        "poppy",
+        "daisy",
+        "poppy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "fossil",
+        "plain",
+        "plain"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 350,
+      "textures": 88,
+      "geometries": 1932,
+      "programs": 11,
+      "flowers": [
+        "daisy",
+        "daisy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "plain",
+        "plain"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 450,
+      "textures": 80,
+      "geometries": 1796,
+      "programs": 10,
+      "flowers": [
+        "buttercup",
+        "buttercup"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 500,
+      "textures": 84,
+      "geometries": 1742,
+      "programs": 13,
+      "flowers": [
+        "poppy",
+        "poppy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "plain",
+        "split",
+        "plain",
+        "plain",
+        "rosette"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 308,
+      "textures": 82,
+      "geometries": 1657,
+      "programs": 13,
+      "flowers": [
+        "buttercup",
+        "buttercup",
+        "meadow",
+        "buttercup"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [
+        "fossil",
+        "plain",
+        "plain",
+        "dimples",
+        "plain",
+        "fossil"
+      ],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 1,
+      "textures": 30,
+      "geometries": 589,
+      "programs": 9,
+      "flowers": [
+        "poppy",
+        "poppy",
+        "daisy",
+        "poppy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    },
+    {
+      "level": 1,
+      "textures": 30,
+      "geometries": 589,
+      "programs": 9,
+      "flowers": [
+        "poppy",
+        "poppy",
+        "daisy",
+        "poppy"
+      ],
+      "bloomsReady": true,
+      "stoneStyles": [],
+      "visitors": {
+        "enabled": true,
+        "bee": 175,
+        "bumblebee": 180
+      }
+    }
+  ]
+}
