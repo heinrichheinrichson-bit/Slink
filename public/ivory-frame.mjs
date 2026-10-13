@@ -1,8 +1,9 @@
 import * as THREE from 'three';
+import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
 export const IVORY_STYLES={
  current:{name:'A · Schlanker Vergleich',outer:11,inset:7,corner:10,bevel:5,depth:22},
- soft:{name:'B · Weiches Elfenbein',outer:16,inset:10,corner:21,bevel:8,depth:26},
- plush:{name:'C · Kräftig und rund',outer:20,inset:13,corner:25,bevel:10,depth:28}
+ soft:{name:'B · Modelliertes Elfenbein',outer:17,inset:16,corner:23,bevel:12,depth:24},
+ plush:{name:'C · Warmer Formguss',outer:20,inset:18,corner:27,bevel:14,depth:28}
 };
 const adjacent=(i,n)=>[i-n,i+n,i%n?i-1:-1,i%n<n-1?i+1:-1].filter(j=>j>=0&&j<n*n);
 function groups(cells,n){let left=new Set(cells),result=[];while(left.size){let q=[left.values().next().value];left.delete(q[0]);for(let k=0;k<q.length;k++)for(let j of adjacent(q[k],n))if(left.delete(j))q.push(j);result.push(q)}return result}
@@ -15,8 +16,23 @@ function rounded(points,r){let path=new THREE.Shape();points.forEach((p,k)=>{let
  * Returns matching liquid shapes so the renderer cannot leave seams at the rim. */
 export function createIvoryFrame({n,cells,water=[],lava=[],stones=[],style='soft',pitch=80}={}){
  const spec=IVORY_STYLES[style];if(!spec)throw Error('Unknown ivory style');let occupied=new Set(cells);if(!Number.isInteger(n)||n<1||!cells.length||cells.some(i=>!Number.isInteger(i)||i<0||i>=n*n))throw Error('Invalid frame cells');let hazards=[...water,...lava,...stones];if(new Set(hazards).size!==hazards.length||hazards.some(i=>!occupied.has(i)))throw Error('Invalid obstacle cells');
- let group=new THREE.Group(),openings=[],geometries=[],top=new THREE.MeshStandardMaterial({color:'#f7e5c3',roughness:.64}),side=new THREE.MeshStandardMaterial({color:'#dfc397',roughness:.76});
- for(let component of groups(cells,n)){let set=new Set(component),outlines=loops(component,n,pitch),islands=[],rimPaths=[],shape=rounded(shifted(outlines[0],spec.outer),spec.corner);if(style!=='current')rimPaths.push(rounded(shifted(outlines[0],spec.outer*.65),spec.corner));for(let hole of outlines.slice(1))shape.holes.push(rounded(shifted(hole,-spec.outer),spec.corner));for(let [type,items]of [['water',water],['lava',lava],['stone',stones]])for(let part of groups(items.filter(i=>set.has(i)),n)){let contours=loops(part,n,pitch),opening=rounded(shifted(contours[0],-spec.inset),spec.corner*.7);shape.holes.push(opening);if(style!=='current')rimPaths.push(rounded(shifted(contours[0],-spec.inset*.5),spec.corner*.7));for(let inner of contours.slice(1)){islands.push(rounded(shifted(inner,spec.inset),spec.corner*.7));if(style!=='current')rimPaths.push(rounded(shifted(inner,spec.inset*.5),spec.corner*.7))}let liquidShape=rounded(shifted(contours[0],-spec.inset),spec.corner*.7);for(let inner of contours.slice(1))liquidShape.holes.push(rounded(shifted(inner,spec.inset),spec.corner*.7));openings.push({type,cells:part,shape:liquidShape})}
- for(let bodyShape of [shape,...islands]){let geometry=new THREE.ExtrudeGeometry(bodyShape,{depth:spec.depth,bevelEnabled:true,bevelThickness:spec.bevel,bevelSize:spec.bevel,bevelSegments:10,curveSegments:20,steps:1});geometry.translate(0,0,-spec.depth-spec.bevel+3);geometry.computeVertexNormals();geometries.push(geometry);let body=new THREE.Mesh(geometry,[top,side]);body.castShadow=body.receiveShadow=true;group.add(body)}for(let rimPath of rimPaths){let points=rimPath.getPoints(12);if(points[0].distanceTo(points.at(-1))<.001)points.pop();let curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(p.x,p.y,2.5)),true,'centripetal'),geometry=new THREE.TubeGeometry(curve,Math.max(96,points.length*2),style==='plush'?8.5:6.5,14,true);geometries.push(geometry);let rim=new THREE.Mesh(geometry,top);rim.castShadow=rim.receiveShadow=true;group.add(rim)}}
- const blocked=new Set(hazards),walkableShapes=groups(cells.filter(i=>!blocked.has(i)),n).map(part=>{let contours=loops(part,n,pitch),shape=rounded(contours[0],10);for(let hole of contours.slice(1))shape.holes.push(rounded(hole,10));return shape});group.userData={style,pitch,walkable:false,spec:{...spec}};return{group,openings,walkableShapes,spec,dispose(){geometries.forEach(g=>g.dispose());top.dispose();side.dispose()}};
+ const grain=new Uint8Array(128*128*4);let seed=375;for(let i=0;i<128*128;i++){seed=(seed*1664525+1013904223)>>>0;let v=110+(seed>>>24)*.16;grain.set([v,v,v,255],i*4)}
+ const texture=new THREE.DataTexture(grain,128,128);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.magFilter=texture.minFilter=THREE.LinearFilter;texture.needsUpdate=true;
+ let group=new THREE.Group(),openings=[],geometries=[],top=new THREE.MeshStandardMaterial({color:style==='plush'?'#f3dcb3':'#f7e5c3',roughness:.88,bumpMap:texture,bumpScale:style==='current'?.12:.65}),side=new THREE.MeshStandardMaterial({color:'#d4ad7d',roughness:.9,bumpMap:texture,bumpScale:.45});
+ for(let component of groups(cells,n)){let set=new Set(component),outlines=loops(component,n,pitch),islands=[],shape=rounded(shifted(outlines[0],spec.outer),spec.corner);for(let hole of outlines.slice(1))shape.holes.push(rounded(shifted(hole,-spec.outer),spec.corner));for(let [type,items]of [['water',water],['lava',lava],['stone',stones]])for(let part of groups(items.filter(i=>set.has(i)),n)){let contours=loops(part,n,pitch),opening=rounded(shifted(contours[0],-spec.inset),spec.corner*.7);shape.holes.push(opening);for(let inner of contours.slice(1)){islands.push(rounded(shifted(inner,spec.inset),spec.corner*.7))}let liquidShape=rounded(shifted(contours[0],-spec.inset+spec.bevel),spec.corner*.7);for(let inner of contours.slice(1))liquidShape.holes.push(rounded(shifted(inner,spec.inset-spec.bevel),spec.corner*.7));openings.push({type,cells:part,shape:liquidShape})}
+ for(let bodyShape of [shape,...islands]){
+ let geometry=new THREE.ExtrudeGeometry(bodyShape,{depth:spec.depth,bevelEnabled:true,bevelThickness:spec.bevel,bevelSize:spec.bevel,bevelSegments:16,curveSegments:24,steps:1});
+ geometry.translate(0,0,-spec.depth-spec.bevel+3);
+ const pos=geometry.attributes.position,uv=geometry.attributes.uv;
+ for(let i=0;i<pos.count;i++){
+ const x=pos.getX(i),y=pos.getY(i),z=pos.getZ(i);
+ // The entire casting shares a gently irregular shoulder; no separate raised rail.
+ const wave=style==='current'?0:(Math.sin(x*.043+y*.017)*.55+Math.sin(y*.067-x*.023)*.38);
+ pos.setZ(i,z+wave);uv.setXY(i,x/90,y/90);
+ }
+ // Weld normals across the many bevel rings, without separate tube seams.
+ geometry.deleteAttribute('normal');let welded=mergeVertices(geometry,1e-3);geometry.dispose();geometry=welded;geometry.computeVertexNormals();
+ geometries.push(geometry);let body=new THREE.Mesh(geometry,[top,side]);body.castShadow=body.receiveShadow=true;group.add(body)
+ }}
+ const blocked=new Set(hazards),walkableShapes=groups(cells.filter(i=>!blocked.has(i)),n).map(part=>{let contours=loops(part,n,pitch),shape=rounded(contours[0],10);for(let hole of contours.slice(1))shape.holes.push(rounded(hole,10));return shape});group.userData={style,pitch,walkable:false,spec:{...spec}};return{group,openings,walkableShapes,spec,dispose(){geometries.forEach(g=>g.dispose());top.dispose();side.dispose();texture.dispose()}};
 }
