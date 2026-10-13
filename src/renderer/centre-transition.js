@@ -1,7 +1,7 @@
-/** Short visual transition, replaceable immediately; never queues input. */
+/** A bounded-time visual route along accepted edges; corners are never cut. */
 export class CentreTransition{
  constructor(x=0,y=0){this.reset(x,y)}
- reset(x,y){this.x=x;this.y=y;this.toX=x;this.toY=y;this.start=0;this.duration=0;this.fromX=x;this.fromY=y;this.lastTarget=null}
- sample(now){const u=this.duration?Math.max(0,Math.min(1,(now-this.start)/this.duration)):1,s=u*u*(3-2*u);this.x=this.fromX+(this.toX-this.fromX)*s;this.y=this.fromY+(this.toY-this.fromY)*s;if(u===1){this.x=this.toX;this.y=this.toY}return {x:this.x,y:this.y,moving:u<1}}
- target(x,y,now){if(x===this.toX&&y===this.toY)return;const p=this.sample(now);this.fromX=p.x;this.fromY=p.y;this.toX=x;this.toY=y;this.duration=this.lastTarget===null?.22:Math.max(.07,Math.min(.22,now-this.lastTarget));this.lastTarget=now;this.start=now}
+ reset(x,y){this.x=x;this.y=y;this.toX=x;this.toY=y;this.start=0;this.duration=0;this.lastTarget=null;this.points=[[x,y]];this.remaining=[];this.segmentStart=[x,y]}
+ sample(now){const u=this.duration?Math.max(0,Math.min(1,(now-this.start)/this.duration)):1,s=u*u*(3-2*u),lengths=this.points.slice(1).map((p,i)=>Math.abs(p[0]-this.points[i][0])+Math.abs(p[1]-this.points[i][1]));let d=lengths.reduce((a,b)=>a+b,0)*s;this.remaining=[];for(let i=0;i<lengths.length;i++){const a=this.points[i],b=this.points[i+1],length=lengths[i];if(d<=length&&length>0){const v=d/length;this.x=a[0]+(b[0]-a[0])*v;this.y=a[1]+(b[1]-a[1])*v;this.segmentStart=a;this.remaining=this.points.slice(i+1);break}d-=length}if(u===1||!lengths.length){this.x=this.toX;this.y=this.toY;this.remaining=[];this.segmentStart=[this.x,this.y]}return {x:this.x,y:this.y,moving:u<1&&lengths.length>0}}
+ target(x,y,now){if(x===this.toX&&y===this.toY)return false;if(x!==this.toX&&y!==this.toY)return false;const p=this.sample(now),same=q=>q[0]===x&&q[1]===y;let route=this.remaining.map(q=>[...q]);if(same(this.segmentStart))route=[[x,y]];else{const at=route.findIndex(same);if(at>=0)route=route.slice(0,at+1);else route.push([x,y])}this.points=[[p.x,p.y],...route];this.toX=x;this.toY=y;this.duration=this.lastTarget===null?.22:Math.max(.07,Math.min(.22,now-this.lastTarget));this.lastTarget=now;this.start=now;return true}
 }

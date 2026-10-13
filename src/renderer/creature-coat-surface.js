@@ -1,0 +1,15 @@
+import * as THREE from 'three';
+const parts=[[[0,6,10],[10.5,15,9.7]],[[0,19,6],[7.4,9,5.7]],[[1,26,4],[4.7,7,3.4]],[[0,-8,20],[13.1,11.5,12.2]]];
+function ellipsoid(p,c,r){const x=p.x-c[0],y=p.y-c[1],z=p.z-c[2],a=Math.hypot(x/r[0],y/r[1],z/r[2]),b=Math.hypot(x/r[0]**2,y/r[1]**2,z/r[2]**2);return b?a*(a-1)/b:-Math.min(...r)}
+export function coatDistance(p){let d=Infinity;for(const [c,r]of parts){const v=ellipsoid(p,c,r),k=5.5,h=Math.max(k-Math.abs(d-v),0)/k;d=Math.min(d,v)-h*h*k*.25}return d}
+export function coatNormal(p){const e=.06;return new THREE.Vector3(coatDistance(new THREE.Vector3(p.x+e,p.y,p.z))-coatDistance(new THREE.Vector3(p.x-e,p.y,p.z)),coatDistance(new THREE.Vector3(p.x,p.y+e,p.z))-coatDistance(new THREE.Vector3(p.x,p.y-e,p.z)),coatDistance(new THREE.Vector3(p.x,p.y,p.z+e))-coatDistance(new THREE.Vector3(p.x,p.y,p.z-e))).normalize()}
+/** One smoothly united surface for head, back and tail; no overlapping base shells. */
+export function createCoatSurface(){
+ const pos=[],normals=[],triangles=[],cdf=[];let area=0;
+ const offsets=[[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,1],[1,0,1],[1,1,1],[0,1,1]],tetra=[[0,5,1,6],[0,1,2,6],[0,2,3,6],[0,3,7,6],[0,7,4,6],[0,4,5,6]],edges=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]],step=1.6;
+ function triangle(a,b,c){const mid=a.clone().add(b).add(c).multiplyScalar(1/3),n=coatNormal(mid),cross=b.clone().sub(a).cross(c.clone().sub(a));if(cross.dot(n)<0)[b,c]=[c,b];const size=cross.length()/2;if(size<1e-8)return;triangles.push([a,b,c]);area+=size;cdf.push(area);for(const p of [a,b,c]){pos.push(p.x,p.y,p.z);const n=coatNormal(p);normals.push(n.x,n.y,n.z)}}
+ for(let x=-16;x<16;x+=step)for(let y=-23;y<37;y+=step)for(let z=-3;z<35;z+=step){const p=offsets.map(o=>new THREE.Vector3(x+o[0]*step,y+o[1]*step,z+o[2]*step)),d=p.map(coatDistance);if(d.every(v=>v>0)||d.every(v=>v<0))continue;for(const t of tetra){const pts=[];for(const [a,b]of edges){const ia=t[a],ib=t[b];if((d[ia]<0)===(d[ib]<0))continue;pts.push(p[ia].clone().lerp(p[ib],d[ia]/(d[ia]-d[ib])))}if(pts.length<3)continue;if(pts.length===4){const center=pts.reduce((a,p)=>a.add(p),new THREE.Vector3()).multiplyScalar(.25),n=coatNormal(center),u=pts[0].clone().sub(center).normalize(),v=n.clone().cross(u);pts.sort((a,b)=>Math.atan2(a.clone().sub(center).dot(v),a.clone().sub(center).dot(u))-Math.atan2(b.clone().sub(center).dot(v),b.clone().sub(center).dot(u)))}triangle(pts[0],pts[1],pts[2]);if(pts.length===4)triangle(pts[0],pts[2],pts[3])}}
+ const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));geometry.setAttribute('normal',new THREE.Float32BufferAttribute(normals,3));
+ return {geometry,sample(rng){const pick=rng()*area;let lo=0,hi=cdf.length-1;while(lo<hi){const m=(lo+hi)>>1;if(cdf[m]<pick)lo=m+1;else hi=m}const [a,b,c]=triangles[lo],r=Math.sqrt(rng()),s=rng(),p=a.clone().multiplyScalar(1-r).addScaledVector(b,r*(1-s)).addScaledVector(c,r*s);for(let i=0;i<2;i++)p.addScaledVector(coatNormal(p),-coatDistance(p));return {p,normal:coatNormal(p)}}};
+}
+
