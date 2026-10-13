@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import * as THREE from 'three';
 import {createFlowerGoal,FLOWER_SPECIES,sampleVisitorFlight} from '../src/renderer/flower-goals.js';
+import {createVisitorMotion} from '../src/renderer/visitor-motion.js';
 globalThis.document={createElement(){return{width:0,height:0,getContext(){return{fillText(){}}}}}};
 let budReference;
 for(const species of Object.keys(FLOWER_SPECIES)){
@@ -24,4 +25,13 @@ for(let seed=0;seed<20;seed++)for(let k=0;k<800;k++){
  const next=sampleVisitorFlight(t+.002,seed),acceleration=next.clone().add(p).addScaledVector(q,-2);assert(acceleration.length()<.0002,'Abrupt change in flight velocity');
  assert.deepEqual(p.toArray(),sampleVisitorFlight(t,seed).toArray(),'Unstable flight seed');
 }
-console.log('PASS: four flower species, identical buds, reversible opening, marker clearance, bee/humblebee visibility and bounded continuous wandering, disposal.');
+for(const seed of [17,24,31,38,51,58]){
+ const motion=createVisitorMotion(seed),same=createVisitorMotion(seed);let near=0;
+ for(let k=0;k<5400;k++){
+  const before=motion.agents.map(a=>a.position.clone()),agents=motion.update(1/60);same.update(1/60);
+  if(agents[0].position.distanceTo(agents[1].position)<12)near++;
+  for(let i=0;i<2;i++){const p=agents[i].position;assert(p.x>=-16&&p.x<=24&&p.z>=-14&&p.z<=22&&p.x+p.z<=14.001);assert(p.distanceTo(before[i])<.36,'Steering position jumps');assert.deepEqual(p.toArray(),same.agents[i].position.toArray())}
+ }
+ assert(near/5400<.1,'Visitors remain clustered');assert(motion.agents[0].leg>25&&motion.agents[1].leg>12,'Agents get stuck or share one behaviour');
+}
+console.log('PASS: flower states, visitor sizes/fur, clearance, disposal and independent bounded steering; no persistent clustering over six 90-second runs.');

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {createGardenGoal} from './garden-marker-goals.js';
+import {createVisitorMotion} from './visitor-motion.js';
 export const FLOWER_SPECIES={
  daisy:{name:'Gänseblümchen',petals:10,colors:['#fff6dc','#ffffff'],center:'#edb62c',width:2.9,length:7.8,radius:10.8,heart:4.5},
  buttercup:{name:'Butterblume',petals:5,colors:['#ffd133','#ffe567'],center:'#dca119',width:6.5,length:8,radius:9.2,heart:3.3},
@@ -61,6 +62,7 @@ export function createFlowerGoal({species='daisy',number=1,state='closed',layout
   const wings=[];for(const side of [-1,1]){const wing=ball(insect,wingMat,side*.95,.5,-.1,1.5,.16,.65);wing.castShadow=false;wings.push(wing)}flights.push({insect,wings,seed:number*17+k*31+Object.keys(FLOWER_SPECIES).indexOf(species)*7,phase:k*2.7,a:new THREE.Vector3(),b:new THREE.Vector3()});
  }
  let insectsEnabled=Boolean(insects);function setInsects(enabled){insectsEnabled=Boolean(enabled);group.userData.insects=insectsEnabled}
+ const motion=createVisitorMotion(number*17+Object.keys(FLOWER_SPECIES).indexOf(species)*7);
  group.userData.visitorSizes={bee:100,bumblebee:100};
  function setVisitorSize(kind,percent=100){
   if(!['bee','bumblebee'].includes(kind))throw Error('Unknown flower visitor');
@@ -74,7 +76,8 @@ export function createFlowerGoal({species='daisy',number=1,state='closed',layout
   bud.scale.multiplyScalar(1-o);bud.visible=o<.999;
   blossom.visible=o>.001;blossom.scale.setScalar(o);for(const hinge of petals)hinge.rotation.x=-(1-o)*1.1;heart.scale.y=2.7*(.8+.2*o);
   visitors.visible=insectsEnabled&&current==='bloom'&&o>.94;
-  for(const f of flights){sampleVisitorFlight(time,f.seed,f.a);sampleVisitorFlight(time+.08,f.seed,f.b);f.insect.position.copy(f.a);const vx=f.b.x-f.a.x,vz=f.b.z-f.a.z;if(Math.hypot(vx,vz)>.004){const heading=Math.atan2(vx,vz),turn=Math.atan2(Math.sin(heading-f.insect.rotation.y),Math.cos(heading-f.insect.rotation.y));f.insect.rotation.y+=turn*Math.min(1,delta*7);f.insect.rotation.z=THREE.MathUtils.clamp(-turn*.18,-.2,.2)}f.insect.rotation.x=-Math.min(.14,Math.hypot(vx,vz)*.25);f.wings.forEach((w,k)=>w.rotation.z=Math.sin(time*30+f.phase)*(k?1:-1)*.5)}
+  const agents=motion.update(delta);
+  for(let i=0;i<flights.length;i++){const f=flights[i],a=agents[i];f.insect.position.copy(a.position);const vx=a.velocity.x,vz=a.velocity.z,speed=Math.hypot(vx,vz);if(speed>.5){const heading=Math.atan2(vx,vz),turn=Math.atan2(Math.sin(heading-f.insect.rotation.y),Math.cos(heading-f.insect.rotation.y));f.insect.rotation.y+=turn*Math.min(1,delta*9);f.insect.rotation.z=THREE.MathUtils.clamp(-turn*.22,-.24,.24)}else f.insect.rotation.z*=Math.max(0,1-delta*6);f.insect.rotation.x=-Math.min(.16,speed*.009);f.wings.forEach((w,k)=>w.rotation.z=Math.sin(time*30+f.phase)*(k?1:-1)*.5)}
  }
  setInsects(insects);update(0,1);group.userData.species=species;group.userData.decorative=true;
  return{group,setState,setInsects,setVisitorSize,setSize:marker.setSize,update,get state(){return current},dispose(){marker.dispose();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose())}};

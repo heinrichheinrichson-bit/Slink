@@ -1,5 +1,5 @@
 // src/renderer/flower-goals.js
-import * as THREE2 from "three";
+import * as THREE3 from "three";
 
 // src/renderer/garden-marker-goals.js
 import * as THREE from "three";
@@ -117,6 +117,91 @@ function createGardenGoal({ number = 1, state = "closed", layout = new URLSearch
   } };
 }
 
+// src/renderer/visitor-motion.js
+import * as THREE2 from "three";
+var hash = (n, seed) => THREE2.MathUtils.euclideanModulo(Math.sin(n * 127.1 + seed * 311.7) * 43758.5453, 1);
+var stations = [[-13, -9], [20, -10], [8, 4], [-11, 18]];
+function bound(p) {
+  p.x = THREE2.MathUtils.clamp(p.x, -16, 24);
+  p.z = THREE2.MathUtils.clamp(p.z, -14, 22);
+  const excess = Math.max(0, (p.x + p.z - 14) / 2);
+  p.x -= excess;
+  p.z -= excess;
+  return p;
+}
+function createVisitorMotion(seed = 73) {
+  const agents = [{ kind: "bee", position: new THREE2.Vector3(-12, 25, 10), velocity: new THREE2.Vector3(), speed: 19, leg: 0, wait: 0, station: -1 }, { kind: "bumblebee", position: new THREE2.Vector3(3, 21.5, -7), velocity: new THREE2.Vector3(), speed: 9, leg: 0, wait: 0, station: -1 }];
+  let time = 0;
+  function choose(a, index) {
+    a.leg++;
+    a.age = 0;
+    const key = seed + index * 113, visiting = a.kind === "bumblebee" ? a.leg % 2 === 1 : a.leg % 5 === 0;
+    if (visiting) {
+      a.target = new THREE2.Vector3((hash(a.leg + 1, key) - 0.5) * 5, 20.5, (hash(a.leg + 3, key) - 0.5) * 5);
+      a.visiting = true;
+    } else {
+      let station = Math.floor(hash(a.leg, key) * 4);
+      if (station === a.station) station = (station + 1 + Math.floor(hash(a.leg + 9, key) * 2)) % 4;
+      a.station = station;
+      const [x, z] = stations[station];
+      a.target = bound(new THREE2.Vector3(x + (hash(a.leg + 2, key) - 0.5) * 3, a.kind === "bee" ? 24.5 : 23, z + (hash(a.leg + 4, key) - 0.5) * 3));
+      a.visiting = false;
+    }
+    const other = agents[1 - index], flatDistance = (p, q) => Math.hypot(p.x - q.x, p.z - q.z);
+    if (flatDistance(a.target, other.position) < 13 || other.target && flatDistance(a.target, other.target) < 13) {
+      let best = -1;
+      for (let k = 0; k < stations.length; k++) {
+        const [x, z] = stations[k], p = new THREE2.Vector3(x, 24, z), score = flatDistance(p, other.position) + (other.target ? flatDistance(p, other.target) : 0);
+        if (score > best) {
+          best = score;
+          a.target = p;
+          a.station = k;
+        }
+      }
+      a.visiting = false;
+    }
+  }
+  agents.forEach(choose);
+  function step(dt) {
+    time += dt;
+    const separation = agents[0].position.clone().sub(agents[1].position);
+    separation.y = 0;
+    const distance = separation.length();
+    for (let index = 0; index < 2; index++) {
+      const a = agents[index];
+      a.age += dt;
+      if (a.wait <= 0 && a.age > (a.kind === "bee" ? 4.2 : 6.2) + hash(a.leg, seed + index) * 1.3) choose(a, index);
+      const d = a.target.clone().sub(a.position), flat = Math.hypot(d.x, d.z);
+      if (a.wait > 0) {
+        a.wait -= dt;
+        if (a.wait <= 0) choose(a, index);
+      } else if (flat < 1 && a.velocity.length() < 2) {
+        a.wait = a.visiting ? (a.kind === "bumblebee" ? 1.2 : 0.45) + hash(a.leg, seed + index) * 1.3 : 0.12 + hash(a.leg, seed + index) * 0.3;
+      }
+      const desired = d.clone();
+      desired.y = 0;
+      if (desired.lengthSq() > 0) desired.normalize().multiplyScalar(a.speed * Math.min(1, flat / 8));
+      const acceleration = desired.sub(new THREE2.Vector3(a.velocity.x, 0, a.velocity.z)).multiplyScalar(5.5);
+      if (distance < 16 && distance > 1e-3) acceleration.addScaledVector(separation, (index ? -1 : 1) * (16 - distance) * 11 / distance);
+      acceleration.y = (a.target.y + Math.sin(time * 4.1 + index * 2.3) * 0.16 - a.position.y) * 16 - a.velocity.y * 7;
+      acceleration.clampLength(0, 95);
+      a.velocity.addScaledVector(acceleration, dt);
+      a.velocity.clampLength(0, a.speed * 1.1);
+      a.position.addScaledVector(a.velocity, dt);
+      bound(a.position);
+    }
+  }
+  return { agents, update(delta) {
+    let remaining = THREE2.MathUtils.clamp(delta, 0, 0.1);
+    while (remaining > 1e-8) {
+      const dt = Math.min(1 / 120, remaining);
+      step(dt);
+      remaining -= dt;
+    }
+    return agents;
+  } };
+}
+
 // src/renderer/flower-goals.js
 var FLOWER_SPECIES = {
   daisy: { name: "G\xE4nsebl\xFCmchen", petals: 10, colors: ["#fff6dc", "#ffffff"], center: "#edb62c", width: 2.9, length: 7.8, radius: 10.8, heart: 4.5 },
@@ -124,8 +209,8 @@ var FLOWER_SPECIES = {
   meadow: { name: "Wiesenbl\xFCte", petals: 5, colors: ["#df68bf", "#ed8cd1"], center: "#ffdc63", width: 6.8, length: 8.1, radius: 9.4, heart: 3.5 },
   poppy: { name: "Kleiner Mohn", petals: 4, colors: ["#f16d51", "#ff8a68"], center: "#50343c", width: 8.7, length: 9.2, radius: 8.8, heart: 4.1 }
 };
-var flightHash = (step, seed) => THREE2.MathUtils.euclideanModulo(Math.sin(step * 127.1 + seed * 311.7) * 43758.5453, 1);
-function sampleVisitorFlight(time, seed, out = new THREE2.Vector3()) {
+var flightHash = (step, seed) => THREE3.MathUtils.euclideanModulo(Math.sin(step * 127.1 + seed * 311.7) * 43758.5453, 1);
+function sampleVisitorFlight(time, seed, out = new THREE3.Vector3()) {
   const clock = Math.max(0, time), phase = flightHash(0, seed) * 6.28, t = clock * 0.52 + 0.6 * Math.sin(clock * 0.43 + phase) + 0.18 * Math.sin(clock * 0.97 + phase * 1.7) + 2, step = Math.floor(t), u = t - step;
   const weights = [(1 - u) ** 3 / 6, (3 * u ** 3 - 6 * u * u + 4) / 6, (-3 * u ** 3 + 3 * u * u + 3 * u + 1) / 6, u ** 3 / 6];
   out.set(0, 0, 0);
@@ -145,19 +230,19 @@ function sampleVisitorFlight(time, seed, out = new THREE2.Vector3()) {
 function createFlowerGoal({ species = "daisy", number = 1, state = "closed", layout = "compact", insects = true } = {}) {
   const spec = FLOWER_SPECIES[species];
   if (!spec) throw Error("Unknown flower species " + species);
-  const marker = createGardenGoal({ number, state, layout }), group = marker.group, bud = group.children[0], blossom = new THREE2.Group();
+  const marker = createGardenGoal({ number, state, layout }), group = marker.group, bud = group.children[0], blossom = new THREE3.Group();
   blossom.position.copy(bud.position);
   group.add(blossom);
   const geometries = [], materials = [];
   const material = (color) => {
-    const m = new THREE2.MeshStandardMaterial({ color, roughness: 0.56 });
+    const m = new THREE3.MeshStandardMaterial({ color, roughness: 0.56 });
     materials.push(m);
     return m;
   };
-  const green = material("#538b2c"), petalMats = spec.colors.map(material), heartMat = material(spec.center), sphere = new THREE2.SphereGeometry(1, 20, 12);
+  const green = material("#538b2c"), petalMats = spec.colors.map(material), heartMat = material(spec.center), sphere = new THREE3.SphereGeometry(1, 20, 12);
   geometries.push(sphere);
   function ball(parent, mat, x, y, z, sx, sy, sz) {
-    const m = new THREE2.Mesh(sphere, mat);
+    const m = new THREE3.Mesh(sphere, mat);
     m.position.set(x, y, z);
     m.scale.set(sx, sy, sz);
     m.castShadow = m.receiveShadow = true;
@@ -171,11 +256,11 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
   }
   const petals = [];
   for (let k = 0; k < spec.petals; k++) {
-    const pivot = new THREE2.Group();
+    const pivot = new THREE3.Group();
     pivot.position.y = 12;
     pivot.rotation.y = k * Math.PI * 2 / spec.petals;
     blossom.add(pivot);
-    const hinge = new THREE2.Group();
+    const hinge = new THREE3.Group();
     pivot.add(hinge);
     let geo = sphere;
     if (species === "poppy") {
@@ -188,7 +273,7 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
       geo.computeVertexNormals();
       geometries.push(geo);
     }
-    const petal = new THREE2.Mesh(geo, petalMats[k % 2]);
+    const petal = new THREE3.Mesh(geo, petalMats[k % 2]);
     petal.position.z = spec.radius;
     petal.scale.set(spec.width, species === "poppy" ? 1.5 : 1.2, spec.length);
     petal.castShadow = petal.receiveShadow = true;
@@ -200,7 +285,7 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
     const a = k * Math.PI * 2 / (species === "poppy" ? 9 : 7);
     ball(blossom, heartMat, Math.cos(a) * spec.heart * 0.7, 16, Math.sin(a) * spec.heart * 0.7, 0.65, 0.6, 0.65);
   }
-  const visitors = new THREE2.Group();
+  const visitors = new THREE3.Group();
   visitors.name = "flower-visitors";
   blossom.add(visitors);
   const honey = material("#e9ad32"), fluff = material("#d6af50"), dark = material("#60452b"), wingMat = material("#fff6df");
@@ -210,7 +295,7 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
   wingMat.depthWrite = false;
   const flights = [];
   for (let k = 0; k < 2; k++) {
-    const insect = new THREE2.Group();
+    const insect = new THREE3.Group();
     insect.name = k ? "bumblebee" : "bee";
     insect.scale.setScalar(1.8);
     visitors.add(insect);
@@ -225,20 +310,20 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
       const positions = [], colors = [], count = 260;
       for (let j = 0; j < count; j++) {
         const y = 1 - 2 * (j + 0.5) / count, r = Math.sqrt(1 - y * y), a = j * 2.39996323, x = Math.cos(a) * r, z = Math.sin(a) * r;
-        const root = new THREE2.Vector3(x * width * 1.015, y * height * 1.015, z * 1.215), normal = new THREE2.Vector3(x / width, y / height, z / 1.2).normalize(), length = 0.12 + flightHash(j, 91) * 0.12;
+        const root = new THREE3.Vector3(x * width * 1.015, y * height * 1.015, z * 1.215), normal = new THREE3.Vector3(x / width, y / height, z / 1.2).normalize(), length = 0.12 + flightHash(j, 91) * 0.12;
         const tip = root.clone().addScaledVector(normal, length);
         tip.z -= 0.045;
         positions.push(...root.toArray(), ...tip.toArray());
-        const c = new THREE2.Color(z < -0.72 ? "#f4e4b9" : Math.abs(z + 0.46) < 0.18 || Math.abs(z - 0.12) < 0.17 ? "#635238" : j % 3 ? "#d6af50" : "#e7c776");
+        const c = new THREE3.Color(z < -0.72 ? "#f4e4b9" : Math.abs(z + 0.46) < 0.18 || Math.abs(z - 0.12) < 0.17 ? "#635238" : j % 3 ? "#d6af50" : "#e7c776");
         colors.push(...c.toArray(), ...c.toArray());
       }
-      const hairGeo = new THREE2.BufferGeometry();
-      hairGeo.setAttribute("position", new THREE2.Float32BufferAttribute(positions, 3));
-      hairGeo.setAttribute("color", new THREE2.Float32BufferAttribute(colors, 3));
+      const hairGeo = new THREE3.BufferGeometry();
+      hairGeo.setAttribute("position", new THREE3.Float32BufferAttribute(positions, 3));
+      hairGeo.setAttribute("color", new THREE3.Float32BufferAttribute(colors, 3));
       geometries.push(hairGeo);
-      const hairMat = new THREE2.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.82, depthWrite: false });
+      const hairMat = new THREE3.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.82, depthWrite: false });
       materials.push(hairMat);
-      const fur = new THREE2.LineSegments(hairGeo, hairMat);
+      const fur = new THREE3.LineSegments(hairGeo, hairMat);
       fur.name = "bumblebee-fur";
       insect.add(fur);
     }
@@ -248,13 +333,14 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
       wing.castShadow = false;
       wings.push(wing);
     }
-    flights.push({ insect, wings, seed: number * 17 + k * 31 + Object.keys(FLOWER_SPECIES).indexOf(species) * 7, phase: k * 2.7, a: new THREE2.Vector3(), b: new THREE2.Vector3() });
+    flights.push({ insect, wings, seed: number * 17 + k * 31 + Object.keys(FLOWER_SPECIES).indexOf(species) * 7, phase: k * 2.7, a: new THREE3.Vector3(), b: new THREE3.Vector3() });
   }
   let insectsEnabled = Boolean(insects);
   function setInsects(enabled) {
     insectsEnabled = Boolean(enabled);
     group.userData.insects = insectsEnabled;
   }
+  const motion = createVisitorMotion(number * 17 + Object.keys(FLOWER_SPECIES).indexOf(species) * 7);
   group.userData.visitorSizes = { bee: 100, bumblebee: 100 };
   function setVisitorSize(kind, percent = 100) {
     if (!["bee", "bumblebee"].includes(kind)) throw Error("Unknown flower visitor");
@@ -279,17 +365,17 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
     for (const hinge of petals) hinge.rotation.x = -(1 - o) * 1.1;
     heart.scale.y = 2.7 * (0.8 + 0.2 * o);
     visitors.visible = insectsEnabled && current === "bloom" && o > 0.94;
-    for (const f of flights) {
-      sampleVisitorFlight(time, f.seed, f.a);
-      sampleVisitorFlight(time + 0.08, f.seed, f.b);
-      f.insect.position.copy(f.a);
-      const vx = f.b.x - f.a.x, vz = f.b.z - f.a.z;
-      if (Math.hypot(vx, vz) > 4e-3) {
+    const agents = motion.update(delta);
+    for (let i = 0; i < flights.length; i++) {
+      const f = flights[i], a = agents[i];
+      f.insect.position.copy(a.position);
+      const vx = a.velocity.x, vz = a.velocity.z, speed = Math.hypot(vx, vz);
+      if (speed > 0.5) {
         const heading = Math.atan2(vx, vz), turn = Math.atan2(Math.sin(heading - f.insect.rotation.y), Math.cos(heading - f.insect.rotation.y));
-        f.insect.rotation.y += turn * Math.min(1, delta * 7);
-        f.insect.rotation.z = THREE2.MathUtils.clamp(-turn * 0.18, -0.2, 0.2);
-      }
-      f.insect.rotation.x = -Math.min(0.14, Math.hypot(vx, vz) * 0.25);
+        f.insect.rotation.y += turn * Math.min(1, delta * 9);
+        f.insect.rotation.z = THREE3.MathUtils.clamp(-turn * 0.22, -0.24, 0.24);
+      } else f.insect.rotation.z *= Math.max(0, 1 - delta * 6);
+      f.insect.rotation.x = -Math.min(0.16, speed * 9e-3);
       f.wings.forEach((w, k) => w.rotation.z = Math.sin(time * 30 + f.phase) * (k ? 1 : -1) * 0.5);
     }
   }

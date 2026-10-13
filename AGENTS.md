@@ -23,3 +23,5 @@
 - User rejected the current flower visitor flight pattern as unnatural. Do not describe it as approved/natural. `blumenwerkstatt.html` now has separate 50-300% bee and bumblebee size sliders (100% = prior 1.8 model scale), immediate preview, study-only persisted values and reset. Species changes retain these test sizes. Main game remains unchanged.
 
 - Latest visitor study revision: rounder bumblebee with cream tail and short coloured fur fibres; continuous curved B-spline flight instead of eased straight waypoint legs; enlarged own-cell flight region excluding number-tag corner. Size test values remain preserved. Await user judgement on the new motion; do not label it approved.
+
+- User rejected the B-spline visitor motion too: animals stayed too close and looked unnatural. Active flower visitors now use independent steering agents (`visitor-motion.js`) with distinct bee/bumblebee speeds and visit schedules, mutual avoidance and non-overlapping destinations. The old spline sampler remains only a comparison export. New movement is still awaiting user review, not approved.
