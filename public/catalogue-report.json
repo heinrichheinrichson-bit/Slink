@@ -1,0 +1,734 @@
+{
+  "generatedAt": "2026-10-13",
+  "total": 112,
+  "newUniqueLevels": 102,
+  "levels": [
+    {
+      "level": 11,
+      "set": "Kleine Gärten",
+      "fields": 13,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 16
+    },
+    {
+      "level": 12,
+      "set": "Kleine Gärten",
+      "fields": 14,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 24
+    },
+    {
+      "level": 13,
+      "set": "Kleine Gärten",
+      "fields": 14,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 20
+    },
+    {
+      "level": 14,
+      "set": "Kleine Gärten",
+      "fields": 13,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 16
+    },
+    {
+      "level": 15,
+      "set": "Kleine Gärten",
+      "fields": 14,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 19
+    },
+    {
+      "level": 16,
+      "set": "Kleine Gärten",
+      "fields": 12,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 16
+    },
+    {
+      "level": 17,
+      "set": "Kleine Gärten",
+      "fields": 13,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 24
+    },
+    {
+      "level": 18,
+      "set": "Kleine Gärten",
+      "fields": 13,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 21
+    },
+    {
+      "level": 19,
+      "set": "Kleine Gärten",
+      "fields": 15,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 18
+    },
+    {
+      "level": 20,
+      "set": "Kleine Gärten",
+      "fields": 13,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 18
+    },
+    {
+      "level": 21,
+      "set": "Kleine Gärten",
+      "fields": 12,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 14
+    },
+    {
+      "level": 22,
+      "set": "Kleine Gärten",
+      "fields": 15,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 26
+    },
+    {
+      "level": 23,
+      "set": "Kleine Gärten",
+      "fields": 12,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 15
+    },
+    {
+      "level": 24,
+      "set": "Kleine Gärten",
+      "fields": 15,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 18
+    },
+    {
+      "level": 25,
+      "set": "Kleine Gärten",
+      "fields": 15,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 22
+    },
+    {
+      "level": 26,
+      "set": "Kleine Gärten",
+      "fields": 12,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 16
+    },
+    {
+      "level": 27,
+      "set": "Kleine Gärten",
+      "fields": 14,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 24
+    },
+    {
+      "level": 28,
+      "set": "Kleine Gärten",
+      "fields": 15,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 19
+    },
+    {
+      "level": 29,
+      "set": "Kleine Gärten",
+      "fields": 13,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 18
+    },
+    {
+      "level": 30,
+      "set": "Kleine Gärten",
+      "fields": 13,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 17
+    },
+    {
+      "level": 31,
+      "set": "Teichpfade",
+      "fields": 20,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 39
+    },
+    {
+      "level": 32,
+      "set": "Teichpfade",
+      "fields": 22,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 38
+    },
+    {
+      "level": 33,
+      "set": "Teichpfade",
+      "fields": 23,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 32
+    },
+    {
+      "level": 34,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 33
+    },
+    {
+      "level": 35,
+      "set": "Teichpfade",
+      "fields": 21,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 45
+    },
+    {
+      "level": 36,
+      "set": "Teichpfade",
+      "fields": 20,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 30
+    },
+    {
+      "level": 37,
+      "set": "Teichpfade",
+      "fields": 22,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 30
+    },
+    {
+      "level": 38,
+      "set": "Teichpfade",
+      "fields": 24,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 54
+    },
+    {
+      "level": 39,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 33
+    },
+    {
+      "level": 40,
+      "set": "Teichpfade",
+      "fields": 21,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 34
+    },
+    {
+      "level": 41,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 28
+    },
+    {
+      "level": 42,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 50
+    },
+    {
+      "level": 43,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 24
+    },
+    {
+      "level": 44,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 30
+    },
+    {
+      "level": 45,
+      "set": "Teichpfade",
+      "fields": 21,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 51
+    },
+    {
+      "level": 46,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 35
+    },
+    {
+      "level": 47,
+      "set": "Teichpfade",
+      "fields": 21,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 28
+    },
+    {
+      "level": 48,
+      "set": "Teichpfade",
+      "fields": 23,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 47
+    },
+    {
+      "level": 49,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 27
+    },
+    {
+      "level": 50,
+      "set": "Teichpfade",
+      "fields": 21,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 30
+    },
+    {
+      "level": 51,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 22
+    },
+    {
+      "level": 52,
+      "set": "Teichpfade",
+      "fields": 21,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 27
+    },
+    {
+      "level": 53,
+      "set": "Teichpfade",
+      "fields": 19,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 24
+    },
+    {
+      "level": 54,
+      "set": "Teichpfade",
+      "fields": 23,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 34
+    },
+    {
+      "level": 55,
+      "set": "Teichpfade",
+      "fields": 20,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 44
+    },
+    {
+      "level": 56,
+      "set": "Teichpfade",
+      "fields": 24,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 198
+    },
+    {
+      "level": 57,
+      "set": "Teichpfade",
+      "fields": 23,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 42
+    },
+    {
+      "level": 58,
+      "set": "Teichpfade",
+      "fields": 21,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 42
+    },
+    {
+      "level": 59,
+      "set": "Teichpfade",
+      "fields": 20,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 27
+    },
+    {
+      "level": 60,
+      "set": "Teichpfade",
+      "fields": 22,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 57
+    },
+    {
+      "level": 61,
+      "set": "Glut und Klee",
+      "fields": 31,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 116
+    },
+    {
+      "level": 62,
+      "set": "Glut und Klee",
+      "fields": 31,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 50
+    },
+    {
+      "level": 63,
+      "set": "Glut und Klee",
+      "fields": 32,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 291
+    },
+    {
+      "level": 64,
+      "set": "Glut und Klee",
+      "fields": 27,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 59
+    },
+    {
+      "level": 65,
+      "set": "Glut und Klee",
+      "fields": 29,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 77
+    },
+    {
+      "level": 66,
+      "set": "Glut und Klee",
+      "fields": 27,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 53
+    },
+    {
+      "level": 67,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 43
+    },
+    {
+      "level": 68,
+      "set": "Glut und Klee",
+      "fields": 27,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 51
+    },
+    {
+      "level": 69,
+      "set": "Glut und Klee",
+      "fields": 30,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 49
+    },
+    {
+      "level": 70,
+      "set": "Glut und Klee",
+      "fields": 32,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 73
+    },
+    {
+      "level": 71,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 66
+    },
+    {
+      "level": 72,
+      "set": "Glut und Klee",
+      "fields": 27,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 75
+    },
+    {
+      "level": 73,
+      "set": "Glut und Klee",
+      "fields": 30,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 154
+    },
+    {
+      "level": 74,
+      "set": "Glut und Klee",
+      "fields": 29,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 71
+    },
+    {
+      "level": 75,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 171
+    },
+    {
+      "level": 76,
+      "set": "Glut und Klee",
+      "fields": 31,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 206
+    },
+    {
+      "level": 77,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 98
+    },
+    {
+      "level": 78,
+      "set": "Glut und Klee",
+      "fields": 29,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 52
+    },
+    {
+      "level": 79,
+      "set": "Glut und Klee",
+      "fields": 29,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 72
+    },
+    {
+      "level": 80,
+      "set": "Glut und Klee",
+      "fields": 34,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 131
+    },
+    {
+      "level": 81,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 45
+    },
+    {
+      "level": 82,
+      "set": "Glut und Klee",
+      "fields": 29,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 40
+    },
+    {
+      "level": 83,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 45
+    },
+    {
+      "level": 84,
+      "set": "Glut und Klee",
+      "fields": 31,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 109
+    },
+    {
+      "level": 85,
+      "set": "Glut und Klee",
+      "fields": 30,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 142
+    },
+    {
+      "level": 86,
+      "set": "Glut und Klee",
+      "fields": 29,
+      "checkpoints": 4,
+      "unique": true,
+      "searchNodes": 71
+    },
+    {
+      "level": 87,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 62
+    },
+    {
+      "level": 88,
+      "set": "Glut und Klee",
+      "fields": 30,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 74
+    },
+    {
+      "level": 89,
+      "set": "Glut und Klee",
+      "fields": 32,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 125
+    },
+    {
+      "level": 90,
+      "set": "Glut und Klee",
+      "fields": 28,
+      "checkpoints": 2,
+      "unique": true,
+      "searchNodes": 69
+    },
+    {
+      "level": 91,
+      "set": "Große Gärten",
+      "fields": 37,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 56
+    },
+    {
+      "level": 92,
+      "set": "Große Gärten",
+      "fields": 37,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 66
+    },
+    {
+      "level": 93,
+      "set": "Große Gärten",
+      "fields": 46,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 785
+    },
+    {
+      "level": 94,
+      "set": "Große Gärten",
+      "fields": 45,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 214
+    },
+    {
+      "level": 95,
+      "set": "Große Gärten",
+      "fields": 40,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 112
+    },
+    {
+      "level": 96,
+      "set": "Große Gärten",
+      "fields": 37,
+      "checkpoints": 5,
+      "unique": true,
+      "searchNodes": 116
+    },
+    {
+      "level": 97,
+      "set": "Große Gärten",
+      "fields": 41,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 359
+    },
+    {
+      "level": 98,
+      "set": "Große Gärten",
+      "fields": 40,
+      "checkpoints": 8,
+      "unique": true,
+      "searchNodes": 443
+    },
+    {
+      "level": 99,
+      "set": "Große Gärten",
+      "fields": 41,
+      "checkpoints": 6,
+      "unique": true,
+      "searchNodes": 146
+    },
+    {
+      "level": 100,
+      "set": "Große Gärten",
+      "fields": 37,
+      "checkpoints": 7,
+      "unique": true,
+      "searchNodes": 122
+    }
+  ],
+  "hardSeries": {
+    "count": 12,
+    "candidates": 12000,
+    "qualified": 81,
+    "report": "hard-report.json",
+    "humanDifficultyValidated": false
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "candidates": 12000,
+  "qualified": 81,
+  "selected": [
+    {
+      "id": "hard-series-0",
+      "n": 6,
+      "fields": 29,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 439,
+      "junctions": 22,
+      "neckCells": 6,
+      "articulations": 1,
+      "delayedWrongChoices": 5,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-1",
+      "n": 6,
+      "fields": 28,
+      "goals": 2,
+      "unique": true,
+      "searchNodes": 149,
+      "junctions": 16,
+      "neckCells": 11,
+      "articulations": 1,
+      "delayedWrongChoices": 6,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 19,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 8,
+          "survivesMoves": 3
+        },
+        {
+          "step": 8,
+          "wrongCell": 26,
+          "survivesMoves": 3
+        },
+        {
+          "step": 8,
+          "wrongCell": 21,
+          "survivesMoves": 8
+        },
+        {
+          "step": 9,
+          "wrongCell": 8,
+          "survivesMoves": 3
+        },
+        {
+          "step": 10,
+          "wrongCell": 21,
+          "survivesMoves": 8
+        }
+      ]
+    },
+    {
+      "id": "hard-series-2",
+      "n": 6,
+      "fields": 26,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 133,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 1,
+      "delayedWrongChoices": 7,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 21,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 17,
+          "survivesMoves": 5
+        },
+        {
+          "step": 7,
+          "wrongCell": 16,
+          "survivesMoves": 6
+        },
+        {
+          "step": 8,
+          "wrongCell": 15,
+          "survivesMoves": 7
+        },
+        {
+          "step": 9,
+          "wrongCell": 14,
+          "survivesMoves": 8
+        },
+        {
+          "step": 12,
+          "wrongCell": 13,
+          "survivesMoves": 9
+        }
+      ]
+    },
+    {
+      "id": "hard-series-3",
+      "n": 6,
+      "fields": 26,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 258,
+      "junctions": 17,
+      "neckCells": 9,
+      "articulations": 0,
+      "delayedWrongChoices": 7,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 33,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 28,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 3,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-4",
+      "n": 7,
+      "fields": 35,
+      "goals": 2,
+      "unique": true,
+      "searchNodes": 205,
+      "junctions": 23,
+      "neckCells": 12,
+      "articulations": 0,
+      "delayedWrongChoices": 7,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 18,
+          "survivesMoves": 9
+        },
+        {
+          "step": 6,
+          "wrongCell": 25,
+          "survivesMoves": 10
+        },
+        {
+          "step": 7,
+          "wrongCell": 32,
+          "survivesMoves": 10
+        },
+        {
+          "step": 12,
+          "wrongCell": 39,
+          "survivesMoves": 10
+        },
+        {
+          "step": 13,
+          "wrongCell": 38,
+          "survivesMoves": 10
+        },
+        {
+          "step": 14,
+          "wrongCell": 37,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-5",
+      "n": 7,
+      "fields": 35,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 355,
+      "junctions": 21,
+      "neckCells": 14,
+      "articulations": 0,
+      "delayedWrongChoices": 8,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 30,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 3,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 7,
+          "survivesMoves": 10
+        },
+        {
+          "step": 7,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 21,
+          "survivesMoves": 10
+        },
+        {
+          "step": 9,
+          "wrongCell": 30,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-6",
+      "n": 6,
+      "fields": 27,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 243,
+      "junctions": 15,
+      "neckCells": 12,
+      "articulations": 0,
+      "delayedWrongChoices": 8,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 14,
+          "survivesMoves": 5
+        },
+        {
+          "step": 1,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 19,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 15,
+          "survivesMoves": 4
+        },
+        {
+          "step": 3,
+          "wrongCell": 33,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 32,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 24,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 18,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-7",
+      "n": 7,
+      "fields": 34,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 212,
+      "junctions": 25,
+      "neckCells": 9,
+      "articulations": 0,
+      "delayedWrongChoices": 8,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 10,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 7,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 29,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 17,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 33,
+          "survivesMoves": 5
+        },
+        {
+          "step": 8,
+          "wrongCell": 27,
+          "survivesMoves": 3
+        }
+      ]
+    },
+    {
+      "id": "hard-series-8",
+      "n": 7,
+      "fields": 36,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 186,
+      "junctions": 27,
+      "neckCells": 9,
+      "articulations": 0,
+      "delayedWrongChoices": 8,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 2,
+          "survivesMoves": 3
+        },
+        {
+          "step": 3,
+          "wrongCell": 7,
+          "survivesMoves": 6
+        },
+        {
+          "step": 4,
+          "wrongCell": 14,
+          "survivesMoves": 7
+        },
+        {
+          "step": 5,
+          "wrongCell": 29,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 21,
+          "survivesMoves": 8
+        },
+        {
+          "step": 6,
+          "wrongCell": 24,
+          "survivesMoves": 10
+        },
+        {
+          "step": 7,
+          "wrongCell": 29,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 24,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-9",
+      "n": 6,
+      "fields": 28,
+      "goals": 2,
+      "unique": true,
+      "searchNodes": 146,
+      "junctions": 22,
+      "neckCells": 6,
+      "articulations": 0,
+      "delayedWrongChoices": 8,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 33,
+          "survivesMoves": 4
+        },
+        {
+          "step": 1,
+          "wrongCell": 28,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 32,
+          "survivesMoves": 5
+        },
+        {
+          "step": 3,
+          "wrongCell": 24,
+          "survivesMoves": 8
+        },
+        {
+          "step": 4,
+          "wrongCell": 18,
+          "survivesMoves": 9
+        },
+        {
+          "step": 5,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 1,
+          "survivesMoves": 10
+        },
+        {
+          "step": 7,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-10",
+      "n": 7,
+      "fields": 39,
+      "goals": 4,
+      "unique": true,
+      "searchNodes": 667,
+      "junctions": 27,
+      "neckCells": 12,
+      "articulations": 0,
+      "delayedWrongChoices": 9,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 10,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 7,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 29,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 21,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 30,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 3,
+          "survivesMoves": 10
+        },
+        {
+          "step": 9,
+          "wrongCell": 4,
+          "survivesMoves": 10
+        }
+      ]
+    },
+    {
+      "id": "hard-series-11",
+      "n": 7,
+      "fields": 39,
+      "goals": 2,
+      "unique": true,
+      "searchNodes": 262,
+      "junctions": 31,
+      "neckCells": 8,
+      "articulations": 0,
+      "delayedWrongChoices": 9,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 6,
+          "wrongCell": 10,
+          "survivesMoves": 10
+        },
+        {
+          "step": 7,
+          "wrongCell": 11,
+          "survivesMoves": 10
+        },
+        {
+          "step": 10,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        },
+        {
+          "step": 11,
+          "wrongCell": 19,
+          "survivesMoves": 4
+        },
+        {
+          "step": 12,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 13,
+          "wrongCell": 33,
+          "survivesMoves": 6
+        },
+        {
+          "step": 16,
+          "wrongCell": 40,
+          "survivesMoves": 7
+        },
+        {
+          "step": 17,
+          "wrongCell": 39,
+          "survivesMoves": 8
+        },
+        {
+          "step": 20,
+          "wrongCell": 38,
+          "survivesMoves": 9
+        }
+      ]
+    }
+  ]
+}

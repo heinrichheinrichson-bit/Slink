@@ -1,0 +1,13 @@
+{
+  "passed": 500,
+  "errors": [],
+  "maximumTextures": 93,
+  "maximumGeometries": 1992,
+  "maximumPrograms": 9,
+  "last": {
+    "level": 500,
+    "textures": 83,
+    "geometries": 1732,
+    "programs": 9
+  }
+}

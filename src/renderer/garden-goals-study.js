@@ -1,0 +1,12 @@
+import * as THREE from 'three';
+import {createGardenGoal} from './garden-goals.js';
+import {createTile} from './growth-modules.js';
+import {createMeadowTile} from './meadow-variants.js';
+window.SlinkGardenGoals={createGardenGoal};
+let views=[];
+for(let id of ['study','scale']){let canvas=document.getElementById(id),renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0,0);let scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-150,150,100,-100,.1,2000);camera.position.set(0,370,290);camera.lookAt(0,0,0);scene.add(new THREE.HemisphereLight('#fff6d9','#78633e',2.3));let sun=new THREE.DirectionalLight('#fff4d5',3);sun.position.set(-160,300,200);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-220,right:220,top:180,bottom:-180,near:1,far:900});sun.shadow.bias=-.0005;scene.add(sun);let goals=[];
+ for(let i=0;i<3;i++){let tile=i===2?createMeadowTile('calm',{seed:73}).group:createTile('earth-loam',{seed:73});tile.rotation.x=-Math.PI/2;tile.position.x=(i-1)*100;scene.add(tile);let goal=createGardenGoal({number:i+1,state:['closed','next','bloom'][i]});goal.group.position.set((i-1)*100,i===2?18:8.5,0);scene.add(goal.group);goals.push(goal)}
+ function resize(){let w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);let half=id==='scale'?180:155;camera.left=-half;camera.right=half;camera.top=half*h/w;camera.bottom=-camera.top;camera.updateProjectionMatrix()}new ResizeObserver(resize).observe(canvas);resize();views.push({renderer,scene,camera,goals});}
+let cycling=false,start=0;document.getElementById('animate').onclick=()=>{cycling=!cycling;start=performance.now()/1000;document.getElementById('animate').textContent=cycling?'Animation anhalten':'Aufblühen ausprobieren';for(let v of views)v.goals.forEach((g,i)=>g.setState(cycling?'closed':['closed','next','bloom'][i]));};
+let last=0;function tick(ms){requestAnimationFrame(tick);if(document.hidden)return;let t=ms/1000,dt=Math.min(.05,t-last);last=t;for(let v of views){if(cycling){let phase=(t-start)%7;v.goals.forEach(g=>g.setState(phase<2?'closed':phase<4?'next':'bloom'))}v.goals.forEach(g=>g.update(t,dt));v.renderer.render(v.scene,v.camera)}}requestAnimationFrame(tick);
+

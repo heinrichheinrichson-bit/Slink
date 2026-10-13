@@ -1,0 +1,16 @@
+{
+  "name": "slink",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SLINK: plastisches Garten-Puzzlespiel mit 500 geprüften Rätseln.",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "build": "node scripts/build.mjs",
+    "test": "node tests/solver-reference.cjs && node tests/catalogue.cjs && node tests/game.cjs && node tests/materials.mjs && node tests/meadows.mjs && node tests/liquids.mjs",
+    "catalogue:generate": "node scripts/generate-catalogue.cjs"
+  },
+  "dependencies": { "three": "0.180.0" },
+  "devDependencies": { "esbuild": "0.25.10" },
+  "engines": { "node": ">=20" }
+}

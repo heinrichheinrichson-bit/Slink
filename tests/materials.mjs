@@ -1,0 +1,4 @@
+import * as THREE from 'three';
+import {createTile,VARIANTS,disposeTile} from '../src/renderer/growth-modules.js';
+globalThis.document={createElement(){return{width:0,height:0,getContext(){return{createImageData(w,h){return{data:new Uint8ClampedArray(w*h*4)}},putImageData(){}}}}}};
+for(let [id,v]of Object.entries(VARIANTS)){let g=createTile(id),base=g.children.find(o=>o.userData.surface),b=new THREE.Box3().setFromObject(base),all=new THREE.Box3().setFromObject(g);for(let size of [b.max.x-b.min.x,b.max.y-b.min.y])if(Math.abs(size-78.5)>.05)throw Error(id+' footprint '+size);if(Math.abs(b.max.z-v.height)>.05)throw Error(id+' height '+b.max.z);if(Math.abs(b.min.z+3.5)>.05)throw Error(id+' bottom');if(all.min.x< -39.3||all.max.x>39.3||all.min.y< -39.3||all.max.y>39.3)throw Error(id+' geometry leaks into neighbour');console.log(id+' PASS: matching footprint, expected height, shared base, decoration contained');disposeTile(g)}

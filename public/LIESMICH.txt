@@ -1,0 +1,16 @@
+LINIENGLÜCK – spielbarer Browser-Prototyp
+
+Start: index.html im Browser öffnen. Oder die einzelne Datei Linienglueck.html öffnen; sie enthält das gesamte Spiel.
+
+Bei 1 beginnen und mit gedrückter Maus bzw. Finger eine Linie ziehen.
+Alle vorhandenen Felder einmal besuchen. Zahlen in Reihenfolge einsammeln.
+Helle Balken sind Wände. Auf der Linie zurückziehen korrigiert den Weg.
+„Ein Impuls“ sucht eine gültige Fortsetzung deines Wegs. Wenn innerhalb der begrenzten Suche kein Anschluss gefunden wird, kündigt das Spiel einen Neustart an. Erst ein zweiter Impuls setzt zurück.
+Über den Weltnamen alle 24 Rätsel mit Vorschauen auswählen. Drei Farbwelten: Die Lichtung, Am Meer, Unter Sternen. Schatzsuche ersetzt Zahlen durch Gegenstände bei denselben Spielregeln. Die Reihenfolge wird über dem Spielfeld angezeigt. Ton ist optional.
+
+Das Spiel läuft ohne Konto und ohne externe Programmbibliotheken. Schriftarten werden bei Internetverbindung von Google Fonts geladen; ohne Internet werden Systemschriften verwendet.
+Fortschritt wird im Browser gespeichert, sofern dieser lokalen Speicher erlaubt.
+
+Android: Linienglueck.html auf das Handy kopieren und mit einem Browser öffnen, sofern Dateizugriff unterstützt wird. Für zuverlässiges Starten per Link muss das Spiel noch gehostet werden. Die localhost-Adresse auf dem PC ist kein öffentlicher Handy-Link.
+
+Stand: Browser-Prototyp, keine APK und keine veröffentlichte Android-App. Auf schmaler Browseransicht geprüft; physische Android-Gerätetests stehen aus. Schwierigkeitskurve und langfristiger Spielspaß sind noch nicht durch Spielertests bewertet.

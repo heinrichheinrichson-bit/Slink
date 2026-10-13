@@ -1,0 +1,10 @@
+# SLINK project instructions
+
+- The user explicitly designated https://github.com/heinrichheinrichson-bit/Slink as the persistent backup repository. Save completed project changes in Git and push them to this remote. Never force-push or overwrite unrelated changes; inspect status and remote state first.
+- Preserve all approved terrain modules, meadow variants, liquid animation variants and studies. Garden earth → clover meadow is the default; water uses gentle sway, lava quiet bubbling. Number markers sit at the front right: 27% by default, 33% and 40% selectable and persisted.
+- Source renderers live in `src/renderer`. Build browser bundles with `npm run build`; do not edit minified bundles by hand. The app and local reusable puzzle tools live in `public`.
+- The curated catalogue has 500 puzzles in ten chapters. Stable puzzle IDs must not be reused for different puzzle data. Progress for the old 112 puzzles remains separate in the archive. Keep archived sets and studies available.
+- `npm test` checks exact solutions, geometry uniqueness, gameplay, wrong-route hints and module geometry. For rendering changes, also use the browser to inspect the result. `renderer-pruefung.html?preview=1` runs all 500 terrain configurations in the real browser; it is a developer QA fixture, not the player entry point.
+- All difficulty scores are selection heuristics. Do not claim human playtesting, calibrated difficulty or actual Android device performance without evidence. The current deliverable is a browser prototype, not a native Android release.
+- Prefer quality and legibility over puzzle counts. Do not generate mirrored, rotated, translated or cosmetic duplicates as new puzzles. Show new visual module studies separately before integrating unapproved designs.
+- Do not commit personal reviews, credentials, `node_modules`, raw candidate pools or unrelated workspace files. Test reviews use the isolated preview storage key.

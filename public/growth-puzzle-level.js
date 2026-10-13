@@ -1,0 +1,1 @@
+const LEVELS=[{"n":6,"holes":[0,1,16,17,34,35],"name":"Ein Rätsel · Sechs Materialien","difficulty":"Materialvergleich","water":[0,1],"lava":[16,17],"stones":[34,35],"solution":[2,3,4,5,11,10,9,15,21,22,23,29,28,27,33,32,31,30,24,25,26,20,19,18,12,6,7,8,14,13],"marks":[2,32,13],"walls":[],"analysis":{"unique":false,"searchNodes":42,"branchPoints":15}}];
