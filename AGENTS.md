@@ -33,3 +33,5 @@
 - New separate fantasy creature prototype in flauschwerkstatt.html, reusable fuzzy-creature.js. User requested a real plastic/3D fur study after rejecting worm proportions. Still awaiting visual approval. Do not integrate main game or produce colour variants until form/fur is accepted. Preserve both studies.
 
 - User approved building on the fuzzy creature and explicitly requested improved paws/gait followed by other colours. Study now includes four palettes (Aprikose/Koralle/Lavendel/Lagune), single sculpted paws and diagonal stance/swing gait with slow motion. This supersedes the earlier restriction on producing study colour variants. Main-game integration remains unrequested.
+
+- Latest correction: user rejected extra undercoat/nap and rubbery continuous legs. Coat restored to 728db34 appearance. Fixed-length two-bone limbs replace elastic lofts. Real pointer movement is synchronous via DirectGridFollower, with no animation queue; Demo-Tempo only affects automated preview. Keep this distinction and do not reintroduce a fixed movement duration for player input.

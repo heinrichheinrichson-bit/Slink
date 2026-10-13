@@ -16,3 +16,8 @@ Apricot, Coral, Lavender and Lagoon share geometry and animations. setPalette up
 ## Continuous paws and softer coat (2026-10-14)
 Replaced separate paw/ankle meshes with a single curved loft per limb. The surface deforms between toe, broad paw, ankle and shoulder, with subtle toe grooves and no capped joint. Gait reduced from eight to four cycles per crossing, smaller lift and roll; normal crossing 1.25s, slow motion 3s. All four palettes retained.
 Fur gains a dense short undercoat on body/head/tail, matte procedurally textured opaque base, and shorter facial fur outside precise eye/muzzle masks instead of a broad bald face area. Extra geometry remains study quality; Android optimisation is still unverified.
+
+## Correction: direct input and rigid limbs
+User rejected dense undercoat/nap and elastic continuous limbs. Restored the entire coat geometry, material and palette treatment from commit 728db34. Limbs now use two fixed-length segments (3.8 / 3.4 units), solved with a knee, clamping unreachable targets rather than stretching geometry. Study remains separate.
+DirectGridFollower synchronously follows projected pointer positions on grid axes; no timed per-cell motion or queue. Coalesced pointer events and skipped cells are processed immediately. Distance-driven cyclic gait is visual only and cannot delay position. Arrow taps jump immediately; Demo-Tempo controls only generated demo input. This is a small interaction study, not final puzzle routing or collision logic.
+Browser verified a real drag across the middle row ending at cell 5, x=1.9604,y=1, pending=0; captured no errors. Tests cover 10000 immediate input changes and invariant bone lengths.
