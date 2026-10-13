@@ -1,1 +1,19 @@
-import assert from 'node:assert/strict';import {createFuzzyCreature} from '../src/renderer/fuzzy-creature.js';const c=createFuzzyCreature();const fur=c.group.getObjectByName('curved-soft-fur');assert.ok(fur.geometry.attributes.position.count>100000);assert.ok(fur.material.transparent);assert.equal(fur.material.depthWrite,false);for(const stride of [0,.25,.5,.75,1]){c.update(2,stride);c.group.traverse(o=>{if(!o.geometry)return;for(const k of ['position','normal'])for(const v of o.geometry.attributes[k].array)assert.ok(Number.isFinite(v));o.geometry.computeBoundingBox();assert.ok(o.geometry.boundingBox.min.z> -3);assert.ok(o.geometry.boundingBox.max.z<42)})}c.setSize(85);assert.equal(c.group.scale.x,.85);c.dispose();console.log('PASS: real curved fur mesh, finite geometry and normals, compact bounds, animation, size and disposal.');
+import assert from 'node:assert/strict';
+import * as THREE from 'three';
+import {createFuzzyCreature} from '../src/renderer/fuzzy-creature.js';
+const c=createFuzzyCreature(),fur=c.group.getObjectByName('curved-soft-fur');
+assert.ok(fur.geometry.attributes.position.count>300000);
+assert.ok(fur.material.transparent);
+assert.equal(fur.material.depthWrite,false);
+for(const stride of [0,.25,.5,.75,1]){
+ c.update(2,stride);
+ c.group.traverse(o=>{if(!o.geometry)return;for(const k of ['position','normal'])for(const v of o.geometry.attributes[k].array)assert.ok(Number.isFinite(v));});
+ c.group.updateMatrixWorld(true);
+ const bounds=new THREE.Box3().setFromObject(c.group);
+ assert.ok(bounds.min.z>-3);assert.ok(bounds.max.z<42);
+}
+const eyes=[];c.group.traverse(o=>{if(o.name==='embedded-eye')eyes.push(o)});
+assert.equal(eyes.length,2);
+for(const eye of eyes){const m=eye.children[0],p=m.geometry.attributes.position;for(let i=0;i<p.count;i++){const x=p.getX(i)+m.position.x,z=p.getZ(i)+m.position.z,front=-8-11.5*Math.sqrt(Math.max(.025,1-(x/13.1)**2-((z-20)/12.2)**2));assert.ok(Math.abs(p.getY(i)-front)<.5,'white follows curved head within half a unit');}assert.ok(m.geometry.attributes.normal.getY(100)<0,'eye faces outwards')}
+c.setSize(85);assert.equal(c.group.scale.x,.85);c.dispose();
+console.log('PASS: dense soft fur, finite animated world bounds, embedded curved outward eyes, size and disposal.');
