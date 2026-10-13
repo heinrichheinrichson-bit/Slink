@@ -31,3 +31,5 @@
 - Separate coral worm prototype: wurmwerkstatt.html, createWormCharacter in src/renderer/worm-character.js. User authorized one animated version of the concept. Not authorized for main-game integration yet. Preserve separate study and size controls; await visual review. See docs/worm-character.md.
 
 - New separate fantasy creature prototype in flauschwerkstatt.html, reusable fuzzy-creature.js. User requested a real plastic/3D fur study after rejecting worm proportions. Still awaiting visual approval. Do not integrate main game or produce colour variants until form/fur is accepted. Preserve both studies.
+
+- User approved building on the fuzzy creature and explicitly requested improved paws/gait followed by other colours. Study now includes four palettes (Aprikose/Koralle/Lavendel/Lagune), single sculpted paws and diagonal stance/swing gait with slow motion. This supersedes the earlier restriction on producing study colour variants. Main-game integration remains unrequested.
