@@ -48,3 +48,6 @@ Turning refinement: head leads within a bounded angle; root yaw advances only du
 
 ## Alternate quiet celebration and limb attachment repair
 User rejected the split hop-turn as mechanical. The new selectable B study keeps zero jump height, gently raises the forepaws, inclines/wips the body and flexes the antennae. A remains for comparison. Turning is now uninterrupted and precedes the expression. All four lower legs now share the character parent with upper legs and paws: previously the lower legs incorrectly stayed outside the jumping/leaning wrapper. A regression samples knee connections throughout the full timeline. Neither animation is visually approved or integrated into the main game.
+
+## Fitted face repair
+The completion head lead rotated only the surface-fitted face group while the underlying original head ellipsoid and fur stayed fixed. This caused eye/muzzle clipping during turns. Removed independent face-group rotation, including idle swivel. Removed geometric squash blinking, which displaced curved eye patches off their fitted head surface. Expressions still switch between open eyes and crescents; the whole character still turns. Proper separate head animation requires rigging skull, fur, antennae and face together and is not claimed here. Regression checks both celebration variants throughout the timeline, including the former blink window.

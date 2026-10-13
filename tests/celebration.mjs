@@ -24,3 +24,14 @@ console.log('PASS: all four knees stay connected throughout completion motion.')
 
 for(let age=0;age<=3.7;age+=.025){const pose=sampleCelebration(age,'gentle');assert.equal(pose.lift,0,'gentle variant never jumps');for(const value of Object.values(pose))if(typeof value==='number')assert.ok(Number.isFinite(value));}
 assert.equal(sampleCelebration(3.6,'gentle').look,1);
+
+// Surface-fitted eyes must remain attached to the original skull, even in the former blink window.
+const faceCreature=createFuzzyCreature();
+const eye=faceCreature.group.getObjectByName('embedded-eye');
+for(const style of ['hops','gentle'])for(let age=0;age<=3.7;age+=.025){
+ faceCreature.update(5.29,0,{celebrationAge:age,celebrationTurn:Math.PI,celebrationStyle:style});
+ assert.deepEqual(eye.parent.rotation.toArray().slice(0,3),[0,0,0],'face cannot swivel inside skull');
+ assert.deepEqual(eye.scale.toArray(),[1,1,1],'surface-fitted eyes cannot be squashed');
+ assert.deepEqual(eye.position.toArray(),[0,0,0]);
+}
+faceCreature.dispose();console.log('PASS: fitted face and eyes retain skull alignment during turns and expression.');
