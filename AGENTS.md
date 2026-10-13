@@ -19,3 +19,5 @@
 - Latest stone decision (2026-10-13): after viewing fused groups, the user prefers INDIVIDUAL stones; fused rocks feel too bulky. Retain seams and individual silhouettes, using harmonized materials and restrained motifs for touching stones. Do not integrate fusion. Preserve `felsgruppen.html` only as an archived comparison study. This supersedes the earlier proposed fused-group direction.
 
 - Flower study: `public/blumenwerkstatt.html`, reusable `createFlowerGoal` in `src/renderer/flower-goals.js`, four species (daisy, buttercup, meadow, poppy), existing identical golden bud/number marker and a small interactive puzzle. User praised the visuals and requested bee/bumblebee visitors only after blooming; optional, bounded and reversible. Preserve study; no main-catalogue integration yet. See `docs/flower-goals.md`.
+
+- User rejected the current flower visitor flight pattern as unnatural. Do not describe it as approved/natural. `blumenwerkstatt.html` now has separate 50-300% bee and bumblebee size sliders (100% = prior 1.8 model scale), immediate preview, study-only persisted values and reset. Species changes retain these test sizes. Main game remains unchanged.

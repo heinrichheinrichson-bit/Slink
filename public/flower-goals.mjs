@@ -223,6 +223,13 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
     insectsEnabled = Boolean(enabled);
     group.userData.insects = insectsEnabled;
   }
+  group.userData.visitorSizes = { bee: 100, bumblebee: 100 };
+  function setVisitorSize(kind, percent = 100) {
+    if (!["bee", "bumblebee"].includes(kind)) throw Error("Unknown flower visitor");
+    if (!Number.isFinite(percent) || percent < 50 || percent > 300) throw RangeError("Visitor size must be between 50 and 300 percent");
+    flights.find((f) => f.insect.name === kind).insect.scale.setScalar(1.8 * percent / 100);
+    group.userData.visitorSizes[kind] = percent;
+  }
   let current = state, target = state === "bloom" ? 1 : 0, openness = target;
   function setState(s) {
     marker.setState(s);
@@ -257,7 +264,7 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
   update(0, 1);
   group.userData.species = species;
   group.userData.decorative = true;
-  return { group, setState, setInsects, setSize: marker.setSize, update, get state() {
+  return { group, setState, setInsects, setVisitorSize, setSize: marker.setSize, update, get state() {
     return current;
   }, dispose() {
     marker.dispose();

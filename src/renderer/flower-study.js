@@ -4,7 +4,9 @@ import {createTile} from './growth-modules.js';
 import {createMeadowTile} from './meadow-variants.js';
 import {createIvoryFrame} from './ivory-frame.js';
 import {createLivingLiquid} from './living-liquid.js';
-const views=[],previews=[];let percent=27,replayAt=-1;
+const views=[],previews=[],visitorSizes={bee:100,bumblebee:100};
+try{const saved=JSON.parse(localStorage.getItem('slink-flower-study-visitor-sizes')||'null');for(const kind of Object.keys(visitorSizes))if(Number.isFinite(saved?.[kind]))visitorSizes[kind]=Math.max(50,Math.min(300,saved[kind]))}catch{}
+let percent=27,replayAt=-1;
 function view(canvas,cx,cy,half){
  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.88;
  const scene=new THREE.Scene();scene.add(new THREE.HemisphereLight('#fff6dc','#a28d6c',1.65));const sun=new THREE.DirectionalLight('#fff4dc',3.3);sun.position.set(cx-280,cy+380,480);sun.target.position.set(cx,cy,0);scene.add(sun.target);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-350,right:350,top:350,bottom:-350,near:1,far:1400});sun.shadow.bias=-.0003;sun.shadow.normalBias=.4;scene.add(sun);const fill=new THREE.DirectionalLight('#d4e8ff',.4);fill.position.set(cx+350,cy-120,350);scene.add(fill);
@@ -12,7 +14,7 @@ function view(canvas,cx,cy,half){
  function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.left=-half;camera.right=half;camera.top=half*h/w;camera.bottom=-camera.top;camera.updateProjectionMatrix()}new ResizeObserver(resize).observe(canvas);resize();
  const v={renderer,scene,camera,update(){}};views.push(v);return v;
 }
-function goal(species,number,state,x,y,z){const g=createFlowerGoal({species,number,state});g.group.rotation.x=Math.PI/2;g.group.position.set(x,y,z);g.setSize(percent);g.setInsects(document.querySelector('#insects').checked);return g}
+function goal(species,number,state,x,y,z){const g=createFlowerGoal({species,number,state});g.group.rotation.x=Math.PI/2;g.group.position.set(x,y,z);g.setSize(percent);g.setInsects(document.querySelector('#insects').checked);for(const kind of Object.keys(visitorSizes))g.setVisitorSize(kind,visitorSizes[kind]);return g}
 for(const [species,spec]of Object.entries(FLOWER_SPECIES)){
  const article=document.createElement('article');article.innerHTML=`<h2>${spec.name}</h2><canvas aria-label="${spec.name}: echte 3D-Blüte mit Zahlenmarke"></canvas><button type="button">Im Testrätsel ansehen</button>`;document.querySelector('#flowers').append(article);article.querySelector('button').onclick=()=>choose(species);
  const v=view(article.querySelector('canvas'),0,0,52),tile=createMeadowTile('calm',{seed:73}).group;v.scene.add(tile);const g=goal(species,1,'bloom',0,0,18);v.scene.add(g.group);v.update=(t,dt)=>g.update(t,dt);previews.push(g);
@@ -32,5 +34,10 @@ canvas.addEventListener('pointerdown',e=>{demoAt=-1;drag=true;canvas.setPointerC
 document.querySelector('#reset').onclick=()=>{demoAt=-1;path.length=0;refresh()};document.querySelector('#undo').onclick=()=>{demoAt=-1;path.pop();refresh()};document.querySelector('#demo').onclick=()=>{path.length=0;refresh();demoAt=performance.now()/1000};document.querySelector('#species').onchange=e=>choose(e.target.value);
 document.querySelector('#size').onchange=e=>{percent=Number(e.target.value);[...goals,...previews].forEach(g=>g.setSize(percent))};document.querySelector('#replay').onclick=()=>{replayAt=performance.now()/1000;previews.forEach(g=>g.setState('closed'))};
 document.querySelector('#insects').onchange=e=>[...goals,...previews].forEach(g=>g.setInsects(e.target.checked));
+function visitorControls(){for(const kind of Object.keys(visitorSizes)){document.querySelector('#'+kind+'-size').value=visitorSizes[kind];document.querySelector('#'+kind+'-value').textContent=visitorSizes[kind]+' %';[...goals,...previews].forEach(g=>g.setVisitorSize(kind,visitorSizes[kind]))}}
+for(const kind of Object.keys(visitorSizes))document.querySelector('#'+kind+'-size').addEventListener('input',e=>{visitorSizes[kind]=Number(e.target.value);visitorControls();try{localStorage.setItem('slink-flower-study-visitor-sizes',JSON.stringify(visitorSizes))}catch{}});
+document.querySelector('#visitor-reset').onclick=()=>{visitorSizes.bee=visitorSizes.bumblebee=100;visitorControls();try{localStorage.removeItem('slink-flower-study-visitor-sizes')}catch{}};
+visitorControls();
+
 board.update=(t,dt)=>{water.update(t);if(demoAt>=0){const wanted=Math.min(8,Math.floor((t-demoAt)/.48));while(path.length<wanted)enter(solution[path.length]);if(wanted===8)demoAt=-1}for(const tile of tiles){tile.p+=(Number(path.includes(tile.i))-tile.p)*Math.min(1,dt*10);tile.earth.visible=tile.p<.99;tile.meadow.visible=tile.p>.005;tile.meadow.scale.z=(8.5+9.5*tile.p)/18}for(const g of goals){const tile=tiles.find(v=>v.i===g.group.userData.cell);g.group.position.z=8.5+9.5*tile.p;g.update(t,dt)}if(solvedAt>=0&&t-solvedAt>1.8)document.querySelector('#status').textContent='Ein kleiner Garten. Du kannst ihn in Ruhe betrachten oder die Blumensorte wechseln.'};choose(species);
 let last=0;function tick(ms){requestAnimationFrame(tick);if(document.hidden||ms-last<33)return;const dt=Math.min(.05,(ms-last)/1000);last=ms;const t=ms/1000;if(replayAt>=0){const age=t-replayAt;previews.forEach(g=>g.setState(age<.6?'closed':age<1.2?'next':'bloom'));if(age>3)replayAt=-1}for(const v of views){v.update(t,dt);v.renderer.render(v.scene,v.camera)}}requestAnimationFrame(tick);

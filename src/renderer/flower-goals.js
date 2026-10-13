@@ -43,6 +43,12 @@ export function createFlowerGoal({species='daisy',number=1,state='closed',layout
   const wings=[];for(const side of [-1,1]){const wing=ball(insect,wingMat,side*.95,.5,-.1,1.5,.16,.65);wing.castShadow=false;wings.push(wing)}flights.push({insect,wings,seed:number*17+k*31+Object.keys(FLOWER_SPECIES).indexOf(species)*7,phase:k*2.7,a:new THREE.Vector3(),b:new THREE.Vector3()});
  }
  let insectsEnabled=Boolean(insects);function setInsects(enabled){insectsEnabled=Boolean(enabled);group.userData.insects=insectsEnabled}
+ group.userData.visitorSizes={bee:100,bumblebee:100};
+ function setVisitorSize(kind,percent=100){
+  if(!['bee','bumblebee'].includes(kind))throw Error('Unknown flower visitor');
+  if(!Number.isFinite(percent)||percent<50||percent>300)throw RangeError('Visitor size must be between 50 and 300 percent');
+  flights.find(f=>f.insect.name===kind).insect.scale.setScalar(1.8*percent/100);group.userData.visitorSizes[kind]=percent;
+ }
  let current=state,target=state==='bloom'?1:0,openness=target;
  function setState(s){marker.setState(s);current=s;target=s==='bloom'?1:0}
  function update(time,delta=.016){
@@ -53,5 +59,5 @@ export function createFlowerGoal({species='daisy',number=1,state='closed',layout
   for(const f of flights){sampleVisitorFlight(time,f.seed,f.a);sampleVisitorFlight(time+.08,f.seed,f.b);f.insect.position.copy(f.a);const vx=f.b.x-f.a.x,vz=f.b.z-f.a.z;if(Math.hypot(vx,vz)>.012){const heading=Math.atan2(vx,vz),turn=Math.atan2(Math.sin(heading-f.insect.rotation.y),Math.cos(heading-f.insect.rotation.y));f.insect.rotation.y+=turn*Math.min(1,delta*4)}f.insect.rotation.z=THREE.MathUtils.clamp(-vx*.18,-.18,.18);f.wings.forEach((w,k)=>w.rotation.z=Math.sin(time*30+f.phase)*(k?1:-1)*.5)}
  }
  setInsects(insects);update(0,1);group.userData.species=species;group.userData.decorative=true;
- return{group,setState,setInsects,setSize:marker.setSize,update,get state(){return current},dispose(){marker.dispose();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose())}};
+ return{group,setState,setInsects,setVisitorSize,setSize:marker.setSize,update,get state(){return current},dispose(){marker.dispose();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose())}};
 }
