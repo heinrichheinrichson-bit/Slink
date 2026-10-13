@@ -1,6 +1,20 @@
-/** Synchronous grid-constrained pointer following. No animation queue or clock. */
-export class DirectGridFollower{
+/** Synchronous field-centred following. Heading changes only on a cell step. */
+export class DirectGridFollower {
  constructor(n=3){this.n=n;this.reset()}
- reset(){this.cell=4;this.x=1;this.y=1;this.travel=0;this.heading=0}
- move(x,y){x=Math.max(0,Math.min(this.n-1,x));y=Math.max(0,Math.min(this.n-1,y));const entered=[];let col=this.cell%this.n,row=Math.floor(this.cell/this.n);for(let i=0;i<this.n*2;i++){const dx=x-col,dy=y-row;if(Math.max(Math.abs(dx),Math.abs(dy))<=.5)break;if(Math.abs(dx)>=Math.abs(dy))col+=Math.sign(dx);else row+=Math.sign(dy);this.cell=row*this.n+col;entered.push(this.cell)}const dx=x-col,dy=y-row;let nx=col,ny=row;if(Math.abs(dx)>=Math.abs(dy))nx+=dx;else ny+=dy;const ax=nx-this.x,ay=ny-this.y,d=Math.hypot(ax,ay);if(d>1e-8)this.heading=Math.atan2(ax,ay);this.travel+=d*80;this.x=nx;this.y=ny;return {cell:this.cell,x:nx,y:ny,entered,travel:this.travel,heading:this.heading}}
+ reset(){const c=Math.floor(this.n/2);this.cell=c*this.n+c;this.x=c;this.y=c;this.travel=0;this.heading=0}
+ move(x,y){
+  const entered=[];
+  if(Number.isFinite(x)&&Number.isFinite(y)){
+   const tx=Math.round(Math.max(0,Math.min(this.n-1,x))),ty=Math.round(Math.max(0,Math.min(this.n-1,y)));
+   let col=this.x,row=this.y;
+   while(col!==tx||row!==ty){
+    const dx=tx-col,dy=ty-row;let sx=0,sy=0;
+    if(Math.abs(dx)>=Math.abs(dy))sx=Math.sign(dx);else sy=Math.sign(dy);
+    col+=sx;row+=sy;this.heading=Math.atan2(sx,sy);this.travel+=80;
+    this.cell=row*this.n+col;entered.push(this.cell);
+   }
+   this.x=col;this.y=row;
+  }
+  return {cell:this.cell,x:this.x,y:this.y,entered,travel:this.travel,heading:this.heading};
+ }
 }

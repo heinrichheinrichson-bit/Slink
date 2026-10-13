@@ -35,3 +35,5 @@
 - User approved building on the fuzzy creature and explicitly requested improved paws/gait followed by other colours. Study now includes four palettes (Aprikose/Koralle/Lavendel/Lagune), single sculpted paws and diagonal stance/swing gait with slow motion. This supersedes the earlier restriction on producing study colour variants. Main-game integration remains unrequested.
 
 - Latest correction: user rejected extra undercoat/nap and rubbery continuous legs. Coat restored to 728db34 appearance. Fixed-length two-bone limbs replace elastic lofts. Real pointer movement is synchronous via DirectGridFollower, with no animation queue; Demo-Tempo only affects automated preview. Keep this distinction and do not reintroduce a fixed movement duration for player input.
+
+- Latest input requirement: figure MUST stay at the centre of the last entered/coloured cell, never between cells. Position and colour change together. Heading is the last valid cardinal cell step, preserved on release and same-cell pointer motion. DirectGridFollower now implements discrete centred input; this supersedes the prior fractional pointer-following behaviour.
