@@ -8,3 +8,5 @@
 - All difficulty scores are selection heuristics. Do not claim human playtesting, calibrated difficulty or actual Android device performance without evidence. The current deliverable is a browser prototype, not a native Android release.
 - Prefer quality and legibility over puzzle counts. Do not generate mirrored, rotated, translated or cosmetic duplicates as new puzzles. Show new visual module studies separately before integrating unapproved designs.
 - Do not commit personal reviews, credentials, `node_modules`, raw candidate pools or unrelated workspace files. Test reviews use the isolated preview storage key.
+
+- The user earmarked the ivory frame module set on 2026-10-13. Preserve all three variants in `elfenbeinwerkstatt.html`, as of commit `60fb0a6`: narrower cream margins, rounded recessed pools, corrected inward-facing walls and light warm ivory materials. No preferred variant was selected. Keep this set separate; earmarking is not authorization to replace the main game renderer. Details: `docs/ivory-frame.md`.

@@ -36,3 +36,6 @@ Fehlerursache des orangefarbenen Spalts: Hindernis-Lochkonturen hatten dieselbe 
 
 
 Rundungsrevision: Aussenueberstand A/B/C von 11/17/20 auf 8/11/13 reduziert. Beckeninset einheitlich von 7 auf 6 reduziert; Innenradius von 7 auf 16 vergroessert. Fluessigkeitsunterlage verwendet dazu den erweiterten Radius 21, damit die Wandecken weiterhin gedeckt sind. Farben und Licht unveraendert.
+
+
+Status 2026-10-13: Vom Nutzer als Modulset vorgemerkt. Referenzstand: Commit `60fb0a6`. Alle drei Varianten bleiben erhalten; keine Auswahl zwischen A, B und C getroffen. Noch kein Austausch im Hauptspiel.
