@@ -28,3 +28,8 @@ PrÃ¼fung: alle 500 aktuellen Grundrisse mit Variante B erzeugt; endliche Geome
 
 
 Materialrevision: B/C verwenden denselben prozeduralen Materialverlauf auf Deckflaeche, Rundung und Wand. Die Hoehe steuert Creme/Sand/Ocker, Hindernisnaehe eine dezente warme Vertiefung. Zweifrequente weiche Farbvariation und feine Poren vermeiden eine uniforme weisse Flaeche. Die Geometrie und Spielmechanik bleiben unveraendert. Browserpruefung: beide Shader ohne Konsolenfehler dargestellt.
+
+
+Passformkorrektur: Alle Stile verwenden feste Beckenmasse (Inset 7, Innenradius 7, Bevel 5). Nur Aussenkontur, Koerpertiefe und Material variieren. rimShape beschreibt die obere Oeffnung; shape die etwas breitere, von den Waenden verdeckte Fluessigkeitsunterlage; surfaceZ=-20 die Oberflaeche. Stein erzeugt keine Oeffnung, sondern steht wie im Hauptspiel auf geschlossener Unterlage. Studienstein hat die Spielmasse 66x66x33. Der Lichtwinkel macht echte Becken- und Steinschatten sichtbar; die urspruengliche Umgebungsaufhellung ist wiederhergestellt. Regression prueft identische Oeffnungen aller Stile, geschlossene Steinunterlage und vorhandene Beckenwaende. Noch separate Studie, kein Austausch im Hauptspiel.
+
+Fehlerursache des orangefarbenen Spalts: Hindernis-Lochkonturen hatten dieselbe Laufrichtung wie die Aussenkontur. Dadurch zeigten die Beckenwand-Normalen vom Beckeninneren weg (Backface-Culling). Lochkonturen sind nun entgegengesetzt orientiert. Ein horizontaler Raycast aus jedem Testbecken prueft die tatsaechlich von innen sichtbare Wand. Die warmen Seitenfarben wurden deutlich aufgehellt, ohne die Farben der Terrainmodule zu aendern.

@@ -2,8 +2,8 @@ import * as THREE from 'three';
 import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
 export const IVORY_STYLES={
  current:{name:'A · Schlanker Vergleich',outer:11,inset:7,corner:10,bevel:5,depth:22},
- soft:{name:'B · Modelliertes Elfenbein',outer:17,inset:16,corner:23,bevel:12,depth:24},
- plush:{name:'C · Warmer Formguss',outer:20,inset:18,corner:27,bevel:14,depth:28}
+ soft:{name:'B · Modelliertes Elfenbein',outer:17,inset:7,corner:23,bevel:5,depth:26},
+ plush:{name:'C · Warmer Formguss',outer:20,inset:7,corner:27,bevel:5,depth:28}
 };
 const adjacent=(i,n)=>[i-n,i+n,i%n?i-1:-1,i%n<n-1?i+1:-1].filter(j=>j>=0&&j<n*n);
 function groups(cells,n){let left=new Set(cells),result=[];while(left.size){let q=[left.values().next().value];left.delete(q[0]);for(let k=0;k<q.length;k++)for(let j of adjacent(q[k],n))if(left.delete(j))q.push(j);result.push(q)}return result}
@@ -24,13 +24,13 @@ function sculptedMaterial(material,spec,style,pits){
  `).replace('#include <color_fragment>',`#include <color_fragment>
  float heightTone=smoothstep(${-spec.depth-spec.bevel}.0, 3.0, ivoryPosition.z);
  float shoulderTone=smoothstep(${-spec.bevel+3}.0, 3.0, ivoryPosition.z);
- vec3 warmBase=mix(vec3(0.34,0.17,0.068),vec3(0.65,0.42,0.21),heightTone);
- vec3 ivoryTop=${style==='plush'?'vec3(0.83,0.67,0.43)':'vec3(0.91,0.77,0.54)'};
+ vec3 warmBase=mix(vec3(0.62,0.44,0.26),vec3(0.82,0.67,0.46),heightTone);
+ vec3 ivoryTop=${style==='plush'?'vec3(0.92,0.79,0.58)':'vec3(0.95,0.84,0.65)'};
  vec3 casting=mix(warmBase,ivoryTop,shoulderTone);
  float pitDistance=10000.0;
  ${pits.length?`for(int i=0;i<${pits.length};i++){vec2 q=abs(ivoryPosition.xy-ivoryPits[i].xy)-ivoryPits[i].zw+vec2(12.0);float d=length(max(q,0.0))+min(max(q.x,q.y),0.0)-12.0;pitDistance=min(pitDistance,d);}`:''}
  float recess=(1.0-smoothstep(-2.0,17.0,pitDistance))*shoulderTone;
- casting=mix(casting,vec3(.55,.34,.16),recess*.42);
+ casting=mix(casting,vec3(.72,.55,.33),recess*.25);
  float clouds=ivorySoftNoise(ivoryPosition.xy*.035)*.65+ivorySoftNoise(ivoryPosition.xy*.12)*.35;
  casting*=mix(.92,1.04,clouds);
  float pores=ivorySoftNoise(ivoryPosition.xy*1.8);
@@ -50,7 +50,8 @@ export function createIvoryFrame({n,cells,water=[],lava=[],stones=[],style='soft
  const texture=new THREE.DataTexture(grain,128,128);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.magFilter=texture.minFilter=THREE.LinearFilter;texture.needsUpdate=true;
  let group=new THREE.Group(),openings=[],geometries=[],top=new THREE.MeshStandardMaterial({color:style==='plush'?'#f3dcb3':'#f7e5c3',roughness:.88,bumpMap:texture,bumpScale:style==='current'?.12:.65}),side=new THREE.MeshStandardMaterial({color:'#d4ad7d',roughness:.9,bumpMap:texture,bumpScale:.45});
  if(style!=='current'){const pits=hazards.map(i=>new THREE.Vector4(i%n*pitch+pitch/2,-(Math.floor(i/n)*pitch+pitch/2),pitch/2-spec.inset,pitch/2-spec.inset));sculptedMaterial(top,spec,style,pits);sculptedMaterial(side,spec,style,pits)}
- for(let component of groups(cells,n)){let set=new Set(component),outlines=loops(component,n,pitch),islands=[],shape=rounded(shifted(outlines[0],spec.outer),spec.corner);for(let hole of outlines.slice(1))shape.holes.push(rounded(shifted(hole,-spec.outer),spec.corner));for(let [type,items]of [['water',water],['lava',lava],['stone',stones]])for(let part of groups(items.filter(i=>set.has(i)),n)){let contours=loops(part,n,pitch),opening=rounded(shifted(contours[0],-spec.inset),spec.corner*.7);shape.holes.push(opening);for(let inner of contours.slice(1)){islands.push(rounded(shifted(inner,spec.inset),spec.corner*.7))}let liquidShape=rounded(shifted(contours[0],-spec.inset+spec.bevel),spec.corner*.7);for(let inner of contours.slice(1))liquidShape.holes.push(rounded(shifted(inner,spec.inset-spec.bevel),spec.corner*.7));openings.push({type,cells:part,shape:liquidShape})}
+ // Hole contours must oppose the clockwise outer contour; otherwise inner walls face away.
+ for(let component of groups(cells,n)){let set=new Set(component),outlines=loops(component,n,pitch),islands=[],shape=rounded(shifted(outlines[0],spec.outer),spec.corner);for(let hole of outlines.slice(1))shape.holes.push(rounded(shifted(hole,-spec.outer),spec.corner));for(let [type,items]of [['water',water],['lava',lava]])for(let part of groups(items.filter(i=>set.has(i)),n)){let contours=loops(part,n,pitch),opening=rounded(shifted(contours[0],-spec.inset).reverse(),7);shape.holes.push(opening);for(let inner of contours.slice(1)){islands.push(rounded(shifted(inner,spec.inset),7))}let liquidShape=rounded(shifted(contours[0],-spec.inset+spec.bevel),7);for(let inner of contours.slice(1))liquidShape.holes.push(rounded(shifted(inner,spec.inset-spec.bevel),7));openings.push({type,cells:part,shape:liquidShape,rimShape:opening,surfaceZ:-20})}
  for(let bodyShape of [shape,...islands]){
  let geometry=new THREE.ExtrudeGeometry(bodyShape,{depth:spec.depth,bevelEnabled:true,bevelThickness:spec.bevel,bevelSize:spec.bevel,bevelSegments:16,curveSegments:24,steps:1});
  geometry.translate(0,0,-spec.depth-spec.bevel+3);
