@@ -1,3 +1,4 @@
+import {createChapterLandscape,fitChapterCamera} from './chapter-landscapes.js';
 import * as THREE from 'three';
 import {createIvoryFrame} from './ivory-frame.js';
 import {createMeadowTile} from './meadow-variants.js';
@@ -39,9 +40,18 @@ for(const [i,species]of [[6,'daisy'],[13,'poppy'],[17,'daisy']]){const f=createF
 const creature=createFuzzyCreature();creature.setPalette('apricot');creature.group.scale.setScalar(2.1);creature.group.position.set(190,-230,22);scene.add(creature.group);
 let cam=cameraFor(n,1.6);function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);cam=cameraFor(n,w/h)}new ResizeObserver(resize).observe(canvas);resize();let last=0;
 function tick(ms){requestAnimationFrame(tick);if(document.hidden||screen!=='home'||ms-last<40)return;const dt=Math.min(.05,(ms-last)/1000);last=ms;anim.forEach(a=>a.update(reduce?0:ms/1000,dt));creature.update(reduce?0:ms/1000,0,{active:false});renderer.render(scene,cam)}requestAnimationFrame(tick);
-// Chapter thumbnails use exactly the same approved tile geometry; no external pictures.
-const thumb=makeRenderer(document.createElement('canvas'));thumb.setPixelRatio(1);thumb.setSize(260,200,false);const ts=litScene(),tc=cameraFor(3,1.3),tf=createIvoryFrame({n:3,cells:[0,1,2,3,4,5,6,7,8],water:[2],lava:[],stones:[],style:'soft'});ts.add(tf.group);const pairs=[];
-for(const i of [0,1,3,4,5,6,7,8]){const earth=createTile('earth-loam',{seed:44+i}),grass=createMeadowTile(i%2?'rich':'flowers',{seed:44+i});for(const o of [earth,grass.group]){o.position.set(i%3*80+40,-Math.floor(i/3)*80-40,0);ts.add(o)}pairs.push({earth,grass:grass.group})}
-for(const op of tf.openings){const l=createLivingLiquid('water',{style:'sway',center:[120,-120]});const m=new THREE.Mesh(new THREE.ExtrudeGeometry(op.shape,{depth:2,bevelEnabled:false}),l.material);m.position.z=op.surfaceZ-2;ts.add(m)}
-for(const [i,g]of gardens.entries()){const count=g.levels.filter(l=>done.has(l.id)).length,ratio=count/g.levels.length;pairs.forEach((p,k)=>{p.grass.visible=k<Math.round(ratio*8);p.earth.visible=!p.grass.visible});thumb.render(ts,tc);const card=document.createElement('button');card.className='garden-card'+(g===currentGarden?' current':'');card.setAttribute('aria-label',g.name+', '+count+' von '+g.levels.length+' erblüht');const image=document.createElement('img');image.src=thumb.domElement.toDataURL();image.alt='';const kicker=document.createElement('span');kicker.className='kicker';kicker.textContent='GARTEN '+String(i+1).padStart(2,'0');const title=document.createElement('h2');title.textContent=g.name;const tally=document.createElement('span');tally.className='card-count';tally.textContent=count+' / '+g.levels.length+' erblüht';const bar=document.createElement('div');bar.className='progress-track';const fill=document.createElement('i');fill.style.width=ratio*100+'%';bar.append(fill);card.append(image,kicker,title,tally,bar);if(g===currentGarden){const tag=document.createElement('span');tag.className='current-tag';tag.textContent='DU BIST HIER';card.append(tag)}card.onclick=()=>openGarden(g);$('gardenCards').append(card)}
-const disposed=new Set();ts.traverse(o=>{if(o.geometry&&!disposed.has(o.geometry)){o.geometry.dispose();disposed.add(o.geometry)}for(const m of Array.isArray(o.material)?o.material:o.material?[o.material]:[])if(!disposed.has(m)){m.dispose();disposed.add(m)}});thumb.dispose();go('home');
+// Lazily render chapter landscapes using one shared offscreen renderer.
+const thumb=makeRenderer(document.createElement('canvas'));thumb.setPixelRatio(1);thumb.setSize(680,460,false);
+const pending=new Map();const thumbnails=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){const data=pending.get(e.target);if(!data)continue;const landscape=createChapterLandscape(data.index,data.ratio);thumb.render(landscape.scene,fitChapterCamera(landscape.bounds,680/460));data.image.src=thumb.domElement.toDataURL('image/png');landscape.dispose();pending.delete(e.target);thumbnails.unobserve(e.target)}},{root:$('gardensScreen'),rootMargin:'200px'});
+for(const [i,g]of gardens.entries()){
+ const count=g.levels.filter(l=>done.has(l.id)).length,ratio=count/g.levels.length;
+ const card=document.createElement('button');card.className='garden-card landscape-card'+(g===currentGarden?' current':'');card.dataset.gardenIndex=i;card.setAttribute('aria-label',g.name+', '+count+' von '+g.levels.length+' erblüht');
+ const picture=document.createElement('div');picture.className='chapter-landscape '+(['meadow','fence','meadow','fence','stone','river','river','stone','fence','stone','fence','stone','river','stone','river'][i]);
+ const image=document.createElement('img');image.alt='';image.width=680;image.height=460;picture.append(image);
+ const body=document.createElement('div');body.className='landscape-card-body';const kicker=document.createElement('span');kicker.className='kicker';kicker.textContent='GARTEN '+String(i+1).padStart(2,'0');const title=document.createElement('h2');title.textContent=g.name;
+ const tally=document.createElement('span');tally.className='card-count';tally.textContent=count+' / '+g.levels.length+' erblüht';const arrow=document.createElement('span');arrow.className='card-arrow';arrow.textContent='→';arrow.setAttribute('aria-hidden','true');
+ const bar=document.createElement('div');bar.className='progress-track';const fill=document.createElement('i');fill.style.width=ratio*100+'%';bar.append(fill);body.append(kicker,title,tally,bar,arrow);card.append(picture,body);
+ if(g===currentGarden){const tag=document.createElement('span');tag.className='current-tag';tag.textContent='DU BIST HIER';picture.append(tag)}
+ card.onclick=()=>openGarden(g);$('gardenCards').append(card);pending.set(card,{index:i,ratio,image});thumbnails.observe(card);
+}
+go('home');
