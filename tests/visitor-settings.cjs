@@ -12,3 +12,13 @@ const reloaded=boot();assert.equal(reloaded.c.window.SlinkVisitorSettings.bee,22
 const persisted=storage.get('slink-visitor-settings-v1'),preview=boot(true);preview.nodes.beeVisitorSize.value='300';preview.nodes.beeVisitorSize.oninput();assert.equal(storage.get('slink-visitor-settings-v1'),persisted,'QA overwrites player settings');
 nodes.visitorReset.onclick();assert.equal(c.window.SlinkVisitorSettings.bee,100);assert.equal(c.window.SlinkVisitorSettings.bumblebee,100);assert.equal(c.window.SlinkVisitorSettings.enabled,false);assert.equal(run('JSON.stringify({path,done,epoch,index,won})'),state);
 console.log('PASS: study-size migration, live settings preserve route, persistence, reset and isolated preview settings.');
+
+assert.equal(c.window.SlinkCreatureSettings.size,90);
+nodes.creaturePalette.value='lavender';nodes.creaturePalette.onchange();nodes.creatureSize.value='115';nodes.creatureSize.oninput();
+assert.equal(run('JSON.stringify({path,done,epoch,index,won})'),state,'figure settings preserve route');
+const figureReload=boot();assert.equal(figureReload.c.window.SlinkCreatureSettings.palette,'lavender');assert.equal(figureReload.c.window.SlinkCreatureSettings.size,115);
+const figureSaved=storage.get('slink-creature-settings-v1');preview.nodes.creatureSize.value='150';preview.nodes.creatureSize.oninput();assert.equal(storage.get('slink-creature-settings-v1'),figureSaved,'preview must preserve player figure settings');
+console.log('PASS: figure settings defaults, live route preservation, persistence and preview isolation.');
+
+nodes.creatureEnabled.checked=false;nodes.creatureEnabled.onchange();assert.equal(c.window.SlinkCreatureSettings.enabled,false);assert.equal(boot().c.window.SlinkCreatureSettings.enabled,false);assert.equal(run('JSON.stringify({path,done,epoch,index,won})'),state,'hide figure preserves route');nodes.creatureEnabled.checked=true;nodes.creatureEnabled.onchange();assert.equal(c.window.SlinkCreatureSettings.enabled,true);
+console.log('PASS: figure toggle is immediate, persisted and preserves puzzle state.');
