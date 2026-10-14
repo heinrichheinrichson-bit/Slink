@@ -25,3 +25,6 @@ Reusable createIvoryControl also accepts deep (default false), effective when en
 Follow-up feedback: reduced label weight from650 to500 and symbol stroke from2 to1.7; engraving lips narrowed accordingly to avoid heavy lettering.
 Engraved controls now mix the selected brown with12% warm ivory and soften the upper shadow to offset apparent darkening. Plain controls retain the exact selected ink. This is a visual adjustment, not a claim of identical perceived colour.
 Approved ink treatment: Warme Umbra + fine engraving edge, extra depth disabled because it makes symbols appear blurred. Study now defaults to that combination; existing12% warm-ivory lightening retained. Main game unchanged.
+
+## Main-game integration
+User authorized integration: five main controls now reuse C/satin, Warme Umbra, fine engraving and no extra depth. game-ivory-controls.js decorates the original button elements, preserving listeners, accessible action names and disabled state. Separate scoped bridge stylesheet avoids legacy icon/label overrides. Main actions use all-ivory (no gold hint); standard study dimensions retained with narrow-screen sizing. Browser verified home/settings dialogs and hint/undo route count changes. No puzzle/progress/renderer changes. Existing study and all alternatives retained.
