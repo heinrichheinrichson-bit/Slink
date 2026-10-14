@@ -24,3 +24,4 @@ Additional optional data-deep=true treatment strengthens the upper dark cut lip 
 Reusable createIvoryControl also accepts deep (default false), effective when engraved is true.
 Follow-up feedback: reduced label weight from650 to500 and symbol stroke from2 to1.7; engraving lips narrowed accordingly to avoid heavy lettering.
 Engraved controls now mix the selected brown with12% warm ivory and soften the upper shadow to offset apparent darkening. Plain controls retain the exact selected ink. This is a visual adjustment, not a claim of identical perceived colour.
+Approved ink treatment: Warme Umbra + fine engraving edge, extra depth disabled because it makes symbols appear blurred. Study now defaults to that combination; existing12% warm-ivory lightening retained. Main game unchanged.
