@@ -16,3 +16,6 @@ This is a native grass cue added over the surface, not deformation of the origin
 
 ## Highlight variant E
 User rejected all trails and additional markings. E is now default. Touch beginning on the figure/current cell enables a temporary colour lift of only the immediate predecessor meadow. Pointer release/cancel restores exact original material colours. No overlay geometry, trail, emissive material or additional shadows. The study-only checkbox freezes the effect for comparison. On-board movement/undo unchanged. Browser preview verified predecessor15 then11 on undo and no highlighted cell when disabled; zero cue meshes and no console errors. Targeted tests cover exact colour restoration and no accumulated whitening. Main game/APK unchanged.
+
+## Main integration
+User approved E plus optional settings. Main renderer uses meadow-highlight.js, enabled by default at24%, adjustable10-50% in gear. Only gestures begun on figure/current cell activate it, release/cancel restores colours. Shared saved completion delay1-15s defaults4.4s, applies from next win. Study checkbox remains study-only. Browser verified settings persistence; targeted test checks timer uses selected7600/1000ms. Existing APK remains previous version.

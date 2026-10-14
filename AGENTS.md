@@ -76,3 +76,5 @@
 - Route cue study: user rejected bright dots as unnatural. wegspuren.html now defaults to D, a physical green laid-down grass cue with lightly lifting predecessor blades. Preserve A/B/C as comparisons. This remains separate from main gameplay and requires visual review; do not integrate automatically. See docs/route-study.md.
 
 - Route study update: all traces rejected. User requested temporary brightening of only predecessor on touching figure. E is now default in wegspuren.html, with study-only freeze checkbox for visual comparison. Preserve old comparisons; do not integrate without approval.
+
+- User approved predecessor brightening integration. Main renderer now brightens only previous meadow while holding gesture begun on figure/current cell, restores on release/cancel. Settings enable/strength10-50% default24%, persisted. completion-settings.js adds saved1-15s win delay default4.4s, applied on next completion. Main and route study share preferences. Existing test APK has not been rebuilt for these changes.
