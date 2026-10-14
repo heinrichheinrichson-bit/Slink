@@ -4,8 +4,8 @@
 .ivory-face{position:absolute;inset:0;border-radius:var(--ivory-radius);background:radial-gradient(ellipse at 23% 11%,#fff1d7aa,transparent 55%),linear-gradient(155deg,var(--ivory-top) 0%,var(--ivory-mid) 58%,var(--ivory-bottom) 100%);box-shadow:inset 1.5px 2.5px 3px #fff1d3,inset -2px -4px 5px #c49b6555,inset 0 -1px 1px #bf95664d;z-index:-1;overflow:hidden;transition:transform .12s ease,box-shadow .12s ease}
 .ivory-face::after{content:"";position:absolute;inset:0;opacity:.075;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.65'/%3E%3C/svg%3E")}
 .ivory-content{width:100%;min-width:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;transition:transform .12s ease;pointer-events:none}
-.ivory-control svg{display:block;flex:none;width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
-.ivory-label{font:650 12px/16px system-ui,"Segoe UI",sans-serif;letter-spacing:.01em;white-space:nowrap;color:inherit}
+.ivory-control svg{display:block;flex:none;width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.ivory-label{font:500 12px/16px system-ui,"Segoe UI",sans-serif;letter-spacing:.01em;white-space:nowrap;color:inherit}
 .ivory-control[data-action=hint]:not(.compact){width:92px;height:83px}
 .ivory-control.compact{width:47px;height:47px;--ivory-radius:17px;--ivory-depth:5px}
 .ivory-control.compact svg{width:25px;height:25px}
@@ -21,6 +21,11 @@
 @media(prefers-reduced-motion:reduce){.ivory-control *{transition:none!important}}
 
 /* Hard, fine lower cut edge: no blurred glow or thick embossed lettering. */
-.ivory-control .engrave-edge{display:none;stroke:#fff0d2;stroke-width:2.25;opacity:.65}
+.ivory-control .engrave-edge{display:none;stroke:#fff0d2;stroke-width:1.95;opacity:.65}
 .ivory-control[data-engraved=true] .engrave-edge{display:inline}
 .ivory-control[data-engraved=true] .ivory-label{text-shadow:0 1px 0 #fff0d2b8}
+
+/* Recessed cut: dark upper lip, warm light catching the lower lip. */
+.ivory-control[data-engraved=true][data-deep=true] .engrave-ink{filter:drop-shadow(0 -.4px .2px #38261880)}
+.ivory-control[data-engraved=true][data-deep=true] .engrave-edge{transform:translateY(.35px);opacity:.85;stroke-width:2.05}
+.ivory-control[data-engraved=true][data-deep=true] .ivory-label{text-shadow:0 -.4px .2px #38261850,0 1.2px .2px #fff0d2e0}
