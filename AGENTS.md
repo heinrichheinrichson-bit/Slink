@@ -78,3 +78,5 @@
 - Route study update: all traces rejected. User requested temporary brightening of only predecessor on touching figure. E is now default in wegspuren.html, with study-only freeze checkbox for visual comparison. Preserve old comparisons; do not integrate without approval.
 
 - User approved predecessor brightening integration. Main renderer now brightens only previous meadow while holding gesture begun on figure/current cell, restores on release/cancel. Settings enable/strength10-50% default24%, persisted. completion-settings.js adds saved1-15s win delay default4.4s, applied on next completion. Main and route study share preferences. Existing test APK has not been rebuilt for these changes.
+
+- Android0.1.1-test/versionCode2 now includes approved highlight and completion-delay settings. Explicitly package completion-settings.js. Menu background persists validated sand/orange/original selection. Keep same package/signing identity for updates; previous APK retained.

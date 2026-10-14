@@ -2,13 +2,13 @@ plugins { id 'com.android.application' }
 android {
  namespace 'app.slink.garden'
  compileSdk 36
- defaultConfig { applicationId 'app.slink.garden'; minSdk 27; targetSdk 35; versionCode 1; versionName '0.1.0-test' }
+ defaultConfig { applicationId 'app.slink.garden'; minSdk 27; targetSdk 35; versionCode 2; versionName '0.1.1-test' }
  compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
  sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/webAssets'))
 }
 
 tasks.register('syncWebAssets', Sync) {
- from('../../public') { include 'gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-design.js','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
+ from('../../public') { include 'gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-design.js','completion-settings.js','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
  from('../../THIRD_PARTY_THREE_LICENSE.txt')
  into(layout.buildDirectory.dir('generated/webAssets'))
 }
