@@ -1,5 +1,6 @@
 import {build} from 'esbuild';
 const entries={
+ 'route-study-entry':'route-study',
  'peek-study':'neugierwerkstatt',
  'garden-card-study':'gartenkarten',
  'garden-menu-study':'gartenstudio',
