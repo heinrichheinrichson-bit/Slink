@@ -6,3 +6,12 @@ work/
 !.env.example
 .DS_Store
 Thumbs.db
+
+android/.gradle/
+android/**/build/
+android/local.properties
+*.apk
+*.aab
+*.keystore
+*.jks
+!releases/*.apk
