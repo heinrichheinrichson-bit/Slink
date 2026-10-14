@@ -1,0 +1,11 @@
+# Garden menu study
+
+Separate study: public/gartenstudio.html. The approved game screen and puzzle catalogue are unchanged.
+
+Three navigable views: home with living garden island and Continue, chapter gardens with actual completion counts and current-garden shortcut, and chapter level selection with path/grid alternatives. All600 levels in15 existing sets are available; names are shortened for presentation without altering catalogue data. Local completed IDs are deduplicated and validated; legacy indexes map through SLINK_LEGACY_IDS. Browsing writes no progress. Explicit “Rätsel spielen” writes only selected current-level ID then opens existing slink.html. Continue opens the saved game. Settings/friend actions currently provide a clearly labeled study dialog linking to existing game settings, rather than pretending to have additional finished screens.
+
+Home island uses real ivory frame, meadow variants, flower modules, living water and fuzzy creature. It is decorative, not an extra puzzle. Character has idle motion, no walking-in-place. No generated concept pictures. Chapter thumbnails render approved tiles through one reused offscreen WebGL renderer, then dispose its scene resources. Partial completion changes the thumbnail's proportion of meadow/earth. This is a chapter progress illustration, not its actual puzzle layout. Home render loop pauses when tab or home view is hidden; reduced-motion users get static animation time.
+
+Materials follow approved orange/ivory language. Native compact controls use C/satin, Warme Umbra, fine engraving, without extra depth. App shell keeps header/navigation visible while content scrolls. Garden path has a curved SVG connector; level buttons remain native and keyboard accessible. Grid minimum measured width46 CSSpx at320px viewport. User's real progress observed108/600; no completions added by menu verification.
+
+Verification: build and full npm test passed. Browser checked3 views, all15 chapter entries, current garden6/25, path/grid switch, level7 detail25fields/3goals, native dialog, jump to next node,320/390px layouts and no captured renderer errors. Physical Android performance is still unmeasured. Screenshots in docs/screenshots/menu-*.png. Separate study, not yet integrated as game entry navigation.
