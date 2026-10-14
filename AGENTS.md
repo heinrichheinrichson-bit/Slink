@@ -63,3 +63,4 @@
 - Ivory UI study also includes optional slightly deeper optical engraving, selectable independently while engraving is enabled. Reusable createIvoryControl accepts deep; preserve plain and fine-edge versions.
 - User selected Warme Umbra with fine engraving edge, WITHOUT extra depth (blurred symbols rejected). UI study defaults: ink #704a2c, engraved true, deep false. C remains preferred skin; main UI integration not yet requested.
 - Main UI integration approved and implemented: home/settings/undo/hint/reset reuse C satin + Warme Umbra + fine engraving, deep false, all ivory. Original button elements/listeners/ARIA preserved. Keep studies and alternatives. See game-ivory-controls.js/css.
+- Completion card now hides both terrain3d canvas and SVG board via visibility only while win is not hidden. Preserve delayed reveal, board layout, and automatic return on replay/undo/reset.
