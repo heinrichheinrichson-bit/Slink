@@ -5,7 +5,8 @@ export function stoneComponents(cells,n){const left=new Set(cells),result=[];whi
 /** Decoration only: never changes IDs, geometry, walkability, goals or solutions. */
 export function createGardenDecorationPlan(level){
  const seed=hash(level.id||JSON.stringify([level.n,level.solution,level.marks])),primary=FLOWERS[seed%4],flowers=level.marks.map(()=>primary),stones={};
- if(flowers.length>=4&&seed%3===0)flowers[flowers.length-2]=FLOWERS[(seed%4+1)%4];
+ // A stable two-species palette also works for gardens with only two or three goals.
+ if(flowers.length>=2&&hash(seed+':flower-mix')%3!==0){const secondary=FLOWERS[(seed%4+1+hash(seed+':flower-palette')%3)%4];for(let i=1;i<flowers.length;i+=2)flowers[i]=secondary;}
  for(const part of stoneComponents(level.stones||[],level.n)){
   const key=hash(seed+':'+part.join(','));
   if(part.length===1){stones[part[0]]=SINGLE_STONES[key%SINGLE_STONES.length];continue}
