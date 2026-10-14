@@ -74,3 +74,5 @@
 - Phone home: settings only in gear; bottom Gartenfreund retained disabled for future use. Home must fit available height without scroll (360x640/700 verified); catalogue still scrolls. Decorative hero must not intercept navigation. Android offline test app now under android/, versioned signed test APK in releases/. Preserve package/signing identity for updates; no real S22 test yet. See docs/android-test-app.md.
 
 - Route cue study: user rejected bright dots as unnatural. wegspuren.html now defaults to D, a physical green laid-down grass cue with lightly lifting predecessor blades. Preserve A/B/C as comparisons. This remains separate from main gameplay and requires visual review; do not integrate automatically. See docs/route-study.md.
+
+- Route study update: all traces rejected. User requested temporary brightening of only predecessor on touching figure. E is now default in wegspuren.html, with study-only freeze checkbox for visual comparison. Preserve old comparisons; do not integrate without approval.
