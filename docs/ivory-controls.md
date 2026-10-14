@@ -1,0 +1,14 @@
+# Ivory control study
+
+Separate live study: `public/bedienwerkstatt.html`. Main game controls and puzzle data are unchanged.
+
+Reusable assets:
+- `public/ivory-controls.css`: scoped native-button skins. Solid layered ivory body with broad shoulder gradients, light warm side, subtle CSS/SVG pore grain and no raised outline tube. No generated bitmap skin.
+- `public/ivory-controls.js`: `createIvoryControl({action,variant,compact,gold,label})` returns a native `<button type="button">`. Actions undo/hint/reset/home/settings; variants cast/soft/satin. Caller wires existing game actions.
+- `src/renderer/ui-button-study.js`: preview game context using the existing real3D ivory frame, earth, meadow, water, lava and stone modules. Button appearance uses HTML/CSS, rather than the frame's WebGL shader. Future integration would reuse exactly these DOM/CSS controls.
+
+Variants: A Elfenbeinguss (warm rounded casting), B Weich modelliert (softer asymmetric corners/deeper side), C Matter Schliff (quieter shallow profile). Existing buttons appear in a reference row. All sample controls act on the same small demo board. All-ivory is default; optional gold hint. Native disabled undo preview, keyboard focus and reduced-motion handling included. Native dialog opens from the settings control. No localStorage/progress writes.
+
+Nominal play controls82×76 CSSpx, hint92×83, compact header47×47. Very narrow viewport rules reduce play sizes to74×70/hint80×76 with12px gaps. Studies compare real sizes; actual phone rendering/performance is not asserted.
+
+Browser checked variant switching, keyboard Enter action, count update, reset/undo, gold flag, disabled state and dialog open/close. Observed normal dimensions82×76/92×83 and native disabled undo. No captured renderer errors. Snapshot: docs/screenshots/ivory-controls-study.png. Build and full npm test passed. New design selection/main integration awaits user review.
