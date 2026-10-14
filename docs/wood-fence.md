@@ -11,3 +11,6 @@
 - Browser checked blocked0→4 and5→6, legal0→1→5 and single-step5→1 undo. Both wood tones and shape selection render without captured errors. New tests check placements, shared corner posts, rail clearance, finite geometry and the test solution.
 
 Await user visual review before replacing existing wall visuals or creating catalogue puzzles with this module. Mobile hardware performance unmeasured.
+
+## Additional fence designs
+User approved retaining the original garden fence in BOTH honey and chestnut. Added `design` option, default `rails`, preserving its construction. New reusable designs: `picket` (five curved-top slats with hidden support rails), `cross` (two opposing diagonal braces with offset lap crossing), `logs` (round posts/caps and cylindrical rails). All four accept both wood colours, original walls/edge coordinates and shared posts. No occupied cells, spacing changes or main-game integration. The gallery thumbnails are static captures produced by the same real module/renderer; selecting them updates the live test board and detail. Gallery is labelled honey; live colour selector offers both. Tests now run all4 designs×2 tones×4 edge configurations, including span clearance above grown grass. Browser exercised picket joined/chestnut, cross vertical and logs corner without captured errors. New designs await user judgement.
