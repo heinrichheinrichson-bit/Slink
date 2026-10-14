@@ -26,6 +26,9 @@
 .ivory-control[data-engraved=true] .ivory-label{text-shadow:0 1px 0 #fff0d2b8}
 
 /* Recessed cut: dark upper lip, warm light catching the lower lip. */
-.ivory-control[data-engraved=true][data-deep=true] .engrave-ink{filter:drop-shadow(0 -.4px .2px #38261880)}
+.ivory-control[data-engraved=true][data-deep=true] .engrave-ink{filter:drop-shadow(0 -.4px .2px #38261845)}
 .ivory-control[data-engraved=true][data-deep=true] .engrave-edge{transform:translateY(.35px);opacity:.85;stroke-width:2.05}
-.ivory-control[data-engraved=true][data-deep=true] .ivory-label{text-shadow:0 -.4px .2px #38261850,0 1.2px .2px #fff0d2e0}
+.ivory-control[data-engraved=true][data-deep=true] .ivory-label{text-shadow:0 -.4px .2px #38261830,0 1.2px .2px #fff0d2e0}
+
+/* Compensate engraving darkness without changing the saved ink palette. */
+.ivory-control[data-engraved=true]{color:color-mix(in srgb,var(--ivory-ink,#704a2c) 88%,#edd9b8)}
