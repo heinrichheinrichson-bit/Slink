@@ -1,0 +1,36 @@
+{
+  "passed": 100,
+  "errors": [],
+  "maximumTextures": 78,
+  "maximumGeometries": 1894,
+  "maximumPrograms": 15,
+  "last": {
+    "level": 390,
+    "textures": 77,
+    "geometries": 1863,
+    "programs": 9,
+    "flowers": [
+      "meadow",
+      "meadow"
+    ],
+    "bloomsReady": false,
+    "stoneStyles": [],
+    "fence": {
+      "design": "logs",
+      "style": "honey",
+      "spans": 5
+    },
+    "creature": {
+      "visible": true,
+      "cell": "8",
+      "moving": "false",
+      "heading": "0",
+      "celebrationAge": "0.3164999999999907"
+    },
+    "visitors": {
+      "enabled": true,
+      "bee": 180,
+      "bumblebee": 180
+    }
+  }
+}

@@ -1,0 +1,3528 @@
+{
+  "total": 100,
+  "attempts": 1190,
+  "cutoffs": 0,
+  "humanDifficultyValidated": false,
+  "pureFence": 30,
+  "groups": [
+    {
+      "count": 10,
+      "after": 30,
+      "chapter": "1B",
+      "set": "01b · Am Gartenzaun",
+      "title": "Am Gartenzaun",
+      "difficulty": "Einstieg",
+      "description": "Zäune kennenlernen: Beide Felder bleiben frei, nur der Übergang ist gesperrt."
+    },
+    {
+      "count": 20,
+      "after": 80,
+      "chapter": "2B",
+      "set": "02b · Über kleine Umwege",
+      "title": "Über kleine Umwege",
+      "difficulty": "Aufbau",
+      "description": "Zäune lenken den Weg. Plane, von welcher Seite du die Felder erreichst."
+    },
+    {
+      "count": 20,
+      "after": 130,
+      "chapter": "3B",
+      "set": "03b · Zwischen Holz und Wasser",
+      "title": "Zwischen Holz und Wasser",
+      "difficulty": "Anspruchsvoll",
+      "description": "Gesperrte Kanten und Gelände gemeinsam lesen."
+    },
+    {
+      "count": 25,
+      "after": 230,
+      "chapter": "5B",
+      "set": "05b · Verborgene Durchgänge",
+      "title": "Verborgene Durchgänge",
+      "difficulty": "Anspruchsvoll",
+      "description": "Ein kleiner Umweg kann später eine ganze Fläche abschneiden."
+    },
+    {
+      "count": 25,
+      "after": 290,
+      "chapter": "6B",
+      "set": "06b · Verzäunte Denkpfade",
+      "title": "Verzäunte Denkpfade",
+      "difficulty": "Anspruchsvoll",
+      "description": "Die stärkere Auswahl nach Prüfmetriken. Schwierigkeit noch im Spieltest abzustimmen."
+    }
+  ],
+  "levels": [
+    {
+      "id": "slink-fence-v1-001",
+      "n": 4,
+      "fields": 16,
+      "walls": 2,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 25,
+      "junctions": 9,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.8,
+      "longestForcedRun": 11,
+      "turns": 8,
+      "delayedWrongChoices": 0,
+      "maxWrongDepth": 0,
+      "examples": [],
+      "essentialFences": 2,
+      "score": 15.101319154423276
+    },
+    {
+      "id": "slink-fence-v1-002",
+      "n": 4,
+      "fields": 16,
+      "walls": 2,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 22,
+      "junctions": 8,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 5,
+      "turns": 11,
+      "delayedWrongChoices": 0,
+      "maxWrongDepth": 0,
+      "examples": [],
+      "essentialFences": 2,
+      "score": 17.904019201504376
+    },
+    {
+      "id": "slink-fence-v1-003",
+      "n": 4,
+      "fields": 16,
+      "walls": 2,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 23,
+      "junctions": 10,
+      "neckCells": 4,
+      "articulations": 2,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 6,
+      "turns": 12,
+      "delayedWrongChoices": 0,
+      "maxWrongDepth": 0,
+      "examples": [],
+      "essentialFences": 2,
+      "score": 18.088220835496802
+    },
+    {
+      "id": "slink-fence-v1-004",
+      "n": 5,
+      "fields": 25,
+      "walls": 5,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 38,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.7083333333333334,
+      "longestForcedRun": 9,
+      "turns": 9,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 3,
+      "examples": [
+        {
+          "step": 11,
+          "wrongCell": 5,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 5,
+      "score": 50.147873323253414
+    },
+    {
+      "id": "slink-fence-v1-005",
+      "n": 5,
+      "fields": 19,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 31,
+      "junctions": 12,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.7222222222222222,
+      "longestForcedRun": 7,
+      "turns": 11,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 5,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 23,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 3,
+      "score": 50.94444444444444
+    },
+    {
+      "id": "slink-fence-v1-008",
+      "n": 5,
+      "fields": 19,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 33,
+      "junctions": 10,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.7222222222222222,
+      "longestForcedRun": 11,
+      "turns": 10,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 5,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 17,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 2,
+      "score": 53.20683296819546
+    },
+    {
+      "id": "slink-fence-v1-009",
+      "n": 4,
+      "fields": 16,
+      "walls": 2,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 33,
+      "junctions": 10,
+      "neckCells": 6,
+      "articulations": 0,
+      "forcedRatio": 0.8,
+      "longestForcedRun": 11,
+      "turns": 7,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 6,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 13,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 53.262388523751014
+    },
+    {
+      "id": "slink-fence-v1-011",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 51,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 6,
+      "turns": 14,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 4,
+      "examples": [
+        {
+          "step": 5,
+          "wrongCell": 7,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 4,
+      "score": 54.434652487756615
+    },
+    {
+      "id": "slink-fence-v1-014",
+      "n": 5,
+      "fields": 15,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 31,
+      "junctions": 9,
+      "neckCells": 6,
+      "articulations": 0,
+      "forcedRatio": 0.6428571428571429,
+      "longestForcedRun": 3,
+      "turns": 7,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 6,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 12,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 56.92857142857143
+    },
+    {
+      "id": "slink-fence-v1-021",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 49,
+      "junctions": 18,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 5,
+      "turns": 13,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 8,
+      "examples": [
+        {
+          "step": 7,
+          "wrongCell": 7,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 4,
+      "score": 63.30656856932417
+    },
+    {
+      "id": "slink-fence-v1-024",
+      "n": 5,
+      "fields": 25,
+      "walls": 5,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 61,
+      "junctions": 15,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 9,
+      "turns": 13,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 5,
+          "wrongCell": 13,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 5,
+      "score": 65.19592226449396
+    },
+    {
+      "id": "slink-fence-v1-028",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 58,
+      "junctions": 17,
+      "neckCells": 7,
+      "articulations": 1,
+      "forcedRatio": 0.5833333333333334,
+      "longestForcedRun": 4,
+      "turns": 13,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 6,
+      "examples": [
+        {
+          "step": 8,
+          "wrongCell": 6,
+          "survivesMoves": 6
+        },
+        {
+          "step": 9,
+          "wrongCell": 11,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 4,
+      "score": 84.0645958147522
+    },
+    {
+      "id": "slink-fence-v1-030",
+      "n": 5,
+      "fields": 25,
+      "walls": 5,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 57,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.75,
+      "longestForcedRun": 7,
+      "turns": 14,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 9,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 3
+        },
+        {
+          "step": 11,
+          "wrongCell": 15,
+          "survivesMoves": 9
+        }
+      ],
+      "essentialFences": 5,
+      "score": 85.82394298538271
+    },
+    {
+      "id": "slink-fence-v1-031",
+      "n": 4,
+      "fields": 16,
+      "walls": 2,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 42,
+      "junctions": 10,
+      "neckCells": 6,
+      "articulations": 0,
+      "forcedRatio": 0.8,
+      "longestForcedRun": 6,
+      "turns": 8,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 1,
+          "survivesMoves": 7
+        },
+        {
+          "step": 1,
+          "wrongCell": 4,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 87.2787942641063
+    },
+    {
+      "id": "slink-fence-v1-032",
+      "n": 5,
+      "fields": 25,
+      "walls": 6,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 89,
+      "junctions": 15,
+      "neckCells": 9,
+      "articulations": 1,
+      "forcedRatio": 0.75,
+      "longestForcedRun": 15,
+      "turns": 8,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 9,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 7,
+          "survivesMoves": 9
+        },
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 6,
+      "score": 87.72555928898902
+    },
+    {
+      "id": "slink-fence-v1-033",
+      "n": 4,
+      "fields": 16,
+      "walls": 2,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 54,
+      "junctions": 10,
+      "neckCells": 6,
+      "articulations": 0,
+      "forcedRatio": 0.8,
+      "longestForcedRun": 11,
+      "turns": 8,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 4,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 88.34407914057398
+    },
+    {
+      "id": "slink-fence-v1-034",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 68,
+      "junctions": 16,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.75,
+      "longestForcedRun": 13,
+      "turns": 11,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 5,
+          "wrongCell": 5,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 6,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 4,
+      "score": 88.57557337033451
+    },
+    {
+      "id": "slink-fence-v1-035",
+      "n": 4,
+      "fields": 16,
+      "walls": 2,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 53,
+      "junctions": 11,
+      "neckCells": 5,
+      "articulations": 0,
+      "forcedRatio": 0.7333333333333333,
+      "longestForcedRun": 5,
+      "turns": 9,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 4,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 89.93132917315707
+    },
+    {
+      "id": "slink-fence-v1-036",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 72,
+      "junctions": 18,
+      "neckCells": 6,
+      "articulations": 1,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 5,
+      "turns": 16,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 7,
+          "wrongCell": 5,
+          "survivesMoves": 10
+        },
+        {
+          "step": 13,
+          "wrongCell": 3,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 4,
+      "score": 90.90280700997339
+    },
+    {
+      "id": "slink-fence-v1-040",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 56,
+      "junctions": 16,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 9,
+      "turns": 10,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 4,
+      "examples": [
+        {
+          "step": 7,
+          "wrongCell": 7,
+          "survivesMoves": 4
+        },
+        {
+          "step": 11,
+          "wrongCell": 11,
+          "survivesMoves": 3
+        },
+        {
+          "step": 13,
+          "wrongCell": 11,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 4,
+      "score": 104.83200337582755
+    },
+    {
+      "id": "slink-fence-v1-041",
+      "n": 5,
+      "fields": 20,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 39,
+      "junctions": 13,
+      "neckCells": 6,
+      "articulations": 1,
+      "forcedRatio": 0.6842105263157895,
+      "longestForcedRun": 8,
+      "turns": 11,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 5,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 15,
+          "survivesMoves": 3
+        },
+        {
+          "step": 3,
+          "wrongCell": 16,
+          "survivesMoves": 4
+        },
+        {
+          "step": 8,
+          "wrongCell": 17,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 2,
+      "score": 104.86052112676735
+    },
+    {
+      "id": "slink-fence-v1-053",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 72,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.5833333333333334,
+      "longestForcedRun": 8,
+      "turns": 14,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 8,
+      "examples": [
+        {
+          "step": 8,
+          "wrongCell": 6,
+          "survivesMoves": 7
+        },
+        {
+          "step": 9,
+          "wrongCell": 11,
+          "survivesMoves": 8
+        },
+        {
+          "step": 12,
+          "wrongCell": 16,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 4,
+      "score": 115.98614034330673
+    },
+    {
+      "id": "slink-fence-v1-058",
+      "n": 5,
+      "fields": 25,
+      "walls": 5,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 92,
+      "junctions": 19,
+      "neckCells": 5,
+      "articulations": 1,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 4,
+      "turns": 15,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 4,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 17,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 5,
+      "score": 117.9924764333241
+    },
+    {
+      "id": "slink-fence-v1-066",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 69,
+      "junctions": 19,
+      "neckCells": 5,
+      "articulations": 1,
+      "forcedRatio": 0.5833333333333334,
+      "longestForcedRun": 5,
+      "turns": 13,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 11,
+          "survivesMoves": 3
+        },
+        {
+          "step": 10,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 11,
+          "wrongCell": 7,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 4,
+      "score": 119.80451571750157
+    },
+    {
+      "id": "slink-fence-v1-075",
+      "n": 5,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 79,
+      "junctions": 18,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.7083333333333334,
+      "longestForcedRun": 15,
+      "turns": 11,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 9,
+          "survivesMoves": 6
+        },
+        {
+          "step": 4,
+          "wrongCell": 14,
+          "survivesMoves": 7
+        },
+        {
+          "step": 5,
+          "wrongCell": 23,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 140.25745095132874
+    },
+    {
+      "id": "slink-fence-v1-080",
+      "n": 5,
+      "fields": 25,
+      "walls": 5,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 217,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.75,
+      "longestForcedRun": 16,
+      "turns": 9,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 7,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 18,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 5,
+      "score": 143.5545529743308
+    },
+    {
+      "id": "slink-fence-v1-082",
+      "n": 5,
+      "fields": 25,
+      "walls": 6,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 167,
+      "junctions": 16,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 6,
+      "turns": 11,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 23,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 19,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        },
+        {
+          "step": 10,
+          "wrongCell": 8,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 6,
+      "score": 144.51028560166964
+    },
+    {
+      "id": "slink-fence-v1-083",
+      "n": 5,
+      "fields": 25,
+      "walls": 5,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 141,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.7083333333333334,
+      "longestForcedRun": 11,
+      "turns": 17,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 5,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 15,
+          "survivesMoves": 3
+        },
+        {
+          "step": 6,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 5,
+      "score": 144.74090802518072
+    },
+    {
+      "id": "slink-fence-v1-084",
+      "n": 5,
+      "fields": 25,
+      "walls": 4,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 150,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 8,
+      "turns": 14,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 1,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 6,
+          "survivesMoves": 6
+        },
+        {
+          "step": 3,
+          "wrongCell": 11,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 4,
+      "score": 145.09021421797524
+    },
+    {
+      "id": "slink-fence-v1-097",
+      "n": 5,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 159,
+      "junctions": 18,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.7083333333333334,
+      "longestForcedRun": 10,
+      "turns": 14,
+      "delayedWrongChoices": 6,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 7,
+          "survivesMoves": 9
+        },
+        {
+          "step": 1,
+          "wrongCell": 11,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 13,
+          "survivesMoves": 9
+        },
+        {
+          "step": 2,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 15,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 10,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 193.25745095132874
+    },
+    {
+      "id": "slink-fence-v1-006",
+      "n": 6,
+      "fields": 28,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 42,
+      "junctions": 16,
+      "neckCells": 11,
+      "articulations": 4,
+      "forcedRatio": 0.7407407407407407,
+      "longestForcedRun": 8,
+      "turns": 11,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 4,
+      "examples": [
+        {
+          "step": 8,
+          "wrongCell": 28,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 3,
+      "score": 51.760275745587776
+    },
+    {
+      "id": "slink-fence-v1-007",
+      "n": 6,
+      "fields": 24,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 38,
+      "junctions": 13,
+      "neckCells": 10,
+      "articulations": 4,
+      "forcedRatio": 0.782608695652174,
+      "longestForcedRun": 7,
+      "turns": 13,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 6,
+      "examples": [
+        {
+          "step": 8,
+          "wrongCell": 14,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 52.2909892652824
+    },
+    {
+      "id": "slink-fence-v1-010",
+      "n": 6,
+      "fields": 23,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 39,
+      "junctions": 9,
+      "neckCells": 13,
+      "articulations": 5,
+      "forcedRatio": 0.8181818181818182,
+      "longestForcedRun": 12,
+      "turns": 10,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 6,
+      "examples": [
+        {
+          "step": 4,
+          "wrongCell": 19,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 53.51123883011664
+    },
+    {
+      "id": "slink-fence-v1-012",
+      "n": 6,
+      "fields": 22,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 35,
+      "junctions": 12,
+      "neckCells": 10,
+      "articulations": 2,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 6,
+      "turns": 13,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 5,
+      "examples": [
+        {
+          "step": 12,
+          "wrongCell": 34,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 2,
+      "score": 54.843108337660276
+    },
+    {
+      "id": "slink-fence-v1-013",
+      "n": 6,
+      "fields": 26,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 48,
+      "junctions": 11,
+      "neckCells": 14,
+      "articulations": 2,
+      "forcedRatio": 0.76,
+      "longestForcedRun": 9,
+      "turns": 13,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 7,
+      "examples": [
+        {
+          "step": 13,
+          "wrongCell": 23,
+          "survivesMoves": 7
+        }
+      ],
+      "essentialFences": 2,
+      "score": 55.844129532345626
+    },
+    {
+      "id": "slink-fence-v1-015",
+      "n": 6,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 49,
+      "junctions": 15,
+      "neckCells": 9,
+      "articulations": 1,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 9,
+      "turns": 14,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 6,
+      "examples": [
+        {
+          "step": 4,
+          "wrongCell": 26,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 3,
+      "score": 58.264901902657506
+    },
+    {
+      "id": "slink-fence-v1-016",
+      "n": 6,
+      "fields": 26,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 46,
+      "junctions": 15,
+      "neckCells": 11,
+      "articulations": 0,
+      "forcedRatio": 0.72,
+      "longestForcedRun": 5,
+      "turns": 14,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 7,
+      "examples": [
+        {
+          "step": 14,
+          "wrongCell": 33,
+          "survivesMoves": 7
+        }
+      ],
+      "essentialFences": 2,
+      "score": 58.663766555032915
+    },
+    {
+      "id": "slink-fence-v1-017",
+      "n": 6,
+      "fields": 24,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 43,
+      "junctions": 14,
+      "neckCells": 9,
+      "articulations": 1,
+      "forcedRatio": 0.7391304347826086,
+      "longestForcedRun": 10,
+      "turns": 11,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 9,
+      "examples": [
+        {
+          "step": 9,
+          "wrongCell": 4,
+          "survivesMoves": 9
+        }
+      ],
+      "essentialFences": 3,
+      "score": 61.90003398634667
+    },
+    {
+      "id": "slink-fence-v1-018",
+      "n": 6,
+      "fields": 26,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 59,
+      "junctions": 12,
+      "neckCells": 13,
+      "articulations": 1,
+      "forcedRatio": 0.76,
+      "longestForcedRun": 10,
+      "turns": 10,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 4,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 62.72067178682556
+    },
+    {
+      "id": "slink-fence-v1-019",
+      "n": 6,
+      "fields": 28,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 55,
+      "junctions": 17,
+      "neckCells": 10,
+      "articulations": 1,
+      "forcedRatio": 0.7407407407407407,
+      "longestForcedRun": 12,
+      "turns": 17,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 4,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 62.90354624765429
+    },
+    {
+      "id": "slink-fence-v1-020",
+      "n": 6,
+      "fields": 22,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 48,
+      "junctions": 14,
+      "neckCells": 7,
+      "articulations": 2,
+      "forcedRatio": 0.7142857142857143,
+      "longestForcedRun": 10,
+      "turns": 11,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 21,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 62.98698667520277
+    },
+    {
+      "id": "slink-fence-v1-022",
+      "n": 6,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 53,
+      "junctions": 13,
+      "neckCells": 11,
+      "articulations": 1,
+      "forcedRatio": 0.7083333333333334,
+      "longestForcedRun": 11,
+      "turns": 11,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 7,
+          "wrongCell": 15,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 63.55632917315707
+    },
+    {
+      "id": "slink-fence-v1-023",
+      "n": 6,
+      "fields": 27,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 81,
+      "junctions": 18,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.7307692307692307,
+      "longestForcedRun": 11,
+      "turns": 8,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 1,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 64.80342524462347
+    },
+    {
+      "id": "slink-fence-v1-025",
+      "n": 6,
+      "fields": 25,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 56,
+      "junctions": 15,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 7,
+      "turns": 15,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 8,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 66.83200337582755
+    },
+    {
+      "id": "slink-fence-v1-026",
+      "n": 6,
+      "fields": 28,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 59,
+      "junctions": 19,
+      "neckCells": 8,
+      "articulations": 1,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 6,
+      "turns": 12,
+      "delayedWrongChoices": 1,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 67.05400512015889
+    },
+    {
+      "id": "slink-fence-v1-027",
+      "n": 6,
+      "fields": 28,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 49,
+      "junctions": 17,
+      "neckCells": 11,
+      "articulations": 0,
+      "forcedRatio": 0.6296296296296297,
+      "longestForcedRun": 3,
+      "turns": 20,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 5,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 8,
+          "survivesMoves": 4
+        },
+        {
+          "step": 18,
+          "wrongCell": 19,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 3,
+      "score": 82.19082782858342
+    },
+    {
+      "id": "slink-fence-v1-029",
+      "n": 6,
+      "fields": 26,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 53,
+      "junctions": 15,
+      "neckCells": 9,
+      "articulations": 2,
+      "forcedRatio": 0.68,
+      "longestForcedRun": 6,
+      "turns": 14,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 8,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 33,
+          "survivesMoves": 7
+        },
+        {
+          "step": 3,
+          "wrongCell": 27,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 3,
+      "score": 85.2646625064904
+    },
+    {
+      "id": "slink-fence-v1-037",
+      "n": 6,
+      "fields": 28,
+      "walls": 5,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 63,
+      "junctions": 18,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 5,
+      "turns": 14,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 17,
+          "survivesMoves": 9
+        },
+        {
+          "step": 2,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 5,
+      "score": 92.33333333333333
+    },
+    {
+      "id": "slink-fence-v1-038",
+      "n": 6,
+      "fields": 28,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 173,
+      "junctions": 21,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.5925925925925926,
+      "longestForcedRun": 3,
+      "turns": 20,
+      "delayedWrongChoices": 2,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 15,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 98.51401567273138
+    },
+    {
+      "id": "slink-fence-v1-039",
+      "n": 6,
+      "fields": 24,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 52,
+      "junctions": 15,
+      "neckCells": 8,
+      "articulations": 2,
+      "forcedRatio": 0.6956521739130435,
+      "longestForcedRun": 7,
+      "turns": 10,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 4,
+      "examples": [
+        {
+          "step": 7,
+          "wrongCell": 26,
+          "survivesMoves": 4
+        },
+        {
+          "step": 8,
+          "wrongCell": 27,
+          "survivesMoves": 3
+        },
+        {
+          "step": 14,
+          "wrongCell": 22,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 3,
+      "score": 101.7924570158635
+    },
+    {
+      "id": "slink-fence-v1-042",
+      "n": 6,
+      "fields": 24,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 54,
+      "junctions": 11,
+      "neckCells": 12,
+      "articulations": 1,
+      "forcedRatio": 0.6956521739130435,
+      "longestForcedRun": 11,
+      "turns": 9,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 5,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 21,
+          "survivesMoves": 3
+        },
+        {
+          "step": 4,
+          "wrongCell": 22,
+          "survivesMoves": 4
+        },
+        {
+          "step": 5,
+          "wrongCell": 16,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 3,
+      "score": 105.9527747927479
+    },
+    {
+      "id": "slink-fence-v1-043",
+      "n": 6,
+      "fields": 27,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 57,
+      "junctions": 18,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.5384615384615384,
+      "longestForcedRun": 4,
+      "turns": 12,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 4,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 7,
+          "survivesMoves": 3
+        },
+        {
+          "step": 2,
+          "wrongCell": 13,
+          "survivesMoves": 4
+        },
+        {
+          "step": 12,
+          "wrongCell": 13,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 3,
+      "score": 108.11240452384425
+    },
+    {
+      "id": "slink-fence-v1-044",
+      "n": 6,
+      "fields": 29,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 59,
+      "junctions": 16,
+      "neckCells": 13,
+      "articulations": 0,
+      "forcedRatio": 0.6785714285714286,
+      "longestForcedRun": 8,
+      "turns": 12,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 7,
+      "examples": [
+        {
+          "step": 8,
+          "wrongCell": 11,
+          "survivesMoves": 7
+        },
+        {
+          "step": 9,
+          "wrongCell": 15,
+          "survivesMoves": 4
+        },
+        {
+          "step": 18,
+          "wrongCell": 7,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 3,
+      "score": 110.75638607253984
+    },
+    {
+      "id": "slink-fence-v1-045",
+      "n": 6,
+      "fields": 23,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 69,
+      "junctions": 12,
+      "neckCells": 11,
+      "articulations": 0,
+      "forcedRatio": 0.7727272727272727,
+      "longestForcedRun": 9,
+      "turns": 10,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 9,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 20,
+          "survivesMoves": 3
+        },
+        {
+          "step": 1,
+          "wrongCell": 32,
+          "survivesMoves": 9
+        },
+        {
+          "step": 1,
+          "wrongCell": 27,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 3,
+      "score": 111.06966723265309
+    },
+    {
+      "id": "slink-fence-v1-046",
+      "n": 6,
+      "fields": 27,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 71,
+      "junctions": 14,
+      "neckCells": 13,
+      "articulations": 0,
+      "forcedRatio": 0.7307692307692307,
+      "longestForcedRun": 13,
+      "turns": 15,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 8,
+          "survivesMoves": 4
+        },
+        {
+          "step": 3,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 21,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 114.24054423509617
+    },
+    {
+      "id": "slink-fence-v1-047",
+      "n": 6,
+      "fields": 29,
+      "walls": 4,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 81,
+      "junctions": 14,
+      "neckCells": 15,
+      "articulations": 0,
+      "forcedRatio": 0.75,
+      "longestForcedRun": 16,
+      "turns": 12,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 4
+        },
+        {
+          "step": 1,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 4,
+      "score": 114.32265601385424
+    },
+    {
+      "id": "slink-fence-v1-048",
+      "n": 6,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 67,
+      "junctions": 18,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 7,
+      "turns": 9,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 8,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 33,
+          "survivesMoves": 4
+        },
+        {
+          "step": 1,
+          "wrongCell": 26,
+          "survivesMoves": 8
+        },
+        {
+          "step": 1,
+          "wrongCell": 28,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 3,
+      "score": 114.63738852375101
+    },
+    {
+      "id": "slink-fence-v1-049",
+      "n": 6,
+      "fields": 26,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 75,
+      "junctions": 11,
+      "neckCells": 14,
+      "articulations": 6,
+      "forcedRatio": 0.8,
+      "longestForcedRun": 10,
+      "turns": 9,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 18,
+          "survivesMoves": 9
+        },
+        {
+          "step": 1,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 114.74378254033076
+    },
+    {
+      "id": "slink-fence-v1-050",
+      "n": 6,
+      "fields": 28,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 97,
+      "junctions": 16,
+      "neckCells": 12,
+      "articulations": 0,
+      "forcedRatio": 0.7407407407407407,
+      "longestForcedRun": 10,
+      "turns": 14,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 4,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 16,
+          "survivesMoves": 6
+        },
+        {
+          "step": 1,
+          "wrongCell": 11,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 3,
+      "score": 115.3256110138271
+    },
+    {
+      "id": "slink-fence-v1-051",
+      "n": 6,
+      "fields": 29,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 65,
+      "junctions": 14,
+      "neckCells": 15,
+      "articulations": 0,
+      "forcedRatio": 0.75,
+      "longestForcedRun": 7,
+      "turns": 15,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 24,
+          "survivesMoves": 3
+        },
+        {
+          "step": 1,
+          "wrongCell": 19,
+          "survivesMoves": 3
+        },
+        {
+          "step": 2,
+          "wrongCell": 6,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 115.38318235807536
+    },
+    {
+      "id": "slink-fence-v1-052",
+      "n": 6,
+      "fields": 29,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 89,
+      "junctions": 16,
+      "neckCells": 13,
+      "articulations": 0,
+      "forcedRatio": 0.7142857142857143,
+      "longestForcedRun": 8,
+      "turns": 16,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 32,
+          "survivesMoves": 5
+        },
+        {
+          "step": 1,
+          "wrongCell": 27,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 24,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 2,
+      "score": 115.61841643184616
+    },
+    {
+      "id": "slink-fence-v1-054",
+      "n": 6,
+      "fields": 22,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 74,
+      "junctions": 12,
+      "neckCells": 9,
+      "articulations": 3,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 12,
+      "turns": 9,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 25,
+          "survivesMoves": 9
+        },
+        {
+          "step": 4,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 27,
+          "survivesMoves": 9
+        }
+      ],
+      "essentialFences": 2,
+      "score": 116.01978940482097
+    },
+    {
+      "id": "slink-fence-v1-055",
+      "n": 6,
+      "fields": 26,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 68,
+      "junctions": 16,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.72,
+      "longestForcedRun": 13,
+      "turns": 11,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 14,
+          "survivesMoves": 6
+        },
+        {
+          "step": 1,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 27,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 3,
+      "score": 116.32557337033451
+    },
+    {
+      "id": "slink-fence-v1-056",
+      "n": 6,
+      "fields": 27,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 74,
+      "junctions": 15,
+      "neckCells": 12,
+      "articulations": 0,
+      "forcedRatio": 0.6538461538461539,
+      "longestForcedRun": 5,
+      "turns": 17,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 9,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 16,
+          "survivesMoves": 9
+        },
+        {
+          "step": 2,
+          "wrongCell": 20,
+          "survivesMoves": 4
+        },
+        {
+          "step": 12,
+          "wrongCell": 20,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 3,
+      "score": 116.3403022253338
+    },
+    {
+      "id": "slink-fence-v1-057",
+      "n": 6,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 90,
+      "junctions": 16,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 8,
+      "turns": 13,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 15,
+          "survivesMoves": 5
+        },
+        {
+          "step": 3,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 117.89838392059609
+    },
+    {
+      "id": "slink-fence-v1-059",
+      "n": 6,
+      "fields": 28,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 147,
+      "junctions": 20,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.7037037037037037,
+      "longestForcedRun": 8,
+      "turns": 12,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 6,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 118.03576750429426
+    },
+    {
+      "id": "slink-fence-v1-060",
+      "n": 6,
+      "fields": 28,
+      "walls": 4,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 95,
+      "junctions": 15,
+      "neckCells": 12,
+      "articulations": 1,
+      "forcedRatio": 0.7037037037037037,
+      "longestForcedRun": 12,
+      "turns": 17,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 29,
+          "survivesMoves": 7
+        },
+        {
+          "step": 9,
+          "wrongCell": 17,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 4,
+      "score": 118.16229490957087
+    },
+    {
+      "id": "slink-fence-v1-061",
+      "n": 6,
+      "fields": 26,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 87,
+      "junctions": 12,
+      "neckCells": 14,
+      "articulations": 0,
+      "forcedRatio": 0.68,
+      "longestForcedRun": 12,
+      "turns": 12,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 14,
+          "survivesMoves": 3
+        },
+        {
+          "step": 5,
+          "wrongCell": 20,
+          "survivesMoves": 7
+        }
+      ],
+      "essentialFences": 3,
+      "score": 118.37829485591189
+    },
+    {
+      "id": "slink-fence-v1-062",
+      "n": 6,
+      "fields": 24,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 98,
+      "junctions": 15,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.6086956521739131,
+      "longestForcedRun": 4,
+      "turns": 12,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 5,
+          "wrongCell": 27,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 13,
+          "wrongCell": 20,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 118.670678555891
+    },
+    {
+      "id": "slink-fence-v1-063",
+      "n": 6,
+      "fields": 23,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 80,
+      "junctions": 15,
+      "neckCells": 7,
+      "articulations": 1,
+      "forcedRatio": 0.6363636363636364,
+      "longestForcedRun": 6,
+      "turns": 10,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 4,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 25,
+          "survivesMoves": 4
+        },
+        {
+          "step": 9,
+          "wrongCell": 19,
+          "survivesMoves": 9
+        }
+      ],
+      "essentialFences": 2,
+      "score": 119.11045909956297
+    },
+    {
+      "id": "slink-fence-v1-064",
+      "n": 6,
+      "fields": 26,
+      "walls": 4,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 69,
+      "junctions": 15,
+      "neckCells": 11,
+      "articulations": 0,
+      "forcedRatio": 0.6,
+      "longestForcedRun": 5,
+      "turns": 13,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 10,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 16,
+          "survivesMoves": 4
+        },
+        {
+          "step": 6,
+          "wrongCell": 16,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 4,
+      "score": 119.3878490508349
+    },
+    {
+      "id": "slink-fence-v1-065",
+      "n": 6,
+      "fields": 27,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 103,
+      "junctions": 19,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.6538461538461539,
+      "longestForcedRun": 7,
+      "turns": 15,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 3,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 11,
+          "survivesMoves": 10
+        },
+        {
+          "step": 17,
+          "wrongCell": 27,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 3,
+      "score": 119.75516530826943
+    },
+    {
+      "id": "slink-fence-v1-067",
+      "n": 6,
+      "fields": 36,
+      "walls": 7,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 200,
+      "junctions": 26,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.6857142857142857,
+      "longestForcedRun": 6,
+      "turns": 19,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 8,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 10,
+          "survivesMoves": 10
+        },
+        {
+          "step": 13,
+          "wrongCell": 27,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 7,
+      "score": 119.81029793067965
+    },
+    {
+      "id": "slink-fence-v1-068",
+      "n": 6,
+      "fields": 27,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 113,
+      "junctions": 19,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.5769230769230769,
+      "longestForcedRun": 6,
+      "turns": 16,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 15,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 28,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 32,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 120.0755931194173
+    },
+    {
+      "id": "slink-fence-v1-069",
+      "n": 6,
+      "fields": 26,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 97,
+      "junctions": 13,
+      "neckCells": 12,
+      "articulations": 1,
+      "forcedRatio": 0.6,
+      "longestForcedRun": 11,
+      "turns": 13,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 8,
+          "survivesMoves": 6
+        },
+        {
+          "step": 5,
+          "wrongCell": 13,
+          "survivesMoves": 10
+        },
+        {
+          "step": 11,
+          "wrongCell": 25,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 2,
+      "score": 120.84412953234562
+    },
+    {
+      "id": "slink-fence-v1-070",
+      "n": 6,
+      "fields": 29,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 135,
+      "junctions": 18,
+      "neckCells": 11,
+      "articulations": 0,
+      "forcedRatio": 0.6428571428571429,
+      "longestForcedRun": 8,
+      "turns": 16,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 10,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 3,
+      "score": 121.19095995232244
+    },
+    {
+      "id": "slink-fence-v1-071",
+      "n": 6,
+      "fields": 30,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 183,
+      "junctions": 22,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.6896551724137931,
+      "longestForcedRun": 7,
+      "turns": 19,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 18,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 20,
+          "wrongCell": 9,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 2,
+      "score": 121.32930655782621
+    },
+    {
+      "id": "slink-fence-v1-072",
+      "n": 6,
+      "fields": 36,
+      "walls": 7,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 197,
+      "junctions": 26,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.5714285714285714,
+      "longestForcedRun": 6,
+      "turns": 16,
+      "delayedWrongChoices": 3,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 7,
+          "wrongCell": 23,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 15,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 7,
+      "score": 124.60235557452455
+    },
+    {
+      "id": "slink-fence-v1-073",
+      "n": 6,
+      "fields": 23,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 57,
+      "junctions": 14,
+      "neckCells": 8,
+      "articulations": 2,
+      "forcedRatio": 0.7272727272727273,
+      "longestForcedRun": 7,
+      "turns": 13,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 6,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 27,
+          "survivesMoves": 4
+        },
+        {
+          "step": 6,
+          "wrongCell": 9,
+          "survivesMoves": 5
+        },
+        {
+          "step": 6,
+          "wrongCell": 21,
+          "survivesMoves": 5
+        },
+        {
+          "step": 7,
+          "wrongCell": 22,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 3,
+      "score": 130.3921248035645
+    },
+    {
+      "id": "slink-fence-v1-074",
+      "n": 6,
+      "fields": 27,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 96,
+      "junctions": 14,
+      "neckCells": 13,
+      "articulations": 0,
+      "forcedRatio": 0.7692307692307693,
+      "longestForcedRun": 13,
+      "turns": 13,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 29,
+          "survivesMoves": 10
+        },
+        {
+          "step": 11,
+          "wrongCell": 8,
+          "survivesMoves": 3
+        },
+        {
+          "step": 11,
+          "wrongCell": 20,
+          "survivesMoves": 5
+        },
+        {
+          "step": 12,
+          "wrongCell": 19,
+          "survivesMoves": 6
+        }
+      ],
+      "essentialFences": 2,
+      "score": 139.56896929579216
+    },
+    {
+      "id": "slink-fence-v1-076",
+      "n": 6,
+      "fields": 27,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 74,
+      "junctions": 14,
+      "neckCells": 12,
+      "articulations": 1,
+      "forcedRatio": 0.6923076923076923,
+      "longestForcedRun": 13,
+      "turns": 12,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 10,
+          "survivesMoves": 8
+        },
+        {
+          "step": 3,
+          "wrongCell": 9,
+          "survivesMoves": 9
+        },
+        {
+          "step": 11,
+          "wrongCell": 9,
+          "survivesMoves": 9
+        },
+        {
+          "step": 12,
+          "wrongCell": 15,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 3,
+      "score": 140.37876376379532
+    },
+    {
+      "id": "slink-fence-v1-077",
+      "n": 6,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 86,
+      "junctions": 13,
+      "neckCells": 10,
+      "articulations": 7,
+      "forcedRatio": 0.7083333333333334,
+      "longestForcedRun": 12,
+      "turns": 8,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 4,
+          "wrongCell": 4,
+          "survivesMoves": 8
+        },
+        {
+          "step": 5,
+          "wrongCell": 10,
+          "survivesMoves": 9
+        },
+        {
+          "step": 6,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        },
+        {
+          "step": 7,
+          "wrongCell": 22,
+          "survivesMoves": 9
+        }
+      ],
+      "essentialFences": 3,
+      "score": 140.62049715421284
+    },
+    {
+      "id": "slink-fence-v1-078",
+      "n": 6,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 98,
+      "junctions": 14,
+      "neckCells": 10,
+      "articulations": 1,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 6,
+      "turns": 16,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 24,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 25,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 21,
+          "survivesMoves": 4
+        },
+        {
+          "step": 13,
+          "wrongCell": 21,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 3,
+      "score": 143.26306986023883
+    },
+    {
+      "id": "slink-fence-v1-079",
+      "n": 6,
+      "fields": 26,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 88,
+      "junctions": 16,
+      "neckCells": 9,
+      "articulations": 2,
+      "forcedRatio": 0.68,
+      "longestForcedRun": 5,
+      "turns": 19,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 16,
+          "survivesMoves": 3
+        },
+        {
+          "step": 4,
+          "wrongCell": 27,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 20,
+          "survivesMoves": 7
+        },
+        {
+          "step": 14,
+          "wrongCell": 13,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 3,
+      "score": 143.4272002928992
+    },
+    {
+      "id": "slink-fence-v1-081",
+      "n": 6,
+      "fields": 29,
+      "walls": 4,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 123,
+      "junctions": 17,
+      "neckCells": 12,
+      "articulations": 0,
+      "forcedRatio": 0.7142857142857143,
+      "longestForcedRun": 17,
+      "turns": 17,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 3,
+          "wrongCell": 20,
+          "survivesMoves": 9
+        },
+        {
+          "step": 3,
+          "wrongCell": 13,
+          "survivesMoves": 10
+        },
+        {
+          "step": 6,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 7,
+          "wrongCell": 25,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 4,
+      "score": 144.00544607401775
+    },
+    {
+      "id": "slink-fence-v1-085",
+      "n": 6,
+      "fields": 27,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 112,
+      "junctions": 19,
+      "neckCells": 7,
+      "articulations": 3,
+      "forcedRatio": 0.6538461538461539,
+      "longestForcedRun": 7,
+      "turns": 15,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 14,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 4
+        },
+        {
+          "step": 7,
+          "wrongCell": 4,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 2,
+      "score": 145.1143830410917
+    },
+    {
+      "id": "slink-fence-v1-086",
+      "n": 6,
+      "fields": 29,
+      "walls": 5,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 143,
+      "junctions": 18,
+      "neckCells": 11,
+      "articulations": 0,
+      "forcedRatio": 0.6785714285714286,
+      "longestForcedRun": 6,
+      "turns": 15,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 3,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 10,
+          "survivesMoves": 7
+        },
+        {
+          "step": 2,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 13,
+          "survivesMoves": 7
+        }
+      ],
+      "essentialFences": 5,
+      "score": 145.54548929004122
+    },
+    {
+      "id": "slink-fence-v1-087",
+      "n": 6,
+      "fields": 26,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 99,
+      "junctions": 16,
+      "neckCells": 8,
+      "articulations": 3,
+      "forcedRatio": 0.6,
+      "longestForcedRun": 5,
+      "turns": 17,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 8,
+          "survivesMoves": 7
+        },
+        {
+          "step": 9,
+          "wrongCell": 15,
+          "survivesMoves": 3
+        },
+        {
+          "step": 13,
+          "wrongCell": 10,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 3,
+      "score": 145.93156856932418
+    },
+    {
+      "id": "slink-fence-v1-088",
+      "n": 6,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 125,
+      "junctions": 17,
+      "neckCells": 7,
+      "articulations": 1,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 8,
+      "turns": 11,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 2,
+          "wrongCell": 7,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 13,
+          "survivesMoves": 6
+        },
+        {
+          "step": 7,
+          "wrongCell": 13,
+          "survivesMoves": 9
+        },
+        {
+          "step": 8,
+          "wrongCell": 14,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 3,
+      "score": 146.30683977049975
+    },
+    {
+      "id": "slink-fence-v1-089",
+      "n": 6,
+      "fields": 28,
+      "walls": 3,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 162,
+      "junctions": 23,
+      "neckCells": 5,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 6,
+      "turns": 14,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 33,
+          "survivesMoves": 6
+        },
+        {
+          "step": 1,
+          "wrongCell": 26,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 14,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 3,
+      "score": 146.3795177960266
+    },
+    {
+      "id": "slink-fence-v1-090",
+      "n": 6,
+      "fields": 30,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 170,
+      "junctions": 20,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.5517241379310345,
+      "longestForcedRun": 4,
+      "turns": 15,
+      "delayedWrongChoices": 4,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        },
+        {
+          "step": 11,
+          "wrongCell": 27,
+          "survivesMoves": 3
+        },
+        {
+          "step": 12,
+          "wrongCell": 26,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 2,
+      "score": 147.46045409638182
+    },
+    {
+      "id": "slink-fence-v1-091",
+      "n": 6,
+      "fields": 25,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 85,
+      "junctions": 16,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.75,
+      "longestForcedRun": 15,
+      "turns": 8,
+      "delayedWrongChoices": 5,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 33,
+          "survivesMoves": 9
+        },
+        {
+          "step": 2,
+          "wrongCell": 20,
+          "survivesMoves": 4
+        },
+        {
+          "step": 2,
+          "wrongCell": 32,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 24,
+          "survivesMoves": 10
+        },
+        {
+          "step": 4,
+          "wrongCell": 20,
+          "survivesMoves": 4
+        }
+      ],
+      "essentialFences": 2,
+      "score": 166.5287942641063
+    },
+    {
+      "id": "slink-fence-v1-092",
+      "n": 6,
+      "fields": 30,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 133,
+      "junctions": 20,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.7241379310344828,
+      "longestForcedRun": 14,
+      "turns": 15,
+      "delayedWrongChoices": 5,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 11,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 17,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 21,
+          "survivesMoves": 6
+        },
+        {
+          "step": 3,
+          "wrongCell": 23,
+          "survivesMoves": 10
+        },
+        {
+          "step": 8,
+          "wrongCell": 25,
+          "survivesMoves": 3
+        }
+      ],
+      "essentialFences": 2,
+      "score": 167.09481929551126
+    },
+    {
+      "id": "slink-fence-v1-093",
+      "n": 6,
+      "fields": 29,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 178,
+      "junctions": 16,
+      "neckCells": 13,
+      "articulations": 0,
+      "forcedRatio": 0.7142857142857143,
+      "longestForcedRun": 8,
+      "turns": 15,
+      "delayedWrongChoices": 5,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 1,
+          "survivesMoves": 4
+        },
+        {
+          "step": 1,
+          "wrongCell": 8,
+          "survivesMoves": 8
+        },
+        {
+          "step": 3,
+          "wrongCell": 15,
+          "survivesMoves": 5
+        },
+        {
+          "step": 4,
+          "wrongCell": 2,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 15,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 2,
+      "score": 168.5943044746499
+    },
+    {
+      "id": "slink-fence-v1-094",
+      "n": 6,
+      "fields": 25,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 180,
+      "junctions": 17,
+      "neckCells": 8,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 8,
+      "turns": 14,
+      "delayedWrongChoices": 5,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 13,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 18,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 31,
+          "survivesMoves": 10
+        },
+        {
+          "step": 3,
+          "wrongCell": 32,
+          "survivesMoves": 10
+        },
+        {
+          "step": 13,
+          "wrongCell": 6,
+          "survivesMoves": 5
+        }
+      ],
+      "essentialFences": 2,
+      "score": 169.83287099458298
+    },
+    {
+      "id": "slink-fence-v1-095",
+      "n": 6,
+      "fields": 29,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 229,
+      "junctions": 17,
+      "neckCells": 11,
+      "articulations": 3,
+      "forcedRatio": 0.6428571428571429,
+      "longestForcedRun": 13,
+      "turns": 16,
+      "delayedWrongChoices": 5,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 25,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 14,
+          "survivesMoves": 9
+        },
+        {
+          "step": 4,
+          "wrongCell": 9,
+          "survivesMoves": 10
+        },
+        {
+          "step": 5,
+          "wrongCell": 15,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 2,
+      "score": 171.46504158140453
+    },
+    {
+      "id": "slink-fence-v1-096",
+      "n": 6,
+      "fields": 29,
+      "walls": 4,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 163,
+      "junctions": 18,
+      "neckCells": 10,
+      "articulations": 1,
+      "forcedRatio": 0.6428571428571429,
+      "longestForcedRun": 6,
+      "turns": 18,
+      "delayedWrongChoices": 5,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 3,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 8,
+          "survivesMoves": 10
+        },
+        {
+          "step": 9,
+          "wrongCell": 20,
+          "survivesMoves": 8
+        },
+        {
+          "step": 9,
+          "wrongCell": 15,
+          "survivesMoves": 5
+        },
+        {
+          "step": 13,
+          "wrongCell": 20,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 4,
+      "score": 172.00122744242566
+    },
+    {
+      "id": "slink-fence-v1-098",
+      "n": 6,
+      "fields": 25,
+      "walls": 2,
+      "pureFence": false,
+      "unique": true,
+      "searchNodes": 142,
+      "junctions": 16,
+      "neckCells": 9,
+      "articulations": 0,
+      "forcedRatio": 0.6666666666666666,
+      "longestForcedRun": 9,
+      "turns": 10,
+      "delayedWrongChoices": 6,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 4,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 11,
+          "survivesMoves": 4
+        },
+        {
+          "step": 9,
+          "wrongCell": 23,
+          "survivesMoves": 6
+        },
+        {
+          "step": 10,
+          "wrongCell": 22,
+          "survivesMoves": 7
+        },
+        {
+          "step": 11,
+          "wrongCell": 21,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 2,
+      "score": 195.81294734366853
+    },
+    {
+      "id": "slink-fence-v1-099",
+      "n": 5,
+      "fields": 25,
+      "walls": 3,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 231,
+      "junctions": 18,
+      "neckCells": 7,
+      "articulations": 0,
+      "forcedRatio": 0.625,
+      "longestForcedRun": 8,
+      "turns": 13,
+      "delayedWrongChoices": 6,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 13,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 7,
+          "survivesMoves": 5
+        },
+        {
+          "step": 1,
+          "wrongCell": 9,
+          "survivesMoves": 3
+        },
+        {
+          "step": 8,
+          "wrongCell": 18,
+          "survivesMoves": 10
+        },
+        {
+          "step": 9,
+          "wrongCell": 17,
+          "survivesMoves": 10
+        },
+        {
+          "step": 12,
+          "wrongCell": 16,
+          "survivesMoves": 8
+        }
+      ],
+      "essentialFences": 3,
+      "score": 196.9489429853827
+    },
+    {
+      "id": "slink-fence-v1-100",
+      "n": 6,
+      "fields": 36,
+      "walls": 5,
+      "pureFence": true,
+      "unique": true,
+      "searchNodes": 756,
+      "junctions": 26,
+      "neckCells": 10,
+      "articulations": 0,
+      "forcedRatio": 0.6285714285714286,
+      "longestForcedRun": 15,
+      "turns": 13,
+      "delayedWrongChoices": 6,
+      "maxWrongDepth": 10,
+      "examples": [
+        {
+          "step": 1,
+          "wrongCell": 20,
+          "survivesMoves": 10
+        },
+        {
+          "step": 1,
+          "wrongCell": 15,
+          "survivesMoves": 10
+        },
+        {
+          "step": 2,
+          "wrongCell": 12,
+          "survivesMoves": 10
+        },
+        {
+          "step": 11,
+          "wrongCell": 27,
+          "survivesMoves": 10
+        },
+        {
+          "step": 11,
+          "wrongCell": 22,
+          "survivesMoves": 10
+        },
+        {
+          "step": 12,
+          "wrongCell": 16,
+          "survivesMoves": 10
+        }
+      ],
+      "essentialFences": 5,
+      "score": 203.97816275567146
+    }
+  ]
+}

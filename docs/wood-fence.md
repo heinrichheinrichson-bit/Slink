@@ -17,3 +17,7 @@ User approved retaining the original garden fence in BOTH honey and chestnut. Ad
 
 ## Approved collection and per-puzzle consistency
 User approved all four designs × both wood tones: eight retained combinations. Each individual puzzle uses exactly ONE fence design and ONE wood colour across all its blocked edges. Variation happens between puzzles, never between spans/corners within a puzzle. Future selection should be stable by puzzle ID or explicit puzzle theme; redraw/restart must not reshuffle it. This supersedes the earlier pending visual review for the three additional designs. Existing catalogue data remains unchanged until fence-puzzle integration is requested.
+
+
+## Catalogue integration approved
+Following user approval,100 new fence puzzles are integrated into the main catalogue; original500 remain unchanged. See docs/fence-catalogue.md for generation, stable-ID progress migration and verification. The per-puzzle uniform design/tone rule is enforced by one explicit fence theme per level. All separate module studies remain available.
