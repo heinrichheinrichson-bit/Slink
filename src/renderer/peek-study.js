@@ -1,0 +1,18 @@
+import * as THREE from 'three';
+import {createFuzzyCreature} from './fuzzy-creature.js';
+import {createIvoryFrame} from './ivory-frame.js';
+import {createMeadowTile} from './meadow-variants.js';
+import {createFlowerGoal} from './flower-goals.js';
+import {createLivingLiquid} from './living-liquid.js';
+const canvas=document.getElementById('peekCanvas'),renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.88;
+const scene=new THREE.Scene();scene.add(new THREE.HemisphereLight('#fff6dc','#a28d6c',1.65));const sun=new THREE.DirectionalLight('#fff4dc',3.3);sun.position.set(-180,350,800);sun.target.position.set(200,-160,0);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-450,right:450,top:450,bottom:-450,near:1,far:1800});sun.shadow.bias=-.0003;sun.shadow.normalBias=.4;scene.add(sun,sun.target);const fill=new THREE.DirectionalLight('#d4e8ff',.4);fill.position.set(600,-200,500);scene.add(fill);
+const cells=[1,2,3,5,6,7,8,9,10,11,12,13,14,16,17,18,22],water=[8,9],frame=createIvoryFrame({n:5,cells,water,lava:[],stones:[],style:'soft'});scene.add(frame.group);const updates=[];
+for(const i of cells.filter(i=>!water.includes(i))){const tile=createMeadowTile(['classic','rich','flowers','tuft'][i%4],{seed:930+i});tile.group.position.set(i%5*80+40,-Math.floor(i/5)*80-40,0);scene.add(tile.group);updates.push(tile)}
+for(const op of frame.openings){const l=createLivingLiquid('water',{style:'sway',center:[200,-200]});const m=new THREE.Mesh(new THREE.ExtrudeGeometry(op.shape,{depth:2,bevelEnabled:false,curveSegments:20}),l.material);m.position.z=op.surfaceZ-2;scene.add(m);updates.push(l)}
+for(const [i,species]of [[6,'daisy'],[13,'poppy'],[17,'daisy']]){const f=createFlowerGoal({species,state:'bloom',insects:false});f.group.rotation.x=Math.PI/2;f.group.position.set(i%5*80+40,-Math.floor(i/5)*80-40,12);scene.add(f.group);updates.push(f)}
+const friend=createFuzzyCreature({presentation:'peek'});friend.setPalette('apricot');scene.add(friend.group);let scale=3.5,enabled=!matchMedia('(prefers-reduced-motion: reduce)').matches,greetAt=-1;
+function place(){friend.group.scale.setScalar(scale);friend.group.position.set(200,17*scale+7,3-8.65*scale)}place();friend.update(0,0,{active:false});
+const camera=new THREE.OrthographicCamera(-300,300,300,-300,1,2000);camera.up.set(0,0,1);camera.position.set(200,-660,1100);camera.lookAt(200,-155,10);
+function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);camera.left=-300*w/h;camera.right=300*w/h;camera.top=320;camera.bottom=-280;camera.updateProjectionMatrix()}new ResizeObserver(resize).observe(canvas);resize();
+document.getElementById('idle').checked=enabled;document.getElementById('idle').onchange=e=>enabled=e.target.checked;document.getElementById('palette').onchange=e=>friend.setPalette(e.target.value);document.getElementById('size').oninput=e=>{const percent=Number(e.target.value);scale=3.5*percent/100;place();document.getElementById('sizeValue').textContent=percent+' %'};document.getElementById('greet').onclick=()=>greetAt=performance.now()/1000;
+let last=0;function tick(ms){requestAnimationFrame(tick);if(document.hidden||ms-last<33)return;const t=ms/1000,dt=Math.min(.05,(ms-last)/1000);last=ms;friend.update(enabled?t:0,0,{active:false,peekGreetingAge:enabled&&greetAt>=0?t-greetAt:-1});updates.forEach(a=>a.update(enabled?t:0,dt));renderer.render(scene,camera)}requestAnimationFrame(tick);
