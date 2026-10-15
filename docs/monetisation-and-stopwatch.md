@@ -1,0 +1,13 @@
+# Advertising policy, hints and stopwatch
+
+Version0.1.8 is offline: no SDK, network advertising, billing or purchases. The default provider is absent and progression never waits for an ad. Additional hints require a successfully completed rewarded ad and are unavailable without a provider. Settings → Werbung testen · Entwicklung explicitly enables an in-memory test provider; it resets to off on reload. Test dialogs are labelled and cannot charge money.
+
+Policy ported from the local arrow.joy ad_policy.gd and Hex&Joy ads.js: first five distinct completions protected; thereafter BOTH four new distinct completions and360000ms active gameplay since an actual display. Only Next from a solved board can request interstitial; chapter/set boundaries and newly opened gardens protected. Menu, hidden app, paused prepared frame, dialogs, ad and completed board time excluded. No ad debt/queue. Rewarded displays also reset cadence. Saved stable puzzle IDs survive catalogue reordering. Old progress migrates grace completion IDs, without inventing new rounds.
+
+Each puzzle gets three free hints for its lifetime on this device. Reset/replay/leave/reload do not replenish. Extra credits come one at a time from rewarded completion; cancellation/unavailable/error adds none. Dead-end diagnostic alone is free; confirmed restart consumes a hint. Undo/manual movement remain free. No global two-hour refill copied from Hex&Joy because user explicitly chose per-puzzle three hints.
+
+Future native integration supplies window.SlinkAdProvider with synchronous available(kind), async show(kind) resolving {shown,rewarded}, and optional verified adFree:true. Rewarded must only be true on the SDK earned-reward callback; shown on actual display. No purchase entitlement is fabricated locally. Production provider wiring and store setup remain future work.
+
+Stopwatch starts once ready and visible, not on first move. Prewarm readiness alone does not start it; trusted wake does. Stops on logical completion, before the celebration delay. Pauses on dialogs, ad, app hidden and home return. Restart/new puzzle resets time; retained-frame home return resumes elapsed time. Saved visibility toggle does not stop timing. No ranking/best-time claims or physical S22 performance claims.
+
+Validation: full existing suite and economy.cjs passed. Economy tests cover grace, BOTH gates, boundaries, replay deduplication, persistent quotas, missing/cancelled/completed reward and stopwatch startup/pause/finish. Browser isolated preview verified three tips, fourth-tip dialog, unavailable video, reset no refill, test cancellation and exactly one reward. APK assemble/lint/signature/ZIP and critical assets checked. Native ad SDK and physical phone remain untested.

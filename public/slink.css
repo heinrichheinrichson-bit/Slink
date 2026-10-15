@@ -37,3 +37,5 @@
    Keep its layout so the card and surrounding controls never jump. */
 .playfield:has(> #win:not([hidden])) > #terrain3d,
 .playfield:has(> #win:not([hidden])) > #board{visibility:hidden;pointer-events:none}
+
+.puzzle-meta{position:relative;z-index:3;padding:0 28px;display:flex;justify-content:space-between;align-items:center;color:#704a2c;font-size:12px;margin:0 4px;min-height:22px}.puzzle-meta #puzzleClock{display:flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums;font-weight:600}.puzzle-meta #puzzleClock[hidden]{display:none}.puzzle-meta svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}#adHintDialog button,#adSimulation button{display:block;width:100%;margin-top:12px;padding:14px;border-radius:16px}

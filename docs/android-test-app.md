@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.7-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode8, versionName0.1.7-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.8-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode9, versionName0.1.8-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all600 puzzles and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -32,3 +32,6 @@ Update0.1.6: next-level-preparation.md. SHA256 AC009E9BC600C43DAE92F92CECE73AEBC
 
 
 Update0.1.7: keep the parent menu and its home renderer alive while playing. Trusted child Home messaging and history Back pause/hide the game and restore the existing shell; progress and category focus refresh from stable IDs. No menu navigation/reload on return. Lightweight menu-shell.js fills progress, Continue subtitle and gear handlers before the deferred 3D bundle. Bundled native-rendered home-preview.webp covers the first uncached launch; matching personalized cached previews still take precedence. WebP is explicitly packaged and served with image MIME. Visual designs and fur buffers unchanged. Browser Continue→Home and Continue→Back verified; physical S22 timing remains pending. SHA256 1FDC6303941F80EB5BFC4899DD8DEFBEF5D4951017AD29B48FC757E216E3D33C.
+
+
+Update0.1.8: offline advertising policy, persistent three-free-hints-per-puzzle, explicit test-ad option and ready/visible stopwatch. See monetisation-and-stopwatch.md. No actual ad or billing SDK. SHA256 E821157EC4326A2E82AAFA1F7E8076443C6598C68C620629A36750D271ADAC7A.
