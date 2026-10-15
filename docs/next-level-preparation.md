@@ -1,0 +1,9 @@
+# Prepared next level · 0.1.6
+
+On completion, preserve the current garden and its joy animation for the configured delay. Once the completion card is shown, schedule preparation after a paint opportunity. This deliberately avoids doing heavy synchronous construction during the visible character gesture.
+
+Renderer.prepare builds one detached next terrain root, initial earth and goals using the same existing WebGL renderer/lights. Screen shaders compile and geometry is uploaded via a128×128 offscreen render target. Current root, accepted path, creature rig/motion and progress are not replaced. The prepared state is retained separately; render target is disposed immediately. Animation/rendering of the covered current board pauses while the completion card is visible.
+
+On ordinary next load, adopt matching prepared root/targets/coins/liquids/tiles, dispose previous root resources, reframe camera, reset path normally and retain the existing character/context. No new iframe or character allocation per next puzzle. Cache limited to one future board; mismatched prepared root is disposed. Early click before cache exists retains normal load fallback. Epoch guard cancels scheduled preparation after undo/reset; final catalogue puzzle still opens picker. No future progress written during preparation.
+
+Browser tested two consecutive fence-level completions/adoptions. First observed prepared transition25ms (terrain7, final render18); second12ms (terrain9, render3). These are individual desktop observations, not device benchmarks. Hint/undo after adoption works, no browser error/warning messages in that check. Unit test checks delayed preparation, future outline, unchanged current/progress, cancellation and end-of-catalogue behaviour. Existing npm test suite passed; APK build/lint/signature/current assets andZIP verified. S22 transition time remains unverified.

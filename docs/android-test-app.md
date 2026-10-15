@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.5-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode6, versionName0.1.5-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.6-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode7, versionName0.1.6-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all600 puzzles and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -26,3 +26,6 @@ Update0.1.4: see touch-and-prewarm.md. SHA256 E13B1477A4F1D5B88D5522A5608023A1F8
 
 
 Update0.1.5: see loading correction in touch-and-prewarm.md. SHA256 B1997572AC3A5043738FF210E3260D62A5617BEE7634DC2963418460AF0EC1FE. Build/lint/signature, archive/current assets checked. Native device runtime/timings not verified.
+
+
+Update0.1.6: next-level-preparation.md. SHA256 AC009E9BC600C43DAE92F92CECE73AEBCAB9C0CC7BB8BE3CEF92302AF9ADA419. Build/lint/signature/archive/current assets verified.
