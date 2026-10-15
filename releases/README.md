@@ -1,10 +1,10 @@
 # SLINK Android test builds
 
-[Download SLINK0.1.8 test APK](SLINK-0.1.8-test.apk)
+[Download SLINK0.1.9 test APK](SLINK-0.1.9-test.apk)
 
 Signed test build for installation on Android8.1+. Includes600 puzzles and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
 
-SHA-256: E821157EC4326A2E82AAFA1F7E8076443C6598C68C620629A36750D271ADAC7A
+SHA-256: 4926B7D15ECBF9195F17902D66D8152F3DEE70099165286028CF8C9C00FEF2D0
 
 0.1.1 adds persistent menu background, optional predecessor highlight/strength and configurable completion wait. Same applicationId/signing key, higher versionCode2: designed to update0.1.0 without uninstalling. Previous build retained.
 
@@ -21,3 +21,5 @@ SHA-256: E821157EC4326A2E82AAFA1F7E8076443C6598C68C620629A36750D271ADAC7A
 0.1.7/versionCode8: retained home menu on game Home/history Back, lightweight startup metadata/gear, native scene fallback preview before live3D. Install as update without uninstalling. Phone timing to be tested.
 
 0.1.8/versionCode9: stopwatch from ready/visible puzzle; saved three free tips per puzzle plus rewarded credits. Offline ad policy matches arrow.joy/Hex&Joy cadence. No real ads/provider yet; development simulation opt-in only. Same signing identity, install as update.
+
+0.1.9/versionCode10: gameplay fits available viewport including stopwatch/hint row, controls and footer; camera fits remaining board area without stretching modules. Browser360x640/700/780 verified.

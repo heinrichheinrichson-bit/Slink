@@ -39,3 +39,11 @@
 .playfield:has(> #win:not([hidden])) > #board{visibility:hidden;pointer-events:none}
 
 .puzzle-meta{position:relative;z-index:3;padding:0 28px;display:flex;justify-content:space-between;align-items:center;color:#704a2c;font-size:12px;margin:0 4px;min-height:22px}.puzzle-meta #puzzleClock{display:flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums;font-weight:600}.puzzle-meta #puzzleClock[hidden]{display:none}.puzzle-meta svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}#adHintDialog button,#adSimulation button{display:block;width:100%;margin-top:12px;padding:14px;border-radius:16px}
+
+/* Reserve UI space first; the 3D camera fits the remaining viewport without stretching tiles. */
+body.catalogue .app{height:calc(100dvh - 44px);min-height:0;display:flex;flex-direction:column}
+body.catalogue .app>header,body.catalogue .app>.chapter,body.catalogue .app>.objectives,body.catalogue .app>.puzzle-meta,body.catalogue .app>.status,body.catalogue .app>.progress,body.catalogue .app>.controls,body.catalogue .app>footer{flex-shrink:0}
+body.catalogue .app>.playfield{flex:1 1 0;min-height:0;width:100%;max-width:none!important;margin:8px auto 0}
+body.catalogue .app #board{width:100%;height:100%}
+body.catalogue .app>footer{margin-top:12px;padding-top:0}
+@media(max-width:500px){body.catalogue .app{height:100dvh;min-height:0}}

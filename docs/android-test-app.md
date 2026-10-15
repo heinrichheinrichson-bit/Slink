@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.8-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode9, versionName0.1.8-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.9-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode10, versionName0.1.9-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all600 puzzles and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -35,3 +35,6 @@ Update0.1.7: keep the parent menu and its home renderer alive while playing. Tru
 
 
 Update0.1.8: offline advertising policy, persistent three-free-hints-per-puzzle, explicit test-ad option and ready/visible stopwatch. See monetisation-and-stopwatch.md. No actual ad or billing SDK. SHA256 E821157EC4326A2E82AAFA1F7E8076443C6598C68C620629A36750D271ADAC7A.
+
+
+Update0.1.9: gameplay layout now uses the available viewport height and reserves fixed UI rows before allocating the remaining space to the board. Removed effective inline fixed-height budget via scoped CSS max-width override; SVG/canvas share the actual remaining rectangle, and existing3D camera fit preserves tile shape. Dialogs/catalogue remain scrollable. Browser reproduced37px overflow at360x640 before fix. After fix scrollHeight equals innerHeight at360x640/700/780, footer within viewport. Verified small fence board and41-cell late board; screenshot screenshots/game-phone-fit.png. Native S22 not directly tested. SHA256 4926B7D15ECBF9195F17902D66D8152F3DEE70099165286028CF8C9C00FEF2D0.
