@@ -1,3 +1,4 @@
+import './bake-game-controls.mjs';
 import {build} from 'esbuild';
 const entries={
  'route-study-entry':'route-study',

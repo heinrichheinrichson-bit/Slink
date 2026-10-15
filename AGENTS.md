@@ -80,3 +80,5 @@
 - User approved predecessor brightening integration. Main renderer now brightens only previous meadow while holding gesture begun on figure/current cell, restores on release/cancel. Settings enable/strength10-50% default24%, persisted. completion-settings.js adds saved1-15s win delay default4.4s, applied on next completion. Main and route study share preferences. Existing test APK has not been rebuilt for these changes.
 
 - Android0.1.1-test/versionCode2 now includes approved highlight and completion-delay settings. Explicitly package completion-settings.js. Menu background persists validated sand/orange/original selection. Keep same package/signing identity for updates; previous APK retained.
+
+- Startup cleanup0.1.2: build bakes approved buttons directly into slink.html, no runtime game-ivory-controls skin swap in main. Main3D render skips SVG graphical construction; empty SVG remains as sizing/keyboard target and explicit fallback retains legacy drawing. Preserve shared CSS and archives. Server48321 now intentionally serves canonical public via scripts/serve.cjs. APK versionCode3.
