@@ -52,8 +52,8 @@ public class MainActivity extends Activity {
      if(path!=null&&path.startsWith("/assets/")){
       String asset=path.substring(8);
       if(!asset.contains("..")&&!asset.startsWith("/")&&!asset.contains("\\")){
-       String mime=asset.endsWith(".html")?"text/html":asset.endsWith(".css")?"text/css":asset.endsWith(".js")?"application/javascript":asset.endsWith(".png")?"image/png":asset.endsWith(".svg")?"image/svg+xml":"text/plain";
-       try{return new WebResourceResponse(mime,mime.equals("image/png")?null:"UTF-8",getAssets().open(asset));}catch(IOException ignored){}
+       String mime=asset.endsWith(".html")?"text/html":asset.endsWith(".css")?"text/css":asset.endsWith(".js")?"application/javascript":asset.endsWith(".webp")?"image/webp":asset.endsWith(".png")?"image/png":asset.endsWith(".svg")?"image/svg+xml":"text/plain";
+       try{return new WebResourceResponse(mime,mime.startsWith("image/")?null:"UTF-8",getAssets().open(asset));}catch(IOException ignored){}
       }
      }
     }
