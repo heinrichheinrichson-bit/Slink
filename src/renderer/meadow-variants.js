@@ -10,7 +10,7 @@ export const MEADOW_VARIANTS={
 };
 /** All variants retain the exact approved grass-clover surface, material and dimensions. */
 export function createMeadowTile(id,{seed=73}={}){
- let v=MEADOW_VARIANTS[id];if(!v)throw Error('Unknown meadow '+id);let group=createTile('grass-clover',{seed}),base=group.children.find(o=>o.userData.surface),discard=new THREE.Group();for(let child of [...group.children])if(child!==base)discard.add(child);disposeTile(discard);
+ let v=MEADOW_VARIANTS[id];if(!v)throw Error('Unknown meadow '+id);let group=createTile('grass-clover',{seed,surfaceOnly:true}),base=group.children.find(o=>o.userData.surface),discard=new THREE.Group();for(let child of [...group.children])if(child!==base)discard.add(child);disposeTile(discard);
  let rnd=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296),sphere=new THREE.SphereGeometry(1,12,8),mat=c=>new THREE.MeshStandardMaterial({color:c,roughness:.75}),leaves=[mat('#d3f471'),mat('#b1e443'),mat('#87bf24')],animations=[];
  const add=(geo,m,x,y,z)=>{let o=new THREE.Mesh(geo,m);o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;group.add(o);return o};
  function leaf(x,y,z,angle,length=3.3,width=2.6){let o=add(sphere,leaves[1],x,y,z);o.scale.set(length,width,.85);o.rotation.z=angle;return o}

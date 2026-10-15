@@ -82,3 +82,5 @@
 - Android0.1.1-test/versionCode2 now includes approved highlight and completion-delay settings. Explicitly package completion-settings.js. Menu background persists validated sand/orange/original selection. Keep same package/signing identity for updates; previous APK retained.
 
 - Startup cleanup0.1.2: build bakes approved buttons directly into slink.html, no runtime game-ivory-controls skin swap in main. Main3D render skips SVG graphical construction; empty SVG remains as sizing/keyboard target and explicit fallback retains legacy drawing. Preserve shared CSS and archives. Server48321 now intentionally serves canonical public via scripts/serve.cjs. APK versionCode3.
+
+- Performance0.1.3: lazy grown meadows, exact surfaceOnly meadow bases, batched earth geometry by material; preserve material/shape. Menu static header controls, cached home snapshot tied to friend settings, bounded per-chapter cachedWebP keyed by progress, queued uncached generation and lazy thumbnail GL context. First uncached scenes still need construction. Desktop timing not a phone guarantee. See docs/performance-startup.md.

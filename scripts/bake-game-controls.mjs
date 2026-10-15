@@ -11,5 +11,6 @@ for(const [id,action,compact] of [['home','home',true],['settings','settings',tr
  page=page.replace(regex,(_,tag,attrs)=>{attrs=attrs.replace(/\stype="[^"]*"/g,'').replace(/\sclass="[^"]*"/g,'').replace(/\sdata-(?:action|variant|gold|engraved|deep)="[^"]*"/g,'');const opening=skin.slice(0,skin.indexOf('>')).replace('<button','<'+tag).replace(/ aria-label="[^"]*"/,'');return opening+attrs+'>'+skin.slice(skin.indexOf('>')+1,-9)+'</'+tag+'>'});
 }
 page=page.replace('<script type="module" src="game-ivory-controls.js"></script>','');
-await writeFile(path,page);delete globalThis.document;
+await writeFile(path,page);const menuPath=new URL('../public/gartenstudio.html',import.meta.url);let menu=await readFile(menuPath,'utf8');for(const [slot,action]of [['backSlot','undo'],['settingsSlot','settings']]){const skin=html(createIvoryControl({action,compact:true,variant:'satin',engraved:true}));menu=menu.replace(new RegExp('<div id="'+slot+'">[\\s\\S]*?</div>'),'<div id="'+slot+'">'+skin+'</div>')}await writeFile(menuPath,menu);
+delete globalThis.document;
 console.log('Baked approved controls into main HTML.');
