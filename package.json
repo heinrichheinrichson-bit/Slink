@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "SLINK: plastisches Garten-Puzzlespiel mit 500 geprüften Rätseln.",
+  "description": "SLINK: plastisches Garten-Puzzlespiel mit 1200 gepr\u00fcften R\u00e4tseln.",
   "scripts": {
     "start": "node scripts/serve.cjs",
     "build": "node scripts/build.mjs",
-    "test": "node tests/solver-reference.cjs && node tests/catalogue.cjs && node tests/game.cjs && node tests/materials.mjs && node tests/meadows.mjs && node tests/liquids.mjs && node tests/ivory-frame.mjs && node tests/stones.mjs && node tests/rock-groups.mjs && node tests/flowers.mjs && node tests/decoration-plan.mjs && node tests/visitor-settings.cjs && node tests/worm.mjs && node tests/fuzzy-creature.mjs && node tests/paw-gait.mjs && node tests/direct-follow.mjs && node tests/centre-transition.mjs && node tests/coat-surface.mjs && node tests/celebration.mjs && node tests/game-creature-motion.mjs && node tests/wood-fence.mjs && node tests/fence-solver-reference.cjs && node tests/fence-catalogue.cjs && node tests/catalogue-progress.cjs && node tests/chapter-landscapes.mjs && node tests/peek-pose.mjs && node tests/route-cue.mjs && node tests/meadow-highlight.mjs && node tests/completion-delay.cjs && node tests/startup-cleanup.cjs && node tests/batch-terrain.mjs && node tests/touch-grid.mjs && node tests/prewarm.cjs && node tests/fur-data.mjs && node tests/next-preparation.cjs && node tests/economy.cjs && node tests/meadow-extra.mjs && node tests/meadow-distribution-study.mjs && node tests/game-meadow-plan.mjs && node tests/fence-birds.mjs && node tests/game-fence-bird-plan.mjs",
+    "test": "node tests/solver-reference.cjs && node tests/catalogue.cjs && node tests/game.cjs && node tests/materials.mjs && node tests/meadows.mjs && node tests/liquids.mjs && node tests/ivory-frame.mjs && node tests/stones.mjs && node tests/rock-groups.mjs && node tests/flowers.mjs && node tests/decoration-plan.mjs && node tests/visitor-settings.cjs && node tests/worm.mjs && node tests/fuzzy-creature.mjs && node tests/paw-gait.mjs && node tests/direct-follow.mjs && node tests/centre-transition.mjs && node tests/coat-surface.mjs && node tests/celebration.mjs && node tests/game-creature-motion.mjs && node tests/wood-fence.mjs && node tests/fence-solver-reference.cjs && node tests/fence-catalogue.cjs && node tests/catalogue-expansion.cjs && node tests/catalogue-progress.cjs && node tests/chapter-landscapes.mjs && node tests/peek-pose.mjs && node tests/route-cue.mjs && node tests/meadow-highlight.mjs && node tests/completion-delay.cjs && node tests/startup-cleanup.cjs && node tests/batch-terrain.mjs && node tests/touch-grid.mjs && node tests/prewarm.cjs && node tests/fur-data.mjs && node tests/next-preparation.cjs && node tests/economy.cjs && node tests/meadow-extra.mjs && node tests/meadow-distribution-study.mjs && node tests/game-meadow-plan.mjs && node tests/fence-birds.mjs && node tests/game-fence-bird-plan.mjs",
     "catalogue:generate": "node scripts/generate-catalogue.cjs",
-    "catalogue:fences": "node scripts/generate-fence-catalogue.cjs"
+    "catalogue:fences": "node scripts/generate-fence-catalogue.cjs",
+    "catalogue:expand": "node scripts/generate-expansion-fences.cjs && node scripts/assemble-expansion.cjs"
   },
   "dependencies": {
     "three": "0.180.0"

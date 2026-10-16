@@ -8,7 +8,7 @@ android {
 }
 
 tasks.register('syncWebAssets', Sync) {
- from('../../public') { include 'gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-design.js','completion-settings.js','touch-settings.js','game-prewarm.js','ad-policy.js','game-economy.js','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
+ from('../../public') { include 'gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-expansion-levels.js','slink-design.js','completion-settings.js','touch-settings.js','game-prewarm.js','ad-policy.js','game-economy.js','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
  from('../../THIRD_PARTY_THREE_LICENSE.txt')
  into(layout.buildDirectory.dir('generated/webAssets'))
 }

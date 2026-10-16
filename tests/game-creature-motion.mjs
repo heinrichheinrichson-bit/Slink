@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import vm from 'node:vm';
 import {GameCreatureMotion} from '../src/renderer/game-creature-motion.js';
-const ctx={};vm.createContext(ctx);vm.runInContext(fs.readFileSync('public/slink-levels.js','utf8')+fs.readFileSync('public/slink-fence-levels.js','utf8')+';this.levels=LEVELS',ctx);
+const ctx={};vm.createContext(ctx);vm.runInContext(fs.readFileSync('public/slink-levels.js','utf8')+fs.readFileSync('public/slink-fence-levels.js','utf8')+fs.readFileSync('public/slink-expansion-levels.js','utf8')+';this.levels=LEVELS',ctx);
 const motion=new GameCreatureMotion();let time=0;
 for(const level of ctx.levels){
  motion.sync(level,[],time);let path=[];
@@ -11,4 +11,4 @@ for(const level of ctx.levels){
  path.pop();motion.sync(level,path,time);assert.equal(motion.joyStarted,-1,'undo cancels joy');time+=.3;let pose=motion.sample(time);assert.equal(pose.cell,path.at(-1));assert.equal(pose.x,path.at(-1)%level.n*80+60);
  motion.sync(level,[],time);assert.equal(motion.sample(time).celebrationAge,-1,'reset clears joy');time+=1;
 }
-console.log('PASS: creature follows all 600 accepted routes, rests centred, preserves celebration on redraw, faces player and cancels on undo/reset.');
+console.log('PASS: creature follows all 1200 accepted routes, rests centred, preserves celebration on redraw, faces player and cancels on undo/reset.');
