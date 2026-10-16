@@ -142,3 +142,7 @@
 - User authorizes APK testing of head-lift/dance plus all zoom controls, screenshot values145%/1.8s/.6s. Integrated test settings in rules: enabled, strength100-160,duration.3-4,delay0-3,reset; persisted separately for main/preview. Complete head rig now used by game, disabled retains normal original pose/dance. Camera inclination/light unchanged; card minimum7.4s with animation. Android0.1.10-test/code11 retains package/signing identity. Prior studies retained.
 
 - Finale zoom correction: user wants final creature centred in picture, including edge/bottom goal cells. Interpolate orthographic frustum centre to projected creature face while narrowing by selected zoom; preserve camera pose/light.100% remains no zoom/no reframe. New test APK0.1.11/code12.
+
+- Wiesenvielfalt continued at user request: study-only meadow-extra.js exports moss/fine/pearls/cloverNest built on unchanged approved classic/calm base. Four extra cardsG-J and mixed9-cell preview, real reusable modules. Original six/approved game distribution untouched. No APK this study.
+
+- Wiesenvielfalt extension now five candidatesG-K including flutter butterfly and subtle fine-grass sway; mixed preview includes butterfly. Study-only, original six/main variants unchanged. Shared original leaf colours and grass base.
