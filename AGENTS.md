@@ -158,3 +158,5 @@
 - User approves current meadow study and distribution for GAME integration. game-meadow-plan.js now assigns all14 modules via deterministic40% floral/75% clustering plan on sorted walkable cells excluding goal cells, calm goal ground preserves flower/creature clearance. Stable seed/WeakMap, no puzzle data/IDs/rules changed. Existing water/lava/stone/fences unchanged. No APK requested for this meadow integration yet. Next requested review is existing fence workshop.
 
 - User authorizes bird fence STUDY with maxONE bird per puzzle. fence-birds.js reusable optional wrapper retains exact fence geometry/walls/posts and attaches one animated mesh bird to one post. rails sparrow/picket robin/cross blue tit/logs wren, both wood tones; checkbox in existing zaunwerkstatt. Main/detail independent fixtures eachmax1. Calm breathing/blink/headlook/rare feather shake; no main integration or APK yet.
+
+- Bird study adds brief1.9s lift/flap/lightturn and return to same post, inner flight rig leaves root fence anchor fixed. Replay button plus first demonstration after~3s and long20-26s pauses. Maxonebird remains, no game integration.

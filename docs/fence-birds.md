@@ -5,3 +5,6 @@ Separate study in zaunwerkstatt.html. Native reusable createFenceBird and create
 One bird attaches to one shared post. No movement of fences, blocked edges or cells. Main board and detail comparison are independent fixtures, each has at mostone bird. Future game rule: at mostONE bird in the whole puzzle, some puzzles without. Not integrated into game yet.
 
 Breathing, irregularly scheduled seeded head look, blink and occasional small wing/tail movement; feet stay on post. Seeded API permits stable per-puzzle assignment. Geometry/fence invariants tested in tests/fence-birds.mjs. Both wood colours and all designs/toggle visually checked in browser.
+
+
+Flutter revision:1.9s bounded lift (13 local units), modest yaw and wing beats, return to exact same post. Native flight group includes feet/body/head. Manual flutter() and study replay button; automatic demonstration with20–26s quiet gaps. Fixed outer anchor, one bird rule unchanged. Test covers rise/turn/return.
