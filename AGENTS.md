@@ -128,3 +128,5 @@
 - Spacing study D compact: preview-only fixed seed/bloom anchor(-18,-10), blossom contents85% width/depth and62% height via inner group, existing bloom animation intact. Same test puzzle, defaults D; A/B/C retained. Main flower modules/default game unchanged.
 
 - User earmarked D compact flower spacing, not main integration. New separate kamerawerkstatt.html tests finish camera approach from top-down to lower frontal view, complete unchanged creature and fixed meadow garden, gentle joy held facing player. Height/zoom/duration/heading/palette/replay/pause controls. No head-only transforms, no progress writes or main integration.
+
+- Separate kamera-test.html uses actual puzzle4 preview with camera-finale flag. On centred final arrival,2.5s camera position/quaternion/frustum interpolation approaches creature; completion card waits8.5s only in this preview. Reset restores normal camera. Main defaults/rules untouched; no APK.
