@@ -154,3 +154,5 @@
 - Clarified scope: harmony requirement applies to ENTIRE MEADOW COMPOSITION across all meadow combinations. Water/lava/stone already satisfactory; do not alter them. Same basegreen, locally varied nonidentical flowers, coherent at most2 main flower species per study garden, calm fields and max2 insect tiles in5x5. Subtle seeded flower lean added; retained modules untouched in fundus.
 
 - Harmonious study baseline chosen:40% floral fields/75% clustering, at most1 insect field per5x5, two main flower species. Regler remain available; no water/lava/stone or game catalogue changes. Supersedes prior48%/max2 study defaults.
+
+- User approves current meadow study and distribution for GAME integration. game-meadow-plan.js now assigns all14 modules via deterministic40% floral/75% clustering plan on sorted walkable cells excluding goal cells, calm goal ground preserves flower/creature clearance. Stable seed/WeakMap, no puzzle data/IDs/rules changed. Existing water/lava/stone/fences unchanged. No APK requested for this meadow integration yet. Next requested review is existing fence workshop.
