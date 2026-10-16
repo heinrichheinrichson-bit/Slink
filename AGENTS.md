@@ -124,3 +124,5 @@
 - Flower-spacing clarification: seed fixes bloom position permanently; neither heading, arrival nor leaving may relocate it. Creature rests at cell centre. Separate study now compares original, fixed front-left and fixed back-left anchors, applied identically to seed/blossom and neighbours. Arrival-dependent option removed as invalid. Growth selector permits direct seed/bloom comparison. No main integration.
 
 - Separate bluetenabstand-test.html embeds actual game in isolated preview with fixed catalogue puzzle4. B front-left/C back-left/A original comparison restarts same puzzle. flower-anchor is honored only with preview; main defaults unchanged. Fixed bud/blossom local anchors, unchanged marker and centred creature. No APK.
+
+- Spacing study D compact: preview-only fixed seed/bloom anchor(-18,-10), blossom contents85% width/depth and62% height via inner group, existing bloom animation intact. Same test puzzle, defaults D; A/B/C retained. Main flower modules/default game unchanged.
