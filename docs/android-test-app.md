@@ -48,3 +48,8 @@ Includes current browser work and full-head rise followed by gentle joy on the f
 ## 0.1.11-test (versionCode 12)
 
 Finale zoom now eases the view centre to the final creature face instead of retaining its former screen position. Camera orientation/lighting and saved strength/duration/delay unchanged.100% retains unmodified view. Offline build/lint/signature verified.
+
+
+## 0.1.12-test (versionCode 13)
+
+Includes integrated14 meadow variants/40% clustered floral distribution and optional animated fence birds (73/100 fence puzzles, maxone). Species follows fence design. Ground visits select nearby walkable non-goal fields with quiet meadow, use offcentre positions, variable3.5–8s stays/look/pecks and early return for current/adjacent logical player path. Actual growing-ground height tracked. Long quiet gaps; no automatic pure flutter. Prior head-lift/joy/centred zoom settings retained. Package/signing unchanged; offline assemble/lint/signature verified. No physical-phone performance claim.

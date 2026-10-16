@@ -17,3 +17,6 @@ Ground-visit study:groundVisit() samples an optional safe world-space groundTarg
 
 
 Latest preferred behaviour:ground stays3.5–8s, varied eligible neighbour cells and four offcentre placements, slow looking around and spaced pecks. Automatic ground visits28–42s apart replace automatic pure flutter. groundTargets/isUnsafe/returnToPerch accept integration-supplied eligibility. Study candidate cells8/9/12/13 form the four neighbouring fields around the chosen perch; current/adjacent pathhead blocks landing and triggers early return. Annäherung simulieren provides manual review. Interrupted outbound return begins at actual position; no jump. Tests verify variable cells/durations and unsafe/early-return continuity. Still study-only.
+
+
+Game integration approved:game-fence-bird-plan.js selects73 of100 fence puzzles, one bird each, nearest eligible non-goal quiet meadow cells around a real shared post. Species matches explicit fence design, no wall/data changes. Renderer preserves bird state across next-board preparation/adoption and follows grown terrain heights. Current/adjacent accepted pathhead forces early return; completion prevents ground trips. Included in APK0.1.12-test.
