@@ -51,3 +51,11 @@ body.catalogue .app>footer{margin-top:12px;padding-top:0}
 .puzzle-meta{justify-content:flex-end}.controls #hint{position:relative}.controls #hint .hint-badge{position:absolute;right:10px;top:8px;min-width:18px;height:18px;padding:0 4px;border-radius:50%;display:grid;place-items:center;background:#e9d3ab;color:#704a2c;font-size:10px;line-height:1;font-variant-numeric:tabular-nums}.status p[data-quiet="true"]{visibility:hidden}
 
 .catalogue .chapter #levelButton{text-align:left;letter-spacing:0;max-width:68%}.catalogue #levelButton strong{display:block;font-size:12px;line-height:1.35}.catalogue #levelButton small{display:block;font-size:10px;line-height:1.5;font-weight:600}body.catalogue .app>footer{display:none}
+
+/* A small reward scene; preserve full board coverage behind the card. */
+.win{inset:0;border-radius:28px;background:#fff1d7;overflow:hidden;padding:12px 18px}
+.win-art{position:relative;width:100%;height:clamp(80px,17dvh,160px);flex-shrink:1;min-height:65px}.win-art img{width:100%;height:100%;object-fit:contain}.win h2{font-size:clamp(22px,4vw,28px);margin:4px 0 6px}.win p{font-size:12px;margin:0 0 8px}.win-time{font-size:12px;font-variant-numeric:tabular-nums;color:#94704e;margin-bottom:4px}.win #next{margin:6px 0;padding:12px 35px}.win #replay{margin:2px;padding:8px}.win-petal{position:absolute;width:8px;height:13px;border-radius:70% 30% 70% 30%;background:#edc869;left:20%;top:5%;animation:petal-fall 5s ease-in-out infinite;opacity:0}.win-petal:nth-of-type(2){left:75%;animation-delay:1.6s;background:#ebad99}.win-petal:nth-of-type(3){left:55%;animation-delay:3.1s}@keyframes petal-fall{15%{opacity:.65}85%{opacity:.45}100%{transform:translate(18px,100px) rotate(130deg);opacity:0}}
+
+.win{top:50%;bottom:auto;height:max(100%,310px);transform:translateY(-50%)}.win-art{min-height:95px;max-height:130px}.win-petal{pointer-events:none}@media(prefers-reduced-motion:reduce){.win-petal{display:none}}
+
+body.catalogue .app:has(#win:not([hidden]))>.puzzle-meta,body.catalogue .app:has(#win:not([hidden]))>.status,body.catalogue .app:has(#win:not([hidden]))>.progress{visibility:hidden}
