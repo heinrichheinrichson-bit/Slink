@@ -164,3 +164,5 @@
 - User clarifies bird should fly farther away and land again. Study flight now3.6s curved excursion38 local units sideways/~23 high, return to original perch, smooth turn, maxone and long quiet intervals unchanged.
 
 - Bird study ground visit: optional groundTarget callback/groundVisit API, off-centre field position22/18 from cellcentre (study maincell9, no goal), curved outbound1.8s,2.8s irregular peck pauses, different2s return arc to same post. Maxone. Separate study only: future integration must choose currently safe walkable non-goal positions clear of centred creature and changing surface heights. Naturalness awaits user judgement.
+
+- User prefers ground visits, variable longer3.5–8s stays, different eligible neighbour cells and fixed offcentre positions per visit, looking around; early return when figure approaches. Study groundTargets/isUnsafe/returnToPerch APIs now select among fixture walkable cells8/9/12/13, reject current/adjacent pathhead, and simulate approach button. Calm auto ground visits28–42s apart, pure auto flutter disabled when ground targets exist. Midflight early return starts from actual current pose. No game integration yet.

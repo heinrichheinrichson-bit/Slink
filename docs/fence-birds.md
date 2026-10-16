@@ -14,3 +14,6 @@ Latest study:3.6s outward curved flight38units to the side/23units high, gentle 
 
 
 Ground-visit study:groundVisit() samples an optional safe world-space groundTarget callback. Fixture maincell9 offset22/18 (centre stays free), detailfield0 offset20/20.1.8s cubic outbound,2.8s ground pauses with three varied pecks,2s distinct return. Heading follows curve with gradual turning. Height callback follows earth/meadow surface. User has not yet judged naturalness; no game integration. Future real puzzle assignment must consider goals, creature clearance and terrain.
+
+
+Latest preferred behaviour:ground stays3.5–8s, varied eligible neighbour cells and four offcentre placements, slow looking around and spaced pecks. Automatic ground visits28–42s apart replace automatic pure flutter. groundTargets/isUnsafe/returnToPerch accept integration-supplied eligibility. Study candidate cells8/9/12/13 form the four neighbouring fields around the chosen perch; current/adjacent pathhead blocks landing and triggers early return. Annäherung simulieren provides manual review. Interrupted outbound return begins at actual position; no jump. Tests verify variable cells/durations and unsafe/early-return continuity. Still study-only.
