@@ -162,3 +162,5 @@
 - Bird study adds brief1.9s lift/flap/lightturn and return to same post, inner flight rig leaves root fence anchor fixed. Replay button plus first demonstration after~3s and long20-26s pauses. Maxonebird remains, no game integration.
 
 - User clarifies bird should fly farther away and land again. Study flight now3.6s curved excursion38 local units sideways/~23 high, return to original perch, smooth turn, maxone and long quiet intervals unchanged.
+
+- Bird study ground visit: optional groundTarget callback/groundVisit API, off-centre field position22/18 from cellcentre (study maincell9, no goal), curved outbound1.8s,2.8s irregular peck pauses, different2s return arc to same post. Maxone. Separate study only: future integration must choose currently safe walkable non-goal positions clear of centred creature and changing surface heights. Naturalness awaits user judgement.

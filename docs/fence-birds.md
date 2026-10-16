@@ -11,3 +11,6 @@ Flutter revision:1.9s bounded lift (13 local units), modest yaw and wing beats, 
 
 
 Latest study:3.6s outward curved flight38units to the side/23units high, gentle turnaround then return to same perch. Supersedes small stationary flutter.
+
+
+Ground-visit study:groundVisit() samples an optional safe world-space groundTarget callback. Fixture maincell9 offset22/18 (centre stays free), detailfield0 offset20/20.1.8s cubic outbound,2.8s ground pauses with three varied pecks,2s distinct return. Heading follows curve with gradual turning. Height callback follows earth/meadow surface. User has not yet judged naturalness; no game integration. Future real puzzle assignment must consider goals, creature clearance and terrain.
