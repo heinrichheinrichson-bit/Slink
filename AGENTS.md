@@ -134,3 +134,5 @@
 - User rejected camera finale and requests animation ON the field with fixed game camera. Separate kopfwerkstatt.html and study-only head-lift-creature.js partition original combined fur index draw ranges into body/head, sharing unchanged vertices/materials, and move complete skull/base/face/head fur/antennae around skull pivot. Original fuzzy-creature.js/main unchanged. Tilt/duration/static inspection scale and heading/palette controls; no camera animation or APK.
 
 - Head-lift study correction: preserve gentle joy dance after head rise, with lifted skull throughout dance and settled player-facing end. Fixed camera remains. Prior head-only preview omitted joy unintentionally; main unchanged.
+
+- User requests playable head-rise+dance test: kopf-test.html enables preview-only head-finale rig on real puzzle4. Camera fixed; centred arrival then .9s lead/1.5s full head lift/gentle dance, held lifted head and final player-facing pose.8.5s card delay only preview. Normal game retains original creature module.
