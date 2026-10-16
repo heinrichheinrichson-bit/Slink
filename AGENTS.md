@@ -130,3 +130,5 @@
 - User earmarked D compact flower spacing, not main integration. New separate kamerawerkstatt.html tests finish camera approach from top-down to lower frontal view, complete unchanged creature and fixed meadow garden, gentle joy held facing player. Height/zoom/duration/heading/palette/replay/pause controls. No head-only transforms, no progress writes or main integration.
 
 - Separate kamera-test.html uses actual puzzle4 preview with camera-finale flag. On centred final arrival,2.5s camera position/quaternion/frustum interpolation approaches creature; completion card waits8.5s only in this preview. Reset restores normal camera. Main defaults/rules untouched; no APK.
+
+- User rejected camera finale and requests animation ON the field with fixed game camera. Separate kopfwerkstatt.html and study-only head-lift-creature.js partition original combined fur index draw ranges into body/head, sharing unchanged vertices/materials, and move complete skull/base/face/head fur/antennae around skull pivot. Original fuzzy-creature.js/main unchanged. Tilt/duration/static inspection scale and heading/palette controls; no camera animation or APK.
