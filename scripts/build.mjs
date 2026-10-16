@@ -1,6 +1,7 @@
 import './bake-game-controls.mjs';
 import {build} from 'esbuild';
 const entries={
+ 'completion-study':'abschlusswerkstatt',
  'win-portrait':'win-portrait',
  'route-study-entry':'route-study',
  'peek-study':'neugierwerkstatt',
