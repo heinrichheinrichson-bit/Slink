@@ -136,3 +136,5 @@
 - Head-lift study correction: preserve gentle joy dance after head rise, with lifted skull throughout dance and settled player-facing end. Fixed camera remains. Prior head-only preview omitted joy unintentionally; main unchanged.
 
 - User requests playable head-rise+dance test: kopf-test.html enables preview-only head-finale rig on real puzzle4. Camera fixed; centred arrival then .9s lead/1.5s full head lift/gentle dance, held lifted head and final player-facing pose.8.5s card delay only preview. Normal game retains original creature module.
+
+- User requests small adjustable zoom in kopf-test.html: preview-only strength100-160(default115), duration.3-4s(default1.8), delay0-3s(default.6), saved in study-only key. Same-origin parent messages validated/clamped, immediate adjustable frustum zoom anchored on final creature, camera position/orientation/light unchanged; resets with puzzle. Head lift/dance retained; normal game unchanged.
