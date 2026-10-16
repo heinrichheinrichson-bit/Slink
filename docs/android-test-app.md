@@ -43,3 +43,8 @@ Update0.1.9: gameplay layout now uses the available viewport height and reserves
 ## 0.1.10-test (versionCode 11)
 
 Includes current browser work and full-head rise followed by gentle joy on the final cell. In-game gear > Abschlussanimation · Test provides enabled toggle, zoom100–160%, duration0.3–4s, delay0–3s and reset. Defaults145%/1.8s/0.6s. Preferences persist on device. Camera orientation and lighting stay unchanged; animation enforces minimum7.4s before card, longer chosen delays respected. Same app.slink.garden/debug signing identity; update existing install without uninstalling. Built offline with lint and signature verification. No physical S22 performance claim.
+
+
+## 0.1.11-test (versionCode 12)
+
+Finale zoom now eases the view centre to the final creature face instead of retaining its former screen position. Camera orientation/lighting and saved strength/duration/delay unchanged.100% retains unmodified view. Offline build/lint/signature verified.

@@ -140,3 +140,5 @@
 - User requests small adjustable zoom in kopf-test.html: preview-only strength100-160(default115), duration.3-4s(default1.8), delay0-3s(default.6), saved in study-only key. Same-origin parent messages validated/clamped, immediate adjustable frustum zoom anchored on final creature, camera position/orientation/light unchanged; resets with puzzle. Head lift/dance retained; normal game unchanged.
 
 - User authorizes APK testing of head-lift/dance plus all zoom controls, screenshot values145%/1.8s/.6s. Integrated test settings in rules: enabled, strength100-160,duration.3-4,delay0-3,reset; persisted separately for main/preview. Complete head rig now used by game, disabled retains normal original pose/dance. Camera inclination/light unchanged; card minimum7.4s with animation. Android0.1.10-test/code11 retains package/signing identity. Prior studies retained.
+
+- Finale zoom correction: user wants final creature centred in picture, including edge/bottom goal cells. Interpolate orthographic frustum centre to projected creature face while narrowing by selected zoom; preserve camera pose/light.100% remains no zoom/no reframe. New test APK0.1.11/code12.
