@@ -98,3 +98,5 @@
 -0.1.9: gameplay must fit usable viewport without page scrolling. body.catalogue .app uses viewport-height flex; fixed UI rows do not shrink; playfield takes remaining rectangle and SVG/canvas fill it. Existing camera fit preserves terrain shape. Do not restore fixed350px budget as effective sizing. Dialog/catalogue scroll retained. Browser360x640/700/780 verified; no physicalS22 measurement.
 
 - Browser-only copy cleanup approved2026-10-16: remove menu-study banner/three home decorative sentences/development wording; hint remaining count baked into hint button, normal move/status chatter visually quiet, retain invalid-move guidance. Completion copy and test tools unchanged. No APK requested/built; latest APK remains0.1.9 and predates this browser cleanup.
+
+- Garden labels now use sequential15-set display order (including Erste Schritte and interleaved fence gardens), not legacy chapter1B/2B metadata. Game header shows garden name + Garten N · Rätsel X/Y; redundant bottom label hidden. Picker labels match; IDs/data/progress unchanged. Browser-only, no APK requested.
