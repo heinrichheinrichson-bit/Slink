@@ -152,3 +152,5 @@
 - Flower community requirement: adjacent fields must not look like clones. New floral extras vary5–7 flowers, arrangement rotation/jitter, bloom height/petal phase/size deterministically per field seed; coherent species/palette and identical base retained. No random redraw.
 
 - Clarified scope: harmony requirement applies to ENTIRE MEADOW COMPOSITION across all meadow combinations. Water/lava/stone already satisfactory; do not alter them. Same basegreen, locally varied nonidentical flowers, coherent at most2 main flower species per study garden, calm fields and max2 insect tiles in5x5. Subtle seeded flower lean added; retained modules untouched in fundus.
+
+- Harmonious study baseline chosen:40% floral fields/75% clustering, at most1 insect field per5x5, two main flower species. Regler remain available; no water/lava/stone or game catalogue changes. Supersedes prior48%/max2 study defaults.
