@@ -1,10 +1,10 @@
 # SLINK Android test builds
 
-[Download SLINK0.1.9 test APK](SLINK-0.1.9-test.apk)
+[Download SLINK 0.1.13 test APK](SLINK-0.1.13-test.apk)
 
-Signed test build for installation on Android8.1+. Includes600 puzzles and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
+Signed test build for installation on Android8.1+. Includes1200 puzzles in29 gardens and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
 
-SHA-256: 4926B7D15ECBF9195F17902D66D8152F3DEE70099165286028CF8C9C00FEF2D0
+SHA-256: E17E54DA9B35DCFE9BABBADB3190E07C685F9EE8273766FA15220A27BB5B7812
 
 0.1.1 adds persistent menu background, optional predecessor highlight/strength and configurable completion wait. Same applicationId/signing key, higher versionCode2: designed to update0.1.0 without uninstalling. Previous build retained.
 
@@ -23,3 +23,5 @@ SHA-256: 4926B7D15ECBF9195F17902D66D8152F3DEE70099165286028CF8C9C00FEF2D0
 0.1.8/versionCode9: stopwatch from ready/visible puzzle; saved three free tips per puzzle plus rewarded credits. Offline ad policy matches arrow.joy/Hex&Joy cadence. No real ads/provider yet; development simulation opt-in only. Same signing identity, install as update.
 
 0.1.9/versionCode10: gameplay fits available viewport including stopwatch/hint row, controls and footer; camera fits remaining board area without stretching modules. Browser360x640/700/780 verified.
+
+0.1.13/versionCode14:1200 certified puzzles in29 reordered gardens (500 total fence puzzles), preserved existing puzzle IDs/progress; persisted developer unlimited-hint mode, no credit consumption or ads while enabled. Same package/signing identity. Settings → Entwicklung · Tipps & Werbung → Unbegrenzte Tipps. Install as update without uninstalling; browser and app settings remain separate. Build/lint/signature and bundled-source checks passed; phone playtest pending.
