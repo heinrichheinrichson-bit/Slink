@@ -126,3 +126,5 @@
 - Separate bluetenabstand-test.html embeds actual game in isolated preview with fixed catalogue puzzle4. B front-left/C back-left/A original comparison restarts same puzzle. flower-anchor is honored only with preview; main defaults unchanged. Fixed bud/blossom local anchors, unchanged marker and centred creature. No APK.
 
 - Spacing study D compact: preview-only fixed seed/bloom anchor(-18,-10), blossom contents85% width/depth and62% height via inner group, existing bloom animation intact. Same test puzzle, defaults D; A/B/C retained. Main flower modules/default game unchanged.
+
+- User earmarked D compact flower spacing, not main integration. New separate kamerawerkstatt.html tests finish camera approach from top-down to lower frontal view, complete unchanged creature and fixed meadow garden, gentle joy held facing player. Height/zoom/duration/heading/palette/replay/pause controls. No head-only transforms, no progress writes or main integration.
