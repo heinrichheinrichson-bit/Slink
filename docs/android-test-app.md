@@ -38,3 +38,8 @@ Update0.1.8: offline advertising policy, persistent three-free-hints-per-puzzle,
 
 
 Update0.1.9: gameplay layout now uses the available viewport height and reserves fixed UI rows before allocating the remaining space to the board. Removed effective inline fixed-height budget via scoped CSS max-width override; SVG/canvas share the actual remaining rectangle, and existing3D camera fit preserves tile shape. Dialogs/catalogue remain scrollable. Browser reproduced37px overflow at360x640 before fix. After fix scrollHeight equals innerHeight at360x640/700/780, footer within viewport. Verified small fence board and41-cell late board; screenshot screenshots/game-phone-fit.png. Native S22 not directly tested. SHA256 4926B7D15ECBF9195F17902D66D8152F3DEE70099165286028CF8C9C00FEF2D0.
+
+
+## 0.1.10-test (versionCode 11)
+
+Includes current browser work and full-head rise followed by gentle joy on the final cell. In-game gear > Abschlussanimation · Test provides enabled toggle, zoom100–160%, duration0.3–4s, delay0–3s and reset. Defaults145%/1.8s/0.6s. Preferences persist on device. Camera orientation and lighting stay unchanged; animation enforces minimum7.4s before card, longer chosen delays respected. Same app.slink.garden/debug signing identity; update existing install without uninstalling. Built offline with lint and signature verification. No physical S22 performance claim.
