@@ -8,3 +8,6 @@ Breathing, irregularly scheduled seeded head look, blink and occasional small wi
 
 
 Flutter revision:1.9s bounded lift (13 local units), modest yaw and wing beats, return to exact same post. Native flight group includes feet/body/head. Manual flutter() and study replay button; automatic demonstration with20–26s quiet gaps. Fixed outer anchor, one bird rule unchanged. Test covers rise/turn/return.
+
+
+Latest study:3.6s outward curved flight38units to the side/23units high, gentle turnaround then return to same perch. Supersedes small stationary flutter.
