@@ -146,3 +146,5 @@
 - Wiesenvielfalt continued at user request: study-only meadow-extra.js exports moss/fine/pearls/cloverNest built on unchanged approved classic/calm base. Four extra cardsG-J and mixed9-cell preview, real reusable modules. Original six/approved game distribution untouched. No APK this study.
 
 - Wiesenvielfalt extension now five candidatesG-K including flutter butterfly and subtle fine-grass sway; mixed preview includes butterfly. Study-only, original six/main variants unchanged. Shared original leaf colours and grass base.
+
+- User explicitly approves retaining/importing ALL meadow A-K (original six plus five extras), future game distribution should form flower communities. Further studyL-N: six-flower cream/pink nests, lavender bells, yellow stars. Separate seeded5x5 distribution tool adjusts flower share/clustering with coherent species islands; stable by garden seed, no random re-entry. NewL-N awaiting review and distribution tuning before catalogue assignment. Static extra previews release GL contexts after native render; all remain real reusable mesh modules.
