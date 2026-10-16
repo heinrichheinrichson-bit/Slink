@@ -148,3 +148,7 @@
 - Wiesenvielfalt extension now five candidatesG-K including flutter butterfly and subtle fine-grass sway; mixed preview includes butterfly. Study-only, original six/main variants unchanged. Shared original leaf colours and grass base.
 
 - User explicitly approves retaining/importing ALL meadow A-K (original six plus five extras), future game distribution should form flower communities. Further studyL-N: six-flower cream/pink nests, lavender bells, yellow stars. Separate seeded5x5 distribution tool adjusts flower share/clustering with coherent species islands; stable by garden seed, no random re-entry. NewL-N awaiting review and distribution tuning before catalogue assignment. Static extra previews release GL contexts after native render; all remain real reusable mesh modules.
+
+- Flower community requirement: adjacent fields must not look like clones. New floral extras vary5–7 flowers, arrangement rotation/jitter, bloom height/petal phase/size deterministically per field seed; coherent species/palette and identical base retained. No random redraw.
+
+- Clarified scope: harmony requirement applies to ENTIRE MEADOW COMPOSITION across all meadow combinations. Water/lava/stone already satisfactory; do not alter them. Same basegreen, locally varied nonidentical flowers, coherent at most2 main flower species per study garden, calm fields and max2 insect tiles in5x5. Subtle seeded flower lean added; retained modules untouched in fundus.
