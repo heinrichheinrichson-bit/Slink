@@ -1,15 +1,21 @@
 {
-  "reserved": [
+  "retainedDesigns": [
     "quietApricot",
     "quietIvory",
     "quietGarden",
-    "wood"
-  ],
-  "candidates": [
+    "wood",
     "nativeClover",
     "nativePetals",
     "nativePebbles"
   ],
+  "retainedColourVariants": [
+    "original",
+    "apricot",
+    "ivory",
+    "sage"
+  ],
+  "candidates": [],
   "integration": "study-only",
-  "unlockSystem": "not-implemented"
+  "unlockSystem": "not-implemented",
+  "note": "All eleven explicitly retained by the user; earlier unselected material studies remain archived."
 }
