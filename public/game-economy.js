@@ -6,7 +6,7 @@
  function active(){return ready&&!paused&&!document.hidden&&!finished&&!busy&&!document.querySelector('dialog[open]')}
  function sync(){const now=performance.now();if(last!==null){const delta=Math.max(0,now-last);elapsed+=delta;state.activeMs+=delta}last=active()?now:null;paint()}
  function format(ms){const s=Math.floor(ms/1000);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
- function paint(){if($('puzzleTime')){$('puzzleTime').textContent=format(elapsed);$('puzzleClock').hidden=!visible}if(current&&$('hintBalance')){const n=P.remaining(state,current.id);$('hintBalance').textContent=n+(n===1?' Tipp verfügbar':' Tipps verfügbar')}}
+ function paint(){if($('puzzleTime')){$('puzzleTime').textContent=format(elapsed);$('puzzleClock').hidden=!visible}if(current&&$('hintBalance')){const n=P.remaining(state,current.id);$('hintBalance').textContent=n;$('hint')?.setAttribute('aria-label','Tipp · '+n+' verfügbar')}}
  function unavailable(){ $('adHintStatus').textContent='Gerade ist kein Werbevideo verfügbar. Du kannst jederzeit selbst weiterpuzzeln.' }
  let settle;
  function simulated(kind){return new Promise(resolve=>{settle=resolve;$('adSimulationTitle').textContent=kind==='rewarded'?'Testvideo · +1 Tipp':'Testanzeige';$('adSimulation').showModal()})}
