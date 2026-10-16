@@ -1,0 +1,15 @@
+{
+  "reserved": [
+    "quietApricot",
+    "quietIvory",
+    "quietGarden",
+    "wood"
+  ],
+  "candidates": [
+    "nativeClover",
+    "nativePetals",
+    "nativePebbles"
+  ],
+  "integration": "study-only",
+  "unlockSystem": "not-implemented"
+}

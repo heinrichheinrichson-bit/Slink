@@ -1,6 +1,7 @@
 import './bake-game-controls.mjs';
 import {build} from 'esbuild';
 const entries={
+ 'native-background-studies':'native-background-studies',
  'game-completion':'game-completion',
  'completion-study':'abschlusswerkstatt',
  'win-portrait':'win-portrait',
