@@ -192,3 +192,5 @@
 - Sound preview C 'Blüte → Antwort des Wesens' added: adjustable fade start/duration/residual harp plus existing finale delay/volumes, saved study-only. Default1.2s/.8s/10%, Level Up03 at2.4s. A/B retained. Final audio choice still under comparison.
 
 - Sound/animation study now compares long and quick1.6/2sec total. Dedicated klang-test-game.js fixture timing only; main slink.js unchanged. Preview-gated compact gesture/head lift/short zoom in renderer, unchanged default celebration styles. Quick final harp.45s, response at.45s, LevelUp03 excerpts.78/1.18s with fade. Originals retained for long comparison. Await user judgement; no main timing/APK integration.
+
+- User supplied phone video confirms ~7.4s last move→card and clarifies that is the MAX sound window. Active klang-test now measured7.4s/full existing animation/full Harp+LevelUp03, screenshot zoom160/1.1/.6; no additional wait or sped-up gesture. Quick experiments archived in collapsed selector, not active. v2 study prefs migrate volume/fades but default measured/C. Main/APK unchanged.
