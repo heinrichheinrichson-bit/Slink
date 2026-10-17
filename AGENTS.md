@@ -178,3 +178,5 @@
 - Klangwerkstatt D now uses actual recorded grass rustle, locally stored CC0 HQ MP3 by TheSupremeMuffinPooter (source/license public/audio/README.md). User wanted hand-through-grass feel, rejected synthetic A-C but asked to retain them. Sample excerpts only in D, soft fades/low-pass/offset variation; browser load verified. Separate study, no main game/APK integration.
 
 - Sound direction correction: no ASMR, whispered/repeated rubbing or crackling. D grass is rejected, retain as labelled comparison only. E/F new movement-only short clean contacts, no noise/sample playback/sweeps or bloom/finale in these modes. New study prefs v2 defaultE; old studies/settings preserved. Await user audio judgement, main/APK unchanged.
+
+- User explicitly retains E/F sound experiments. New G bubble/H glass-tick/I soft-wupp added to separate Klangwerkstatt; movement-only, all previous options preserved, no gameplay/APK integration.
