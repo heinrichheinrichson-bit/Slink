@@ -10,3 +10,10 @@
 - Retrieved: 2026-10-17
 
 The author describes gently moving hands through dry wheatgrass, recorded with a Zoom H5. This is a compressed rendition, not the original WAV. Source bytes retained unchanged. Study playback uses short overlapping excerpts, gain fades, mild playback-rate variation and a4400Hz low-pass filter. Not yet integrated into the main game or APK. Attribution is retained even though CC0 does not require it.
+
+## User-provided bloom candidates
+
+- wink-dink.mp3: exact bytes from user-supplied 710735__justjooning__wink-dink.mp3. Creator justjooning. Source https://freesound.org/people/justjooning/sounds/710735/ . CC0 https://creativecommons.org/publicdomain/zero/1.0/ . Source page license verified2026-10-17.
+- harp-glissando.wav: exact bytes from user-supplied 610703__oggraphics__good-answer-harp-glissando.wav. Creator oggraphics. Source https://freesound.org/people/oggraphics/sounds/610703/ . CC0 https://creativecommons.org/publicdomain/zero/1.0/ . Source page license verified2026-10-17.
+
+Both retained intact for comparison in the separate workshop. Full playback at original speed/pitch, only small click-prevention fades and adjustable output volume. These files are not approved for game integration merely by being test candidates.

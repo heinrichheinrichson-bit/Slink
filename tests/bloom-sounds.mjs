@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';import {BloomSounds} from '../public/bloom-sounds.js';
+const parameter=()=>({setValueAtTime(){},linearRampToValueAtTime(){},setTargetAtTime(){}});let fetched=0,started=0,stopped=0;
+globalThis.fetch=async()=>{fetched++;return {ok:true,arrayBuffer:async()=>new ArrayBuffer(2)}};
+globalThis.AudioContext=class{constructor(){this.currentTime=0;this.state='running';this.destination={}}createGain(){return {gain:parameter(),connect(){},disconnect(){}}}async decodeAudioData(){return {duration:2}}createBufferSource(){return {connect(){},disconnect(){},start(){started++},stop(){stopped++;this.onended?.()}}}};
+const b=new BloomSounds();assert.equal(b.play(),false);await b.unlock();assert.equal(fetched,1);assert(b.play());await b.unlock();assert.equal(fetched,1);b.choice='harp';await b.unlock();assert.equal(fetched,2);assert(b.play());assert.equal(b.voices.size,1);b.stop();assert.equal(b.voices.size,0);assert.equal(started,2);assert(stopped>=2);console.log('PASS both bloom files decode/cache, full sample playback, prior voice cancellation and cleanup');
