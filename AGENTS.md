@@ -186,3 +186,5 @@
 - Harp Glissando is provisionally chosen BLOOM sound. Seven supplied clips added as separate completion-study candidates, own selector/volume/last-cell trigger. Happy Harp CC BY-NC stays local ignored (do not package/publish as commercial asset); others CC0 or CC BY with credits public/audio/README.md. All still study-only; no game/APK integration requested.
 
 - User selected Level Up03 completion. Real animation+sound preview klang-test.html/klang-test-spiel.html: Harp bloom, Level Up03 on actual centred celebration at default2.4s dance start. Volume/timing controls, automatic real-path demo and stop/reset. Preview-only copied actual game, main sources/APK unchanged. Do not integrate beyond study without authorization.
+
+- Klang-test A/B completion selector: A only Level Up03 on last field, B last blossom Harp plus Level Up03 at selected delay. Earlier blooms unchanged. Both retained for user comparison; no final selection/integration yet.
