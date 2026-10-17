@@ -176,3 +176,5 @@
 - New separate Klangwerkstatt: klangwerkstatt.html, procedural garden-sounds.js and sound-workshop.js. Three selectable sound sketches, volume persistence, individual actions plus cardinal4x4 test garden. User gesture audio unlock, rapid-step throttle/voice bounds, stop on hidden. Not approved for gameplay/APK integration; final audio direction awaits user judgement. See docs/sound-workshop.md.
 
 - Klangwerkstatt D now uses actual recorded grass rustle, locally stored CC0 HQ MP3 by TheSupremeMuffinPooter (source/license public/audio/README.md). User wanted hand-through-grass feel, rejected synthetic A-C but asked to retain them. Sample excerpts only in D, soft fades/low-pass/offset variation; browser load verified. Separate study, no main game/APK integration.
+
+- Sound direction correction: no ASMR, whispered/repeated rubbing or crackling. D grass is rejected, retain as labelled comparison only. E/F new movement-only short clean contacts, no noise/sample playback/sweeps or bloom/finale in these modes. New study prefs v2 defaultE; old studies/settings preserved. Await user audio judgement, main/APK unchanged.
