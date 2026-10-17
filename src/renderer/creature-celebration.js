@@ -2,6 +2,11 @@
 export function sampleCelebration(age=-1,style='hops'){
  const smooth=x=>{x=Math.max(0,Math.min(1,x));return x*x*x*(x*(x*6-15)+10)};
  const zero={active:false,lift:0,tuck:0,happy:0,look:0,squash:0,pollen:0,antenna:0,pitch:0,roll:0,turnStep:0};if(age<0||age>3.7)return zero;
+ if(style==='compact'){
+  if(age>1.25)return zero;
+  const rise=smooth(age/.22)*(1-smooth((age-.65)/.55));
+  return {...zero,active:true,look:smooth(age/.55),happy:rise,tuck:rise*.6,lift:rise*.25,pitch:-rise*.018,roll:Math.sin(age*5)*rise*.012,antenna:rise*.18,squash:rise*.008};
+ }
  if(style==='gentle'){
   const rise=smooth((age-.75)/.55)*(1-smooth((age-2.5)/.65));
   const sway=rise*Math.sin((age-.85)*7)*.018;

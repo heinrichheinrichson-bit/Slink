@@ -190,3 +190,5 @@
 - Klang-test A/B completion selector: A only Level Up03 on last field, B last blossom Harp plus Level Up03 at selected delay. Earlier blooms unchanged. Both retained for user comparison; no final selection/integration yet.
 
 - Sound preview C 'Blüte → Antwort des Wesens' added: adjustable fade start/duration/residual harp plus existing finale delay/volumes, saved study-only. Default1.2s/.8s/10%, Level Up03 at2.4s. A/B retained. Final audio choice still under comparison.
+
+- Sound/animation study now compares long and quick1.6/2sec total. Dedicated klang-test-game.js fixture timing only; main slink.js unchanged. Preview-gated compact gesture/head lift/short zoom in renderer, unchanged default celebration styles. Quick final harp.45s, response at.45s, LevelUp03 excerpts.78/1.18s with fade. Originals retained for long comparison. Await user judgement; no main timing/APK integration.
