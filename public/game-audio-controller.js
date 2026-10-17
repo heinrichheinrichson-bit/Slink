@@ -1,0 +1,16 @@
+export const AUDIO_DEFAULTS={enabled:true,master:1,bloom:.45,finish:.45,tail:.1,delay:2.4,fadeStart:1.2,fadeDuration:.8};
+export function audioSettings(value={}){if(!value||typeof value!=='object')value={};const s={...AUDIO_DEFAULTS};if(typeof value.enabled==='boolean')s.enabled=value.enabled;for(const k of ['master','bloom','finish','tail'])if(Number.isFinite(value[k]))s[k]=Math.max(0,Math.min(1,value[k]));for(const [k,min,max]of [['delay',0,4],['fadeStart',0,4],['fadeDuration',.1,3]])if(Number.isFinite(value[k]))s[k]=Math.max(min,Math.min(max,value[k]));return s}
+/** Selected sounds only. Neither game timing nor movement is changed. */
+export class GameAudio{
+ constructor({bloom,finish,settings={},active=()=>true,clock=()=>performance.now(),schedule=(fn,ms)=>globalThis.setTimeout(fn,ms),unschedule=id=>globalThis.clearTimeout(id)}){Object.assign(this,{bloom,finish,active,clock,schedule,unschedule});this.settings=audioSettings(settings);this.generation=0;this.timers=[];this.unlocked=false;this.celebrating=false;this.fading=false;this.apply()}
+ apply(){const s=this.settings;this.bloom.volume=s.enabled?s.master*s.bloom:0;this.finish.volume=s.enabled?s.master*s.finish:0;for(const [sound,factor]of [[this.bloom,this.fading?s.tail:1],[this.finish,1]])if(sound.context&&sound.output){const g=sound.output.gain,t=sound.context.currentTime;g.cancelScheduledValues(t);g.setTargetAtTime(sound.volume*factor,t,.025)}}
+ configure(value){this.settings=audioSettings({...this.settings,...value});if(!this.settings.enabled)this.cancel();this.apply()}
+ async unlock(){if(!this.settings.enabled||!this.active())return false;await Promise.all([this.bloom.unlock(),this.finish.unlock()]);this.unlocked=true;this.apply();return true}
+ run(fn){if(!this.settings.enabled||!this.active())return;const token=this.generation,go=()=>{if(token===this.generation&&this.settings.enabled&&this.active()){try{fn()}catch(error){this.cancel();this.onError?.(error)}}};if(this.unlocked&&[this.bloom,this.finish].every(s=>s.context?.state==='running'))go();else this.unlock().then(go).catch(()=>{})}
+ later(fn,ms){const token=this.generation;this.timers.push(this.schedule(()=>{if(token===this.generation&&this.settings.enabled&&this.active()){try{fn()}catch(error){this.cancel();this.onError?.(error)}}},Math.max(0,ms)))}
+ cancel(){this.generation++;this.timers.forEach(this.unschedule);this.timers=[];this.bloom.stop();this.finish.stop();this.celebrating=false;this.fading=false}
+ load(){this.cancel();this.apply()}
+ blossom({final=false}={}){this.run(()=>{this.fading=false;this.apply();this.bloom.play();if(final)this.later(()=>{this.fading=true;const g=this.bloom.output.gain,t=this.bloom.context.currentTime;g.cancelScheduledValues(t);g.setValueAtTime(g.value,t);g.linearRampToValueAtTime(this.bloom.volume*this.settings.tail,t+this.settings.fadeDuration)},this.settings.fadeStart*1000)})}
+ celebration(age){if(age<0){this.celebrating=false;return}if(this.celebrating||age>4||!this.settings.enabled||!this.active())return;this.celebrating=true;const received=this.clock();this.run(()=>this.later(()=>this.finish.play(),(this.settings.delay-age)*1000-(this.clock()-received)))}
+ preview(kind){this.run(()=>{this.cancel();this.apply();(kind==='bloom'?this.bloom:this.finish).play()})}
+}

@@ -1,0 +1,9 @@
+# Selected game audio
+
+User authorized provisional integration after reviewing sound/animation study C. Harp Glissando (oggraphics, CC0) accompanies each goal bloom; Level Up03 (mokasza, CC BY4.0) responds on actual centred completion, default2.4s after arrival. Final harp fades starting1.2s over.8s to10% of its selected volume. Full recordings, no speed/pitch change, no movement sound. Animation and completion-card timing remain unchanged.
+
+Permanent `Ton einschalten` toggle belongs in the finished game. Saved master, bloom, completion and tail-relative-volume sliders remain available for tuning. Separate collapsible temporary fade-start/duration/response-delay controls and individual preview buttons. Credits under Klangnachweise and audio/selected-sounds.txt.
+
+Settings use slink-game-audio-v1 and isolated slink-game-audio-preview-v1. First use imports existing study volumes/fades if present; all values validated/clamped. Muting keeps levels saved and stops pending/playing sounds. Source files are local/offline. Web Audio unlock follows user gestures, decoding cached per sample. No audio allocation during hidden prewarm. Load/undo/backtracking/home/background/card visibility cancel pending voices; stale decode/timer generation guards prevent later replay. Actual renderer celebrationAge triggers the response once, so it follows centred arrival. Runtime audio failures are isolated from game progression.
+
+Functional checks: full npm test, tests/game-audio.mjs (levels, mute, full play, fade/response timing, pause and errors), tests/game-audio-hooks.cjs (actual goal/load/undo hooks). Browser verifies persistence across reload, route unchanged by sliders, completed actual puzzle and no console errors. Android0.1.14/code15 assets/signature verified. All studies and former sounds retained separately.
