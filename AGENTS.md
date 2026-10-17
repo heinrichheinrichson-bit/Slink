@@ -184,3 +184,5 @@
 - User asks to TEST supplied Wink-Dink (justjooning710735) and Harp Glissando (oggraphics610703) for blooming. Added separate bloom selection/volume and two garden triggers in Klangwerkstatt; all movement studies retained. Source pages CC0 verified; attribution public/audio/README.md. No gameplay/APK integration authorized yet.
 
 - Harp Glissando is provisionally chosen BLOOM sound. Seven supplied clips added as separate completion-study candidates, own selector/volume/last-cell trigger. Happy Harp CC BY-NC stays local ignored (do not package/publish as commercial asset); others CC0 or CC BY with credits public/audio/README.md. All still study-only; no game/APK integration requested.
+
+- User selected Level Up03 completion. Real animation+sound preview klang-test.html/klang-test-spiel.html: Harp bloom, Level Up03 on actual centred celebration at default2.4s dance start. Volume/timing controls, automatic real-path demo and stop/reset. Preview-only copied actual game, main sources/APK unchanged. Do not integrate beyond study without authorization.
