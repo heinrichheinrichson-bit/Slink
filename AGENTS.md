@@ -174,3 +174,5 @@
 - Test APK0.1.13/code14 packages1200 catalogue and saved developer Unlimited hints checkbox in Entwicklung · Tipps & Werbung. Separate main/preview storage keys, default off. Enabled skips credit spending/reward prompts and Next interstitials; disabling restores unspent normal balance. Keep test-only for publication.
 
 - New separate Klangwerkstatt: klangwerkstatt.html, procedural garden-sounds.js and sound-workshop.js. Three selectable sound sketches, volume persistence, individual actions plus cardinal4x4 test garden. User gesture audio unlock, rapid-step throttle/voice bounds, stop on hidden. Not approved for gameplay/APK integration; final audio direction awaits user judgement. See docs/sound-workshop.md.
+
+- Klangwerkstatt D now uses actual recorded grass rustle, locally stored CC0 HQ MP3 by TheSupremeMuffinPooter (source/license public/audio/README.md). User wanted hand-through-grass feel, rejected synthetic A-C but asked to retain them. Sample excerpts only in D, soft fades/low-pass/offset variation; browser load verified. Separate study, no main game/APK integration.
