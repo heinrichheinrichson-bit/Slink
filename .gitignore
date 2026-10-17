@@ -15,3 +15,6 @@ android/local.properties
 *.keystore
 *.jks
 !releases/*.apk
+
+# Noncommercial candidate: local study only, not redistributed.
+public/audio/happy-harp.wav

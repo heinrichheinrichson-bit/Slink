@@ -182,3 +182,5 @@
 - User explicitly retains E/F sound experiments. New G bubble/H glass-tick/I soft-wupp added to separate Klangwerkstatt; movement-only, all previous options preserved, no gameplay/APK integration.
 
 - User asks to TEST supplied Wink-Dink (justjooning710735) and Harp Glissando (oggraphics610703) for blooming. Added separate bloom selection/volume and two garden triggers in Klangwerkstatt; all movement studies retained. Source pages CC0 verified; attribution public/audio/README.md. No gameplay/APK integration authorized yet.
+
+- Harp Glissando is provisionally chosen BLOOM sound. Seven supplied clips added as separate completion-study candidates, own selector/volume/last-cell trigger. Happy Harp CC BY-NC stays local ignored (do not package/publish as commercial asset); others CC0 or CC BY with credits public/audio/README.md. All still study-only; no game/APK integration requested.
