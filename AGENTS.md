@@ -188,3 +188,5 @@
 - User selected Level Up03 completion. Real animation+sound preview klang-test.html/klang-test-spiel.html: Harp bloom, Level Up03 on actual centred celebration at default2.4s dance start. Volume/timing controls, automatic real-path demo and stop/reset. Preview-only copied actual game, main sources/APK unchanged. Do not integrate beyond study without authorization.
 
 - Klang-test A/B completion selector: A only Level Up03 on last field, B last blossom Harp plus Level Up03 at selected delay. Earlier blooms unchanged. Both retained for user comparison; no final selection/integration yet.
+
+- Sound preview C 'Blüte → Antwort des Wesens' added: adjustable fade start/duration/residual harp plus existing finale delay/volumes, saved study-only. Default1.2s/.8s/10%, Level Up03 at2.4s. A/B retained. Final audio choice still under comparison.
