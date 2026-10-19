@@ -1,10 +1,10 @@
 # SLINK Android test builds
 
-[Download SLINK 0.1.15 test APK](SLINK-0.1.15-test.apk)
+[Download SLINK 0.1.16 test APK](SLINK-0.1.16-test.apk)
 
 Signed test build for installation on Android8.1+. Includes1200 puzzles in29 gardens and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
 
-SHA-256: E9C3FA46858E938A0E7078490FD2C308737CD6AAB6557D5B1A4D16FB757CB078
+SHA-256: 60CE08D9B7A1D5BD89FAFE3FD60F594AFDF9A89005701E36BC27B797F30CD8CE
 
 0.1.1 adds persistent menu background, optional predecessor highlight/strength and configurable completion wait. Same applicationId/signing key, higher versionCode2: designed to update0.1.0 without uninstalling. Previous build retained.
 
@@ -29,3 +29,5 @@ SHA-256: E9C3FA46858E938A0E7078490FD2C308737CD6AAB6557D5B1A4D16FB757CB078
 0.1.14/versionCode15: selected full Harp Glissando blooms and Level Up03 completion response integrated. Permanent persisted sound enable/disable; master/bloom/completion/target-tail volumes and temporary fade/timing controls in game settings. No movement sound selected. Same1200 puzzles/29 gardens and existing animation/card timing. CC BY4.0 Level Up03 attribution accessible under Klangnachweise and in packaged audio/selected-sounds.txt. Same signing identity; previous APK retained.
 
 0.1.15/versionCode16: saved editable game-screen title (settings Schriftzug · Test), immediate text-only update/automatic fit/reset to SLINK. Menu title, app package and puzzle state unchanged. Same signing identity.
+
+0.1.16/versionCode17: hint confirmation preserves the longest solvable prefix and rewinds only the incorrect suffix; creature path reconciliation fixes stuck positions after recovery/rapid undo. Build, lint, signature and packaged source checks passed. Same signing identity; install as update.

@@ -2,7 +2,7 @@ plugins { id 'com.android.application' }
 android {
  namespace 'app.slink.garden'
  compileSdk 36
- defaultConfig { applicationId 'app.slink.garden'; minSdk 27; targetSdk 35; versionCode 16; versionName '0.1.15-test' }
+ defaultConfig { applicationId 'app.slink.garden'; minSdk 27; targetSdk 35; versionCode 17; versionName '0.1.16-test' }
  compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
  sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/webAssets'))
 }
