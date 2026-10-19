@@ -7,11 +7,17 @@ export class GameCreatureMotion{
   const xy=i=>[i%level.n*80+60,-(Math.floor(i/level.n)*80+60)];
   const changedLevel=this.level!==level,reset=changedLevel||!path.length;
   if(reset){const [x,y]=xy(level.marks[0]);this.transition.reset(x,y);this.path=[];this.heading=0;this.joyStarted=-1;this.complete=false;this.travel=0;this.lastPoint=[x,y];this.lastTime=now;this.level=level;}
-  const previous=this.path.at(-1),next=path.at(-1);
-  if(next!==undefined&&next!==previous){
-   const [x,y]=xy(next);
-   if(previous!==undefined){const [a,b]=xy(previous);this.heading=Math.atan2(x-a,-(y-b));this.transition.target(x,y,now);}
-   else this.transition.reset(x,y);
+  let shared=0;while(shared<this.path.length&&shared<path.length&&this.path[shared]===path[shared])shared++;
+  const changed=shared!==this.path.length||shared!==path.length;
+  if(changed){
+   let previous=this.path.at(-1);
+   const route=this.path.length?[...this.path.slice(Math.max(0,shared-1),-1).reverse(),...path.slice(shared)]:[...path];
+   for(const cell of route){
+    const [x,y]=xy(cell);
+    if(previous===undefined)this.transition.reset(x,y);
+    else{const [a,b]=xy(previous);this.heading=Math.atan2(x-a,-(y-b));this.transition.target(x,y,now);}
+    previous=cell;
+   }
    this.joyStarted=-1;
   }
   this.path=[...path];this.complete=path.length===level.solution.length;

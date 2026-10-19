@@ -12,3 +12,11 @@ for(const level of ctx.levels){
  motion.sync(level,[],time);assert.equal(motion.sample(time).celebrationAge,-1,'reset clears joy');time+=1;
 }
 console.log('PASS: creature follows all 1200 accepted routes, rests centred, preserves celebration on redraw, faces player and cancels on undo/reset.');
+
+// A bulk hint rollback must follow the old route, even when its endpoints are diagonal.
+const l={n:3,marks:[0,8],solution:[0,1,4,5,8]};
+const m=new GameCreatureMotion();m.sync(l,[0,1,4,5],0);m.sample(1);
+m.sync(l,[0],1);assert.deepEqual(m.transition.points,[[220,-140],[140,-140],[140,-60],[60,-60]]);
+let rest=m.sample(2);assert.equal(rest.x,60);assert.equal(rest.y,-60);
+m.sync(l,[0,1],2);m.sample(3);m.sync(l,[0],3);rest=m.sample(4);assert.equal(rest.x,60);assert.equal(rest.y,-60);
+console.log('PASS: bulk hint rollback follows cardinal old edges and subsequent undo remains synchronized.');
