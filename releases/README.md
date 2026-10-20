@@ -1,10 +1,10 @@
 # SLINK Android test builds
 
-[Download SLINK 0.1.16 test APK](SLINK-0.1.16-test.apk)
+[Download Nurbi’s Garden 0.1.17 test APK](SLINK-0.1.17-test.apk)
 
 Signed test build for installation on Android8.1+. Includes1200 puzzles in29 gardens and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
 
-SHA-256: 60CE08D9B7A1D5BD89FAFE3FD60F594AFDF9A89005701E36BC27B797F30CD8CE
+SHA-256: 85788850A1C9A6E2FCA057C2157C21F1964C1EC3F6DBDC175FE4E24E837837AA
 
 0.1.1 adds persistent menu background, optional predecessor highlight/strength and configurable completion wait. Same applicationId/signing key, higher versionCode2: designed to update0.1.0 without uninstalling. Previous build retained.
 
@@ -31,3 +31,5 @@ SHA-256: 60CE08D9B7A1D5BD89FAFE3FD60F594AFDF9A89005701E36BC27B797F30CD8CE
 0.1.15/versionCode16: saved editable game-screen title (settings Schriftzug · Test), immediate text-only update/automatic fit/reset to SLINK. Menu title, app package and puzzle state unchanged. Same signing identity.
 
 0.1.16/versionCode17: hint confirmation preserves the longest solvable prefix and rewinds only the incorrect suffix; creature path reconciliation fixes stuck positions after recovery/rapid undo. Build, lint, signature and packaged source checks passed. Same signing identity; install as update.
+
+0.1.17/versionCode18: Nurbi’s Garden branding, approved playful ivory B logo without antennae on home/game, icon C as launcher icon. Title artwork D stored separately in assets/brand; no store upload. Existing package ID/key retained. Build/lint/signature and packaged branding checks passed.
