@@ -7,3 +7,5 @@ One WebGL renderer and one model; twelve static thumbnails captured sequentially
 Build: `npm run build`. Checks: `node tests/nurbi-colors.mjs`, `node tests/fuzzy-creature.mjs`.
 
 Own variants: the new-variant button clones the selected edited draft into a stable custom UUID entry. No application limit on count. Name and all colors are editable and persist under the same v1 key, alongside the original twelve drafts (no migration/reset). Thumbnails now reflect edited drafts, not factory colors. Reset returns only the selected draft to its own starting values. The qa=1 URL uses a separate key for browser tests. Browser checked adding two copies, renaming, switching and reload persistence.
+
+Fur drawings include transverse stripes, spots, fine speckles, a face mask and a tail tip, alongside retained belly/back choices. Size 50-180%, strength 0-100%; default 100% preserves prior drawings. Markings color fur and base surfaces without geometry changes. Paw materials cloned for independent color; absent old paw values inherit coat. Old drafts/custom entries remain in v1 storage. Solid disables inactive accent/size/strength controls.
