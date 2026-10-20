@@ -2,13 +2,13 @@ plugins { id 'com.android.application' }
 android {
  namespace 'app.slink.garden'
  compileSdk 36
- defaultConfig { applicationId 'app.slink.garden'; minSdk 27; targetSdk 35; versionCode 18; versionName '0.1.17-test' }
+ defaultConfig { applicationId 'app.slink.garden'; minSdk 27; targetSdk 35; versionCode 19; versionName '0.1.18-test' }
  compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
  sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/webAssets'))
 }
 
 tasks.register('syncWebAssets', Sync) {
- from('../../public') { include 'nurbi-brand.css','gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-expansion-levels.js','slink-design.js','completion-settings.js','touch-settings.js','game-prewarm.js','ad-policy.js','game-economy.js','game-audio.js','game-title-settings.js','game-audio-controller.js','bloom-sounds.js','garden-sounds.js','audio/harp-glissando.wav','audio/level-up-03.mp3','audio/selected-sounds.txt','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
+ from('../../public') { include 'nurbi-brand.css','gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-expansion-levels.js','slink-design.js','completion-settings.js','touch-settings.js','game-prewarm.js','ad-policy.js','game-economy.js','game-audio.js','game-audio-controller.js','bloom-sounds.js','garden-sounds.js','audio/harp-glissando.wav','audio/level-up-03.mp3','audio/selected-sounds.txt','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
  from('../../THIRD_PARTY_THREE_LICENSE.txt')
  into(layout.buildDirectory.dir('generated/webAssets'))
 }

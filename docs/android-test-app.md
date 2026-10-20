@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.17-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode18, versionName0.1.17-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.18-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode19, versionName0.1.18-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all1200 puzzles in29 gardens and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -63,3 +63,5 @@ Update0.1.15: editable saved game-screen title, preview-key isolation, long-titl
 Update0.1.16: solvable-prefix hint recovery and synchronized creature rollback, including interrupted recovery/rapid undo. Existing1200-puzzle suite passed. Offline assemble/lint and signature checks passed; packaged main game and renderer match current source. Physical device testing pending. APK SHA256 60CE08D9B7A1D5BD89FAFE3FD60F594AFDF9A89005701E36BC27B797F30CD8CE.
 
 Update0.1.17: Nurbi’s Garden label/icon and B wordmark without antennae. Same applicationId and signing key preserves update compatibility. Build/lint/signature/package checks passed; phone installation not performed. SHA256 85788850A1C9A6E2FCA057C2157C21F1964C1EC3F6DBDC175FE4E24E837837AA.
+
+Update0.1.18: removed custom-title test setting. Fixed approved logo is independent of previous saved names. APK verified to exclude title-settings script, include current logo/HTML/CSS. Build/lint/signature passed. SHA256 F7BB8C665613E27AC6AD08909B471166157CF83B8E91F956012F37B1C6C4A197. Physical device result pending.

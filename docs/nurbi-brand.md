@@ -7,3 +7,5 @@ Built-in image generation created the selected assets from the comparison boards
 Logo is static HTML from first paint in menu and game. Temporary title input retained, default and reset now Nurbi's Garden; legacy SLINK defaults migrate to the logo. Progress keys, puzzle data, applicationId and signing identity remain unchanged for updates. Android launcher label and icon updated.
 
 Browser checked game and home at360x700, no page overflow. Physical Android device verification remains pending.
+
+User subsequently retired the title test control. The main game no longer loads or packages its script; fixed logo always appears regardless of old stored text. Archived script is retained in public for history only.

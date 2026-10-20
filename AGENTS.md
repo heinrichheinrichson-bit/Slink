@@ -202,3 +202,5 @@
 - Hint recovery now preserves the longest solvable prefix: first confirmation is free, second spends one hint and visibly rewinds only the wrong suffix. Unknown solver-budget results never trigger recovery. GameCreatureMotion reconciles accepted path differences via all old cardinal waypoints, fixing the old diagonal-to-start desynchronization/stuck figure. Undo/reset cancels pending recovery. Main and sound test fixture share this behavior.
 
 - Brand approved: Nurbi’s Garden, playful ivory B lettering WITHOUT antennae (avoids U umlaut reading), icon C and feature composition D. Keep source art assets/brand and all studies. Static wordmark in menu/game, retained custom title test/reset. Same applicationId/progress/signing identity; only launcher label/icon change. See docs/nurbi-brand.md.
+
+- User removed need for custom title testing. Main game no longer loads/packages game-title-settings.js; approved logo is fixed and old stored title values have no effect. Script retained only as an archived developer file, not active player settings.
