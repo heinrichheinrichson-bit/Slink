@@ -27,9 +27,16 @@ for(const [id,name,coat,root,tip,iris,face,cheeks,antenna,accent,paws,pattern,pa
  ['dandelion','Löwenzahn','#c6bc79','#99935e','#ede4ac','#7c9d94','#f6e8c4','#d3a48d','#e8ce7d','#f1e8ce','#8a8160','belly',1.1,.8]
 ])COLOR_SKETCHES.push({id:'reward-'+id,name,coat,root,tip,iris,face,cheeks,antenna,accent,paws,pattern,patternSize,patternStrength,rewardStudy:true});
 COLOR_SKETCHES.push({id:'tiger-study',name:'Tigerpfote',coat:'#cd9656',root:'#a5733f',tip:'#ecc38b',iris:'#8b9c71',face:'#f8e6c4',cheeks:'#cc9c89',antenna:'#e3c894',accent:'#49382e',paws:'#edddbf',pattern:'tiger',patternSize:1,patternStrength:.9});
+COLOR_SKETCHES.push({id:'leopard-study',name:'Leopardenpfote',coat:'#ccab70',root:'#a88750',tip:'#edd3a0',iris:'#8a9a68',face:'#f4e6cb',cheeks:'#c59c86',antenna:'#d9c18d',accent:'#48372b',paws:'#e6d4ae',pattern:'leopard',patternSize:1,patternStrength:.95});
+// Fixed staggered rosettes with individual proportions, rotations and broken arcs.
+const LEOPARD_ROSETTES=[];
+for(let row=0;row<4;row++)for(let col=0;col<5;col++){
+ const n=row*5+col,noise=Math.sin(n*13.13+2.1);
+ LEOPARD_ROSETTES.push({u:(col-2)*5.5+(row%2)*1.8+noise*.75,v:4+row*7+Math.cos(n*7.7)*1.1,rx:1.85+(Math.sin(n*5.1)+1)*.38,ry:1.65+(Math.cos(n*4.3)+1)*.5,angle:noise*.8,phase:n*2.37,gap:.3+(Math.sin(n*3.7)+1)*.18});
+}
 // Three designed dorsal-to-flank marks, placed in body-relative angular coordinates.
 const TIGER_BANDS=[[5.8,2.7,1.95,1.25],[15.8,2.25,-2.1,1.6],[25.1,1.9,1.15,1.38]];
-export const FUR_PATTERNS=['solid','belly','saddle','stripes','tiger','spots','speckles','mask','tail'];
+export const FUR_PATTERNS=['solid','belly','saddle','stripes','tiger','leopard','spots','speckles','mask','tail'];
 export function furPatternMask(p,x,y,z){
  const size=p.patternSize??1,strength=p.patternStrength??1,smooth=THREE.MathUtils.smoothstep;
  let amount=0;
@@ -68,6 +75,33 @@ export function furPatternMask(p,x,y,z){
   const clearEyes=y<-10?smooth(eyeDistance,1,1.2):1;
   amount=Math.max(amount,Math.max(cheek,forehead)*front*muzzle*clearEyes*.9);
 
+ }
+ if(p.pattern==='leopard'){
+  const centerZ=9-4*smooth(y,12,29),u=Math.atan2(x,(z-centerZ)*1.12)*9;
+  if(y>0&&z>5){
+   const scale=size*(1-.25*smooth(y,21,29));
+   for(const spot of LEOPARD_ROSETTES){
+    const dx=u-spot.u,dy=y-spot.v;
+    if(Math.abs(dx)>spot.rx*scale*1.7||Math.abs(dy)>spot.ry*scale*1.7)continue;
+    const c=Math.cos(spot.angle),s=Math.sin(spot.angle),a=(dx*c-dy*s)/(spot.rx*scale),b=(dx*s+dy*c)/(spot.ry*scale),theta=Math.atan2(b,a);
+    const r=Math.hypot(a,b)/(1+.12*Math.sin(theta*3+spot.phase)+.065*Math.cos(theta*5-spot.phase));
+    const ring=smooth(r,.51,.69)*(1-smooth(r,1,1.17));
+    const opening=Math.abs(Math.atan2(Math.sin(theta-spot.phase),Math.cos(theta-spot.phase)));
+    const broken=smooth(opening,spot.gap,spot.gap+.24);
+    amount=Math.max(amount,Math.max(ring*broken,(1-smooth(r,.3,.62))*.12));
+   }
+   amount*=smooth(y,0,3)*smooth(z,5,9);
+  }
+  if(y<-3){
+   let dots=0;
+   for(const [cx,cz,r]of [[-3.3,30.7,.7],[1.1,31.5,.65],[4.4,29.8,.8],[-9.8,28.2,.85],[10.1,28.7,.75],[-12,23,.9],[12.5,23.8,1],[-11.1,18.7,.7],[11.6,19.2,.85]]){
+    const sideDepth=Math.abs(cx)>11?-8:Math.abs(cx)>8?-13:-14;
+    const d=Math.hypot((x-cx)/1.1,z-cz,(y-sideDepth)*.65);dots=Math.max(dots,1-smooth(d,r*size*.5,r*size));
+   }
+   const eyeDistance=Math.min(((x-5.6)/5)**2+((z-23.4)/5.6)**2,((x+5.6)/5)**2+((z-23.4)/5.6)**2);
+   const eyes=y<-10?smooth(eyeDistance,1,1.2):1;
+   amount=Math.max(amount,dots*eyes*(1-smooth(y,-4,-2)));
+  }
  }
  if(p.pattern==='spots'||p.pattern==='speckles'){
   const fine=p.pattern==='speckles',spacing=fine?5.2:11,radius=(fine?1.25:3.8)*size;

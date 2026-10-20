@@ -17,3 +17,5 @@ Tiger pattern: separately retained alongside generic stripes. Six explicit nonpe
 Tiger revision after user rejected the thin/cracked appearance: replace six forked bands with three broader individually shaped marks. Angular spine-to-flank coordinates follow the tapered body, varying endpoints per flank, with clear head/belly. Same tiger ID and all stored colors retained; only drawing geometry changes. Tests cover clear head/belly and asymmetry.
 
 Tiger face extension: two short tapered cheek sweeps per side and a compact forehead chevron. Head markings restricted to side fur/upper forehead with explicit eye and muzzle exclusion masks. Same drawing color/size/strength, no expression geometry or material changes. Tested cheek/brow visibility and eye/muzzle/belly exclusion; browser three-quarter view checked.
+
+Leopardenpfote preset26 adds separate leopard pattern: fixed individually rotated/distorted open rosettes on body-relative angular coordinates, lightly tinted centres, smaller toward tail, localized solid head spots with eye/muzzle clearance. Existing colors/custom drafts preserved. Pattern size/strength controls apply; no game integration.
