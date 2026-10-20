@@ -1,10 +1,10 @@
 # SLINK Android test builds
 
-[Download Nurbi’s Garden 0.1.20 test APK](SLINK-0.1.20-test.apk)
+[Download Nurbi’s Garden 0.1.21 test APK](SLINK-0.1.21-test.apk)
 
 Signed test build for installation on Android8.1+. Includes1200 puzzles in29 gardens and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
 
-SHA-256: C38271589EA0A6DD70CDF16A32D04E36544E700058C12AE30466CABF98DD8A04
+SHA-256: EB07DB1E1EF92BDCD2AA2BB57755DB47D84A0A50D206E0D2F030051BE5D2C3E6
 
 0.1.1 adds persistent menu background, optional predecessor highlight/strength and configurable completion wait. Same applicationId/signing key, higher versionCode2: designed to update0.1.0 without uninstalling. Previous build retained.
 
@@ -39,3 +39,5 @@ SHA-256: C38271589EA0A6DD70CDF16A32D04E36544E700058C12AE30466CABF98DD8A04
 0.1.19/versionCode20: compact completion card, one headline and elapsed time; redundant kicker/subtitle/time caption removed. Actual completed puzzle browser checked at360x740. Build/lint/signature/package checks passed; phone testing pending.
 
 0.1.20/versionCode21: garden detail opens centered on first unsolved puzzle, including gaps; preserves focus in path/grid. Compact header, count/bar, conditional next link, no repeated description/percentage/legend. Fully solved gardens have no false next marker. Removed obsolete completion theme label. Catalogue remains unlocked. Build/lint/signature/package and browser phone360x740 checked.
+
+0.1.21/versionCode22: Gartenbuch navigation, offline daily rotation (833 pinned catalogue IDs; separate progress), active time/play days/weekly activity/no-hint evidence, puzzle bookmarks, earned existing palettes/backgrounds and tester unlock-all in gear settings. Actual model color preview reuses renderer. Home phone360x640 fit, browser daily/normal solves, focused and existing tests, build/lint/signature/package verified. Historical time/day stats are not invented; recording starts with this version. Same update identity. See docs/garden-journal.md.

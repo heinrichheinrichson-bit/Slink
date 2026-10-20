@@ -1,0 +1,12 @@
+(()=>{
+ const C=window.NurbiJourneyCore,params=new URLSearchParams(location.search),preview=params.has('preview'),key=preview?'nurbi-journey-preview-v1':'nurbi-journey-v1';
+ const read=()=>{try{return C.clean(JSON.parse(localStorage.getItem(key)||'{}'))}catch{return C.clean()}};
+ function change(fn){const s=read(),result=fn(s);try{localStorage.setItem(key,JSON.stringify(s))}catch{}return result}
+ let current=null,daily=null,hinted=false,recorded=false;
+ function done(){try{const prefix=preview?'slink-curated-v1-preview-':'slink-curated-v1-',raw=localStorage.getItem(prefix+'done-ids');if(raw)return new Set(JSON.parse(raw).filter(id=>LEVELS.some(l=>l.id===id)));const legacy=typeof SLINK_LEGACY_IDS!=='undefined'?SLINK_LEGACY_IDS:LEVELS.map(l=>l.id);return new Set(JSON.parse(localStorage.getItem(prefix+'done')||'[]').map(i=>legacy[i]).filter(Boolean))}catch{return new Set()}}
+ function dailyDate(raw){const today=C.day();return C.parse(raw)&&raw<=today?raw:today}
+ window.SlinkJourney={core:C,read,done,dailyDate,dailyId:date=>C.dailyId(window.SlinkDailyIds||[],date),load(l,date=null){current=l;daily=date;hinted=false;recorded=false;paintBookmark()},hint(){hinted=true},active(ms){change(s=>C.active(s,ms))},complete(ms){if(current&&!recorded){change(s=>C.complete(s,current.id,ms,hinted,C.day(),daily));recorded=true}},toggle(id=current?.id){if(!id)return;const saved=change(s=>C.bookmark(s,id));paintBookmark();return saved},isBookmarked:id=>read().bookmarks.includes(id)};
+ function paintBookmark(){const b=document.getElementById('savePuzzle');if(!b||!current)return;b.hidden=!!daily;b.textContent=window.SlinkJourney.isBookmarked(current.id)?'Vorgemerkt ✓':'Später versuchen';b.setAttribute('aria-pressed',String(window.SlinkJourney.isBookmarked(current.id)))}
+ const dialog=document.getElementById('rules');if(dialog){const section=document.createElement('section');section.className='visitor-settings';const b=document.createElement('button');b.id='savePuzzle';b.type='button';b.onclick=()=>window.SlinkJourney.toggle();section.append(b);dialog.querySelector('.dialoghead').after(section)}
+ addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==parent||e.data?.type!=='nurbi-cosmetics')return;try{const settings=JSON.parse(localStorage.getItem('slink-creature-settings-v1')||'{}'),select=document.getElementById('creaturePalette');if(select&&['apricot','lavender','coral','lagoon'].includes(settings.palette)){select.value=settings.palette;select.dispatchEvent(new Event('change'))}}catch{}});
+})();

@@ -5,7 +5,7 @@
  $('settingsSlot').querySelector('button').onclick=()=>$('aboutDialog').showModal();
  for(const b of document.querySelectorAll('[data-close]'))b.onclick=()=>$(b.dataset.close).close();
  let queued;
- for(const id of ['discover','navGardens','backSlot'])$(id).onclick=()=>{if(!window.SlinkMenuReady)queued=id};
+ for(const id of ['discover','navGardens','backSlot','navFriend'])$(id).onclick=()=>{if(!window.SlinkMenuReady)queued=id};
  document.addEventListener('slink-menu-ready',()=>{if(queued){const id=queued;queued=null;($(id).querySelector('button')||$(id)).click()}});
  // Paint the complete lightweight shell before constructing the living 3D scene.
  requestAnimationFrame(()=>setTimeout(()=>{const script=document.createElement('script');script.src='gartenstudio.js';document.body.append(script)},0));

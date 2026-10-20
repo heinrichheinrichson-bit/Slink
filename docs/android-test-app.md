@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.20-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode21, versionName0.1.20-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.21-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode22, versionName0.1.21-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all1200 puzzles in29 gardens and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -69,3 +69,5 @@ Update0.1.18: removed custom-title test setting. Fixed approved logo is independ
 Update0.1.19: simplified completion copy and tighter540px card, preserved original reward scene. Browser real completion tested360x740; build/lint/signature/packaged HTML+CSS verified. SHA256 9054C74E90FB9DCCE810CBADFE8AEBB7466CB17207C4B68089EA6BDAB487B56B.
 
 Update0.1.20: simplified garden selector and automatic first-unsolved focus in both views; fully solved categories have no next marker. Browser checked existing24/26 garden with earlier gap21 and all-solved30/30 category, phone360x740. Catalogue unchanged/unlocked. Build/lint/signature/packaged files passed. SHA256 C38271589EA0A6DD70CDF16A32D04E36544E700058C12AE30466CABF98DD8A04. Phone install not performed.
+
+Update0.1.21: garden journal/daily/bookmarks/statistics/cosmetic rewards and tester unlock. See garden-journal.md. Existing full test suite and focused journey/economy tests passed. Offline assemble/lint/signature and ZIP asset equality verified. Home fits360x640 in browser. Physical phone installation remains pending. SHA256 EB07DB1E1EF92BDCD2AA2BB57755DB47D84A0A50D206E0D2F030051BE5D2C3E6.
