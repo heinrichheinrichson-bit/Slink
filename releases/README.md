@@ -1,10 +1,10 @@
 # SLINK Android test builds
 
-[Download Nurbi’s Garden 0.1.22 test APK](SLINK-0.1.22-test.apk)
+[Download Nurbi’s Garden 0.1.23 test APK](SLINK-0.1.23-test.apk)
 
 Signed test build for installation on Android8.1+. Includes1200 puzzles in29 gardens and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
 
-SHA-256: 55E62BE94D1DD282041D746A940FE9EF00F12B2CDF3B73C1CF120D4BCCAA2765
+SHA-256: 08CC1E9ABCA95D618BDC79614333B22FB6AF67CFA68E7139E45875FEE7F27339
 
 0.1.1 adds persistent menu background, optional predecessor highlight/strength and configurable completion wait. Same applicationId/signing key, higher versionCode2: designed to update0.1.0 without uninstalling. Previous build retained.
 
@@ -43,3 +43,5 @@ SHA-256: 55E62BE94D1DD282041D746A940FE9EF00F12B2CDF3B73C1CF120D4BCCAA2765
 0.1.21/versionCode22: Gartenbuch navigation, offline daily rotation (833 pinned catalogue IDs; separate progress), active time/play days/weekly activity/no-hint evidence, puzzle bookmarks, earned existing palettes/backgrounds and tester unlock-all in gear settings. Actual model color preview reuses renderer. Home phone360x640 fit, browser daily/normal solves, focused and existing tests, build/lint/signature/package verified. Historical time/day stats are not invented; recording starts with this version. Same update identity. See docs/garden-journal.md.
 
 0.1.22/versionCode23: Sonnenorange is game-only; menu migrates it to Sand-Creme. Eleven retained game backgrounds now selectable separately in journal/in-game settings, with tester unlock and offline native backdrops. Lazy full-model three-quarter Nurbi preview replaces frontal portrait. Daily completion returns home. Targeted tests, browser theme persistence/path preservation, build/lint/signature/package checks passed.
+
+0.1.23/versionCode24: background preview modal with fixed actual 4x4 example, explicit Apply/Close, current selection label/checkmark. Close/back cancel without saving; isolated example has no progress/statistics/audio. Lazy cached frame pauses when closed. Targeted tests, browser close/back/apply/restore and360x740 layout checked; build/lint/signature/packaged assets verified.

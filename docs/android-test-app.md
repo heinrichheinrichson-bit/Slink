@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.22-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode23, versionName0.1.22-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.23-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode24, versionName0.1.23-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all1200 puzzles in29 gardens and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -73,3 +73,5 @@ Update0.1.20: simplified garden selector and automatic first-unsolved focus in b
 Update0.1.21: garden journal/daily/bookmarks/statistics/cosmetic rewards and tester unlock. See garden-journal.md. Existing full test suite and focused journey/economy tests passed. Offline assemble/lint/signature and ZIP asset equality verified. Home fits360x640 in browser. Physical phone installation remains pending. SHA256 EB07DB1E1EF92BDCD2AA2BB57755DB47D84A0A50D206E0D2F030051BE5D2C3E6.
 
 Update0.1.22: separate11game backgrounds/menu restriction, whole-model preview and daily home exit. Targeted journey/background tests and real browser theme change preserving2/15route and reload persistence passed. Build/lint/signature and ZIP source/image equality passed. Physical device testing pending. SHA256 55E62BE94D1DD282041D746A940FE9EF00F12B2CDF3B73C1CF120D4BCCAA2765.
+
+Update0.1.23: background preview read-only example and commit/cancel dialog. Existing native back delegates to WebView history; browser back tested, physical back testing pending. Build/lint/signature/ZIP assets verified. SHA256 08CC1E9ABCA95D618BDC79614333B22FB6AF67CFA68E7139E45875FEE7F27339.
