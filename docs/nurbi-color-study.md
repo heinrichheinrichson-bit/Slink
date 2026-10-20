@@ -13,3 +13,5 @@ Fur drawings include transverse stripes, spots, fine speckles, a face mask and a
 Added twelve achievement directions (24 total): Sternentau, Kleeglueck, Wildbeere, Honigpfote, Mondbluete, Abendfuchs, Farnschatten, Rosenquarz, Bernstein, Eisklee, Pflaumenbluete, Loewenzahn. Stable reward-prefixed IDs; existing and custom drafts preserved. Study proposals only, no game unlock rules.
 
 Tiger pattern: separately retained alongside generic stripes. Six explicit nonperiodic curved bands with unequal width/length, tapered tips, asymmetric flanks and two selected forks. Stable coordinates, same masks on base and fur; no per-frame randomness. Tigerpfote is additive preset25. Tests cover finite masks/geometry and flank asymmetry.
+
+Tiger revision after user rejected the thin/cracked appearance: replace six forked bands with three broader individually shaped marks. Angular spine-to-flank coordinates follow the tapered body, varying endpoints per flank, with clear head/belly. Same tiger ID and all stored colors retained; only drawing geometry changes. Tests cover clear head/belly and asymmetry.

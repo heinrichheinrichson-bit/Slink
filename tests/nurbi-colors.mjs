@@ -19,4 +19,6 @@ vm.createContext(context);vm.runInContext(load+';globalThis.result={drafts,selec
 assert.equal(context.result.drafts.apricot.coat,'#112233');assert.equal(context.result.drafts.apricot.paws,'#112233');assert.equal(context.result.drafts.apricot.name,'Edited Apricot');assert.equal(context.result.selected,custom.id);assert.equal(context.result.drafts[custom.id].paws,'#445566');assert.equal(context.result.drafts[custom.id].pattern,'speckles');assert.equal(context.result.drafts[custom.id].patternSize,1.5);assert.equal(context.result.drafts[custom.id].patternStrength,.4);assert.equal(context.result.favorites[0],custom.id);
 console.log('PASS old edited coats/custom drafts/favorites preserved; independent paws and pattern settings restored.');
 
-const tiger={pattern:"tiger",patternSize:1,patternStrength:1};let differences=0;for(let y=-4;y<33;y+=.4)if(Math.abs(furPatternMask(tiger,8,y,17)-furPatternMask(tiger,-8,y,17))>.1)differences++;assert.ok(differences>10,"flanks have asymmetric stripe paths");
+const tiger={pattern:"tiger",patternSize:1,patternStrength:1};let differences=0;for(let y=-4;y<33;y+=.4)if(Math.abs(furPatternMask(tiger,8,y,17)-furPatternMask(tiger,-8,y,17))>.1)differences++;assert.ok(differences>5,"flanks have asymmetric stripe paths");
+
+for(const y of [-20,-12,-5,0])assert.equal(furPatternMask(tiger,4,y,25),0,"head remains clear");for(const y of [5,15,25])assert.equal(furPatternMask(tiger,4,y,3),0,"belly remains clear");

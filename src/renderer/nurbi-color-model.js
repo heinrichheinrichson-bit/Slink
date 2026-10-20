@@ -27,8 +27,8 @@ for(const [id,name,coat,root,tip,iris,face,cheeks,antenna,accent,paws,pattern,pa
  ['dandelion','Löwenzahn','#c6bc79','#99935e','#ede4ac','#7c9d94','#f6e8c4','#d3a48d','#e8ce7d','#f1e8ce','#8a8160','belly',1.1,.8]
 ])COLOR_SKETCHES.push({id:'reward-'+id,name,coat,root,tip,iris,face,cheeks,antenna,accent,paws,pattern,patternSize,patternStrength,rewardStudy:true});
 COLOR_SKETCHES.push({id:'tiger-study',name:'Tigerpfote',coat:'#cd9656',root:'#a5733f',tip:'#ecc38b',iris:'#8b9c71',face:'#f8e6c4',cheeks:'#cc9c89',antenna:'#e3c894',accent:'#49382e',paws:'#edddbf',pattern:'tiger',patternSize:1,patternStrength:.9});
-// Unequal positions, lengths, bends and widths; the two flanks deliberately differ.
-const TIGER_BANDS=[[-1.8,1.3,11,2.5,.4],[4.2,1.7,13,-2.1,1.7],[11.1,1.1,10,2.9,2.4],[16.5,1.8,12,-1.7,3.5],[24.1,1.25,8,1.5,4.1],[29.4,.85,5,-1.2,5.3]];
+// Three designed dorsal-to-flank marks, placed in body-relative angular coordinates.
+const TIGER_BANDS=[[5.8,2.7,1.95,1.25],[15.8,2.25,-2.1,1.6],[25.1,1.9,1.15,1.38]];
 export const FUR_PATTERNS=['solid','belly','saddle','stripes','tiger','spots','speckles','mask','tail'];
 export function furPatternMask(p,x,y,z){
  const size=p.patternSize??1,strength=p.patternStrength??1,smooth=THREE.MathUtils.smoothstep;
@@ -37,23 +37,21 @@ export function furPatternMask(p,x,y,z){
  if(p.pattern==='saddle')amount=(1-smooth(Math.abs(x),3*size,8*size))*smooth(y,-1,9)*smooth(z,9,17)*.85;
  if(p.pattern==='stripes')amount=(1-smooth(Math.abs(Math.sin((y-3)/ (3.3*size)+x*.025)),.3,.6))*smooth(y,-4,5)*smooth(z,5,12);
  if(p.pattern==='tiger'){
-  const side=x<0?-1:1,across=Math.abs(x);
+  const side=x<0?-1:1;
+  // Follow the rounded body's upper surface; theta advances from spine to flank.
+  const centerZ=9-4*smooth(y,12,29);
+  const theta=Math.atan2(Math.abs(x),(z-centerZ)*1.12);
   for(let i=0;i<TIGER_BANDS.length;i++){
-   const [center,width,length,bend,phase]=TIGER_BANDS[i],reach=length*(side<0?.88:1),u=across/reach;
-   if(u>1.12)continue;
-   const drift=side<0?Math.sin(phase*1.7)*1.1:0;
-   const curve=center+drift+bend*u*u+Math.sin(u*4+phase)*.65+Math.sin(across*1.1+phase)*.1;
-   const taper=(1-smooth(u,.67,1.1));
-   const half=width*size*(.95-.6*Math.min(1,u))*(1+.13*Math.sin(u*7+phase));
-   const distance=Math.abs(y-curve);
-   let band=(1-smooth(distance,half*.55,half))*taper;
-   if((i===1&&side>0)||(i===3&&side<0)){
-    const fork=curve-3.3*smooth(u,.25,.8),fw=half*.55;
-    band=Math.max(band,(1-smooth(Math.abs(y-fork),fw*.45,fw))*smooth(u,.18,.4)*(1-smooth(u,.66,.95)));
-   }
-   amount=Math.max(amount,band);
+   const [center,width,bend,reach]=TIGER_BANDS[i];
+   const end=reach+(side<0?[.15,-.12,.18][i]:0),u=theta/end;
+   if(u>=1)continue;
+   const drift=side<0?[-.15,.25,-.1][i]:0;
+   const curve=center+drift*Math.sin(theta)+bend*(.2*u+.8*u*u);
+   const half=width*size*Math.pow(1-u*u,.7);
+   const edge=1-smooth(Math.abs(y-curve),half*.67,half);
+   amount=Math.max(amount,edge*(1-smooth(u,.8,1)));
   }
-  amount*=smooth(y,-6,-1)*smooth(z,5,11);
+  amount*=smooth(y,2,4)*smooth(z,5,9);
  }
  if(p.pattern==='spots'||p.pattern==='speckles'){
   const fine=p.pattern==='speckles',spacing=fine?5.2:11,radius=(fine?1.25:3.8)*size;
