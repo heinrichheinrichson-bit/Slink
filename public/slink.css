@@ -69,3 +69,5 @@ body.catalogue .app:has(#win:not([hidden]))>header,body.catalogue .app:has(#win:
 
 /* Compact completion: one message, reward scene and elapsed time. */
 body.catalogue .win{height:min(540px,calc(100dvh - 32px))}.win-scene{flex:1 1 240px;max-height:270px}.win .win-message h2{margin:0 0 10px}.win .win-time{margin:10px 0 0}.win-actions{padding:20px 38px 24px}.win .win-actions #replay{padding-top:16px}
+
+.win-header{justify-content:flex-end}

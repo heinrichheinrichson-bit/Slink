@@ -206,3 +206,5 @@
 - User removed need for custom title testing. Main game no longer loads/packages game-title-settings.js; approved logo is fixed and old stored title values have no effect. Script retained only as an archived developer file, not active player settings.
 
 - Completion copy simplified with user approval: only Alles blüht!, elapsed time and actions; kicker/subtitle/visible Spielzeit label removed. Keep hidden winText hook for existing completion lifecycle. Card height540px max with tighter scene/message/actions grouping; approved scene preserved.
+
+- Garden detail UI simplified: no decorative description, duplicate percentage or legend; progress count/bar, Pfad/Übersicht and conditional next link remain. Opening a garden or switching view centers/focuses first unsolved puzzle (including earlier gaps); fully solved gardens have no next marker. Catalogue remains fully unlocked pending user decision. Removed obsolete Sonnenhain completion label.

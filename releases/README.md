@@ -1,10 +1,10 @@
 # SLINK Android test builds
 
-[Download Nurbi’s Garden 0.1.19 test APK](SLINK-0.1.19-test.apk)
+[Download Nurbi’s Garden 0.1.20 test APK](SLINK-0.1.20-test.apk)
 
 Signed test build for installation on Android8.1+. Includes1200 puzzles in29 gardens and all current modules, offline. Browser progress is separate from app progress. Build/signature/lint verified; physical Galaxy S22 testing remains pending. Source and rebuild instructions: ../docs/android-test-app.md.
 
-SHA-256: 9054C74E90FB9DCCE810CBADFE8AEBB7466CB17207C4B68089EA6BDAB487B56B
+SHA-256: C38271589EA0A6DD70CDF16A32D04E36544E700058C12AE30466CABF98DD8A04
 
 0.1.1 adds persistent menu background, optional predecessor highlight/strength and configurable completion wait. Same applicationId/signing key, higher versionCode2: designed to update0.1.0 without uninstalling. Previous build retained.
 
@@ -37,3 +37,5 @@ SHA-256: 9054C74E90FB9DCCE810CBADFE8AEBB7466CB17207C4B68089EA6BDAB487B56B
 0.1.18/versionCode19: fixed approved logo on game screen; removed custom-title test setting and its Android asset. Old saved names cannot override the logo. Same update identity; build/lint/signature/package checks passed.
 
 0.1.19/versionCode20: compact completion card, one headline and elapsed time; redundant kicker/subtitle/time caption removed. Actual completed puzzle browser checked at360x740. Build/lint/signature/package checks passed; phone testing pending.
+
+0.1.20/versionCode21: garden detail opens centered on first unsolved puzzle, including gaps; preserves focus in path/grid. Compact header, count/bar, conditional next link, no repeated description/percentage/legend. Fully solved gardens have no false next marker. Removed obsolete completion theme label. Catalogue remains unlocked. Build/lint/signature/package and browser phone360x740 checked.
