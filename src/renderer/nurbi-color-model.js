@@ -52,6 +52,22 @@ export function furPatternMask(p,x,y,z){
    amount=Math.max(amount,edge*(1-smooth(u,.8,1)));
   }
   amount*=smooth(y,2,4)*smooth(z,5,9);
+  // Short cheek sweeps and a compact forehead chevron, kept outside expression patches.
+  const ax=Math.abs(x),front=1-smooth(y,-2,1);
+  const cheekSide=smooth(ax,8.7,11)*(1-smooth(ax,14,16));
+  const along=(y+15)/12,ends=smooth(along,0,.2)*(1-smooth(along,.78,1));
+  let cheek=0;
+  for(const height of [18.8,23.8]){
+   const curve=height+.9*Math.sin(along*2.4)+(x<0?.2:0);
+   const half=.8*size*(.5+.5*Math.sin(Math.max(0,Math.min(1,along))*Math.PI));
+   cheek=Math.max(cheek,(1-smooth(Math.abs(z-curve),half*.5,half))*ends*cheekSide);
+  }
+  const browZ=30.2+ax*.4,forehead=(1-smooth(ax,3.2,4.6))*(1-smooth(Math.abs(z-browZ),.5*size,1.15*size))*(1-smooth(y,-9,-5));
+  const muzzle=smooth((x/6.5)**2+((z-16.5)/3.8)**2,1,1.25);
+  const eyeDistance=Math.min(((x-5.6)/5)**2+((z-23.4)/5.6)**2,((x+5.6)/5)**2+((z-23.4)/5.6)**2);
+  const clearEyes=y<-10?smooth(eyeDistance,1,1.2):1;
+  amount=Math.max(amount,Math.max(cheek,forehead)*front*muzzle*clearEyes*.9);
+
  }
  if(p.pattern==='spots'||p.pattern==='speckles'){
   const fine=p.pattern==='speckles',spacing=fine?5.2:11,radius=(fine?1.25:3.8)*size;

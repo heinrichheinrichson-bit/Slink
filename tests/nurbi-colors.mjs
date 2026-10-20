@@ -21,4 +21,4 @@ console.log('PASS old edited coats/custom drafts/favorites preserved; independen
 
 const tiger={pattern:"tiger",patternSize:1,patternStrength:1};let differences=0;for(let y=-4;y<33;y+=.4)if(Math.abs(furPatternMask(tiger,8,y,17)-furPatternMask(tiger,-8,y,17))>.1)differences++;assert.ok(differences>5,"flanks have asymmetric stripe paths");
 
-for(const y of [-20,-12,-5,0])assert.equal(furPatternMask(tiger,4,y,25),0,"head remains clear");for(const y of [5,15,25])assert.equal(furPatternMask(tiger,4,y,3),0,"belly remains clear");
+for(const x of [-5.6,5.6])assert.equal(furPatternMask(tiger,x,-18,23.4),0,"eyes remain clear");assert.equal(furPatternMask(tiger,0,-19,16.5),0,"muzzle remains clear");assert.ok(furPatternMask(tiger,12,-9,24.6)>0,"cheek drawing visible");assert.ok(furPatternMask(tiger,0,-13,30.2)>0,"forehead drawing visible");for(const y of [5,15,25])assert.equal(furPatternMask(tiger,4,y,3),0,"belly remains clear");
