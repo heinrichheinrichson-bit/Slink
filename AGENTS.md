@@ -204,3 +204,5 @@
 - Brand approved: Nurbi’s Garden, playful ivory B lettering WITHOUT antennae (avoids U umlaut reading), icon C and feature composition D. Keep source art assets/brand and all studies. Static wordmark in menu/game, retained custom title test/reset. Same applicationId/progress/signing identity; only launcher label/icon change. See docs/nurbi-brand.md.
 
 - User removed need for custom title testing. Main game no longer loads/packages game-title-settings.js; approved logo is fixed and old stored title values have no effect. Script retained only as an archived developer file, not active player settings.
+
+- Completion copy simplified with user approval: only Alles blüht!, elapsed time and actions; kicker/subtitle/visible Spielzeit label removed. Keep hidden winText hook for existing completion lifecycle. Card height540px max with tighter scene/message/actions grouping; approved scene preserved.

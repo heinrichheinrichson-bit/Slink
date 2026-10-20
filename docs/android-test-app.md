@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.18-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode19, versionName0.1.18-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.19-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode20, versionName0.1.19-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all1200 puzzles in29 gardens and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -65,3 +65,5 @@ Update0.1.16: solvable-prefix hint recovery and synchronized creature rollback, 
 Update0.1.17: Nurbi’s Garden label/icon and B wordmark without antennae. Same applicationId and signing key preserves update compatibility. Build/lint/signature/package checks passed; phone installation not performed. SHA256 85788850A1C9A6E2FCA057C2157C21F1964C1EC3F6DBDC175FE4E24E837837AA.
 
 Update0.1.18: removed custom-title test setting. Fixed approved logo is independent of previous saved names. APK verified to exclude title-settings script, include current logo/HTML/CSS. Build/lint/signature passed. SHA256 F7BB8C665613E27AC6AD08909B471166157CF83B8E91F956012F37B1C6C4A197. Physical device result pending.
+
+Update0.1.19: simplified completion copy and tighter540px card, preserved original reward scene. Browser real completion tested360x740; build/lint/signature/packaged HTML+CSS verified. SHA256 9054C74E90FB9DCCE810CBADFE8AEBB7466CB17207C4B68089EA6BDAB487B56B.
