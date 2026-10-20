@@ -1,6 +1,7 @@
 import './bake-game-controls.mjs';
 import {build} from 'esbuild';
 const entries={
+ 'nurbi-color-study':'nurbifarben',
  'meadow-extra-preview':'meadow-extra-preview',
  'head-lift-study':'kopfwerkstatt',
  'camera-finale-study':'kamerawerkstatt',
