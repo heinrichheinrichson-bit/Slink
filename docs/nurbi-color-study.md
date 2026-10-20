@@ -19,3 +19,5 @@ Tiger revision after user rejected the thin/cracked appearance: replace six fork
 Tiger face extension: two short tapered cheek sweeps per side and a compact forehead chevron. Head markings restricted to side fur/upper forehead with explicit eye and muzzle exclusion masks. Same drawing color/size/strength, no expression geometry or material changes. Tested cheek/brow visibility and eye/muzzle/belly exclusion; browser three-quarter view checked.
 
 Leopardenpfote preset26 adds separate leopard pattern: fixed individually rotated/distorted open rosettes on body-relative angular coordinates, lightly tinted centres, smaller toward tail, localized solid head spots with eye/muzzle clearance. Existing colors/custom drafts preserved. Pattern size/strength controls apply; no game integration.
+
+Leopard head revision: replace sparse floating 3D dot centres with surface-anchored spots spanning crown, forehead, temples and cheeks. Ellipsoid-direction masks stay aligned through the fur depth. Eye/muzzle exclusion retained. Actual head surface coverage tested, three-quarter browser view checked; old stored colors/drafts unchanged.

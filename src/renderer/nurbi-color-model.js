@@ -34,6 +34,12 @@ for(let row=0;row<4;row++)for(let col=0;col<5;col++){
  const n=row*5+col,noise=Math.sin(n*13.13+2.1);
  LEOPARD_ROSETTES.push({u:(col-2)*5.5+(row%2)*1.8+noise*.75,v:4+row*7+Math.cos(n*7.7)*1.1,rx:1.85+(Math.sin(n*5.1)+1)*.38,ry:1.65+(Math.cos(n*4.3)+1)*.5,angle:noise*.8,phase:n*2.37,gap:.3+(Math.sin(n*3.7)+1)*.18});
 }
+// Head spots are anchored to directions on the head ellipsoid, not floating 3D points.
+const LEOPARD_HEAD=[];
+for(let row=0;row<4;row++)for(let col=0;col<8;col++){
+ const n=row*8+col,a=col*Math.PI/4+(row%2)*.24+.07*Math.sin(n*4.7),e=.12+row*.36+.04*Math.cos(n*3.1);
+ LEOPARD_HEAD.push({x:Math.cos(a)*Math.cos(e),y:Math.sin(a)*Math.cos(e),z:Math.sin(e),radius:.105+.045*(1+Math.sin(n*7.3))*.5});
+}
 // Three designed dorsal-to-flank marks, placed in body-relative angular coordinates.
 const TIGER_BANDS=[[5.8,2.7,1.95,1.25],[15.8,2.25,-2.1,1.6],[25.1,1.9,1.15,1.38]];
 export const FUR_PATTERNS=['solid','belly','saddle','stripes','tiger','leopard','spots','speckles','mask','tail'];
@@ -92,15 +98,16 @@ export function furPatternMask(p,x,y,z){
    }
    amount*=smooth(y,0,3)*smooth(z,5,9);
   }
-  if(y<-3){
-   let dots=0;
-   for(const [cx,cz,r]of [[-3.3,30.7,.7],[1.1,31.5,.65],[4.4,29.8,.8],[-9.8,28.2,.85],[10.1,28.7,.75],[-12,23,.9],[12.5,23.8,1],[-11.1,18.7,.7],[11.6,19.2,.85]]){
-    const sideDepth=Math.abs(cx)>11?-8:Math.abs(cx)>8?-13:-14;
-    const d=Math.hypot((x-cx)/1.1,z-cz,(y-sideDepth)*.65);dots=Math.max(dots,1-smooth(d,r*size*.5,r*size));
+  if(y<3&&z>12){
+   let dots=0;const hx=x/13.1,hy=(y+8)/11.5,hz=(z-20)/12.2,length=Math.hypot(hx,hy,hz);
+   if(length>.1)for(const spot of LEOPARD_HEAD){
+    const distance=1-(hx*spot.x+hy*spot.y+hz*spot.z)/length,r=spot.radius*size;
+    dots=Math.max(dots,1-smooth(distance,r*r*.2,r*r*.58));
    }
    const eyeDistance=Math.min(((x-5.6)/5)**2+((z-23.4)/5.6)**2,((x+5.6)/5)**2+((z-23.4)/5.6)**2);
    const eyes=y<-10?smooth(eyeDistance,1,1.2):1;
-   amount=Math.max(amount,dots*eyes*(1-smooth(y,-4,-2)));
+   const muzzle=smooth((x/6.5)**2+((z-16.5)/3.8)**2,1,1.25);
+   amount=Math.max(amount,dots*eyes*muzzle*(1-smooth(y,1,3)));
   }
  }
  if(p.pattern==='spots'||p.pattern==='speckles'){
