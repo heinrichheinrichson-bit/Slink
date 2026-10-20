@@ -11,3 +11,5 @@ Own variants: the new-variant button clones the selected edited draft into a sta
 Fur drawings include transverse stripes, spots, fine speckles, a face mask and a tail tip, alongside retained belly/back choices. Size 50-180%, strength 0-100%; default 100% preserves prior drawings. Markings color fur and base surfaces without geometry changes. Paw materials cloned for independent color; absent old paw values inherit coat. Old drafts/custom entries remain in v1 storage. Solid disables inactive accent/size/strength controls.
 
 Added twelve achievement directions (24 total): Sternentau, Kleeglueck, Wildbeere, Honigpfote, Mondbluete, Abendfuchs, Farnschatten, Rosenquarz, Bernstein, Eisklee, Pflaumenbluete, Loewenzahn. Stable reward-prefixed IDs; existing and custom drafts preserved. Study proposals only, no game unlock rules.
+
+Tiger pattern: separately retained alongside generic stripes. Six explicit nonperiodic curved bands with unequal width/length, tapered tips, asymmetric flanks and two selected forks. Stable coordinates, same masks on base and fur; no per-frame randomness. Tigerpfote is additive preset25. Tests cover finite masks/geometry and flank asymmetry.
