@@ -70,4 +70,8 @@ body.catalogue .app:has(#win:not([hidden]))>header,body.catalogue .app:has(#win:
 /* Compact completion: one message, reward scene and elapsed time. */
 body.catalogue .win{height:min(540px,calc(100dvh - 32px))}.win-scene{flex:1 1 240px;max-height:270px}.win .win-message h2{margin:0 0 10px}.win .win-time{margin:10px 0 0}.win-actions{padding:20px 38px 24px}.win .win-actions #replay{padding-top:16px}
 
-.win-header{justify-content:flex-end}
+.win-header{justify-content:space-between}
+
+.win .win-header .win-home{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#ead3ad66;color:#88613e;text-decoration:none;flex:none}.win-home svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.win-home:focus-visible{outline:3px solid #88613e;outline-offset:3px}
+
+.win .win-header button{width:38px;height:38px}
