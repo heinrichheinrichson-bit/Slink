@@ -20,3 +20,6 @@ Revision0.1.23: game background cards open a full-screen-ish modal with a fixed 
 
 
 Nurbi collection expanded from four colors to all36 user-approved edited study drafts. Four start colors,26 freely chosen unlocks and6 fixed achievements, with offline whole-model previews. Existing progress credited retroactively; choices can be saved; tester unlock-all bypasses costs. Same colors now apply in home, actual head-lift gameplay and completion. See nurbi-rewards.md for exact thresholds and persistence.
+
+
+Navigation revised to a compact Gartenbuch overview with internal Nurbi/background/statistics pages. Main footer still has exactly three buttons; no new home action. Browser/header/content back and direct child reload supported. See journal-navigation.md.

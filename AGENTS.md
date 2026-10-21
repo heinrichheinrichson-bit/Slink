@@ -218,3 +218,5 @@
 - Game-background cards now open a read-only modal example instead of immediately saving. Only Übernehmen commits; close/cancel/browser or Android history back leaves selection untouched. One lazily cached example iframe uses actual renderer but no gameplay, economy/audio/statistics scripts or storage writes; paused on close. Active selection label/checkmark shown. Same-origin/source checked messaging, rapid reopen waits for history pop.
 
 - Both daily and catalogue completion cards share a top-left home icon linking to gartenstudio.html. Keep main actions context-specific (Weiter / Zur Startseite) and replay unchanged. In prewarmed games, winHome uses the same validated slink-home parent message as the header home control so the prepared board is reused.
+
+- Gartenbuch now has a compact overview and same-root child routes #journal/nurbi, #journal/backgrounds, #journal/stats. Keep the existing three-button footer and home actions; no extra main button. Back from children returns to overview, including browser/history and direct-link fallback. Preserve same-hash preview history isolation and lazy look collection. See docs/journal-navigation.md.
