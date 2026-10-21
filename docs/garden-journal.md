@@ -17,3 +17,6 @@ Revision0.1.22: Sonnenorange removed from all menu choices; stored original menu
 Full-model preview creation is further deferred until its portrait enters the visible journal area, keeping the statistics page entry light.
 
 Revision0.1.23: game background cards open a full-screen-ish modal with a fixed 4x4 example and real renderer/UI. Only explicit Apply commits. Close, Escape/cancel or history back cancels; native Android back already delegates to WebView history, so the modal adds/removes one same-URL entry. Browser back and rapid reopen are tested; physical device back remains to be checked. Preview frame contains no gameplay/economy/audio/journey storage code and no puzzle catalogue script; it never changes progress or records time. It is created only on demand, reused for later candidates, and paused on close. Parent verifies message origin/source. Current label and selected checkmark remain in journal.
+
+
+Nurbi collection expanded from four colors to all36 user-approved edited study drafts. Four start colors,26 freely chosen unlocks and6 fixed achievements, with offline whole-model previews. Existing progress credited retroactively; choices can be saved; tester unlock-all bypasses costs. Same colors now apply in home, actual head-lift gameplay and completion. See nurbi-rewards.md for exact thresholds and persistence.
