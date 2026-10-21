@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.24-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode25, versionName0.1.24-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.25-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode26, versionName0.1.25-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all1200 puzzles in29 gardens and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -78,3 +78,6 @@ Update0.1.23: background preview read-only example and commit/cancel dialog. Exi
 
 
 Update0.1.24: all36 approved Nurbi looks and achievement/choice unlocks, compact Gartenbuch with internal collection/background/statistics pages, consistent completion Home action, and recovery hints that rewind then make one valid forward move for one credit. Tester unlock-all remains available. Full npm test passed for this source; offline assemble/lint/signature and ZIP integrity plus97 packaged asset/source comparisons passed, including all36 previews and entry-point dependencies. Same signing certificate/applicationId; install as an update. Physical phone testing remains pending. APK SHA256 B82A5D88251763EED5B8DA62D649CE0B99B397E374962267217DCF423C408998.
+
+
+Update0.1.25: German/English/System language selection packaged offline, default System language. Same applicationId/debug certificate preserves update compatibility. Source tests passed in4185834; offline build/lint/signature and ZIP localization asset equality passed. Physical phone language switching remains pending. SHA256 C26EA57C7B55F10C498CF216C9A1F9E4213CBAF2B486700FB54297834C6649A4.
