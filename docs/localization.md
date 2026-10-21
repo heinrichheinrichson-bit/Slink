@@ -1,0 +1,9 @@
+# German / English player UI
+
+Settings in both the home menu and puzzle offer System language, Deutsch and English. The default is System language: the first device/browser language resolves to German for de/de-* and English otherwise. Explicit selection is saved under `nurbi-language-v1` and shared across the local menu, prepared game frames and previews. Android WebView uses the same packaged implementation; device verification remains pending.
+
+`public/i18n-catalogue.js` contains German source phrases and English copy. `public/i18n.js` translates display text and accessible names, including newly inserted UI, dynamic counts, goal messages and garden titles. Original text is retained per node so switching back is reversible. It never replaces elements, event handlers, select values, IDs or puzzle data. Script/style/user-note fields are excluded. New UI phrases must be added to the catalogue; composed messages should have explicit formatting rules in i18n.js.
+
+The change applies to the current home/menu, catalogue/daily gameplay, completion, garden journal, cosmetics, background previews and active settings. Independent workshops and archived studies remain German. Nurbi’s Garden branding remains unchanged. Number/date helpers use de-DE/en-GB; settings decimals and journal dates refresh immediately on language changes. The stopwatch keeps its language-neutral m:ss representation.
+
+`tests/i18n.cjs` covers device fallback, persisted override, reversible live text/accessibility translation, retained elements/notes, counts, achievement messages, all29 garden names, number formats, system-language changes and entry-point/APK asset inclusion. Browser checks covered English menu/journal/collection/backgrounds and live German switch with an existing2/11 puzzle path retained, plus return to System language. Full source test results are recorded in the implementation commit. No new APK was built for this change.

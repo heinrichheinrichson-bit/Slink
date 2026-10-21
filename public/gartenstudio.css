@@ -19,3 +19,5 @@
 
 /* Keep the puzzle choices prominent; each garden opens at its first unsolved tile. */
 #levelsScreen .page-title{padding:20px 3px 16px}#levelsScreen .chapter-progress{padding:11px 14px}#levelsScreen .view-switch{margin-top:14px}#levelsScreen .jump-button{margin-top:8px;padding-top:12px}#levelsScreen #levelChoices{padding-top:24px;padding-bottom:clamp(90px,25dvh,180px)}.level-node.next:focus-visible{outline:3px solid #8a5d32;outline-offset:5px}
+
+.language-settings{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.language-settings label{font-weight:600}.language-settings select{font:inherit;color:inherit;background:#fff5df;border:1px solid #d7bf99;border-radius:12px;padding:10px 12px;max-width:100%}
