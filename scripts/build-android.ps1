@@ -30,7 +30,7 @@ try {
   if($version -notmatch '^[A-Za-z0-9.-]+$'){throw 'Invalid versionName.'}
   $releaseDir=Join-Path $projectRoot 'releases'
   New-Item -ItemType Directory -Force $releaseDir | Out-Null
-  $deliverable=Join-Path $releaseDir ('SLINK-'+$version+'.apk')
+  $deliverable=Join-Path $releaseDir ('Nurbis-Garden-'+$version+'.apk')
   Copy-Item -LiteralPath $apk -Destination $deliverable -Force
   Write-Output $deliverable
   Write-Output ((Get-FileHash $deliverable -Algorithm SHA256).Hash)

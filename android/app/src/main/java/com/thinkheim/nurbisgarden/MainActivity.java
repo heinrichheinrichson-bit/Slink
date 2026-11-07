@@ -1,4 +1,4 @@
-package app.slink.garden;
+package com.thinkheim.nurbisgarden;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import java.io.ByteArrayInputStream;
 
 public class MainActivity extends Activity {
  private WebView web;
+ private NativeAds ads;
  private static final String HOST = "appassets.androidplatform.net";
  private static final String START = "https://" + HOST + "/assets/gartenstudio.html";
  @Override public void onCreate(Bundle state) {
@@ -44,6 +45,8 @@ public class MainActivity extends Activity {
   settings.setSupportZoom(false);
   settings.setMediaPlaybackRequiresUserGesture(true);
   settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+  ads = new NativeAds(this, web);
+  web.addJavascriptInterface(ads, "NurbiNativeAds");
   web.setWebViewClient(new WebViewClient(){
    @Override public WebResourceResponse shouldInterceptRequest(WebView view,WebResourceRequest request){
     Uri uri=request.getUrl();
@@ -60,14 +63,21 @@ public class MainActivity extends Activity {
     return new WebResourceResponse("text/plain","UTF-8",404,"Not found",null,new ByteArrayInputStream(new byte[0]));
    }
    @Override public boolean shouldOverrideUrlLoading(WebView view,WebResourceRequest request){
-    Uri uri=request.getUrl();return !("https".equals(uri.getScheme())&&HOST.equals(uri.getHost())&&uri.getPath().startsWith("/assets/"));
+    Uri uri=request.getUrl();
+    if("https".equals(uri.getScheme())&&HOST.equals(uri.getHost())&&uri.getPath()!=null&&uri.getPath().startsWith("/assets/"))return false;
+    // Keep the bridge inside local assets. Open explicit user links in the external browser only.
+    if(request.isForMainFrame() && request.hasGesture() && "https".equals(uri.getScheme())){
+     try{startActivity(new android.content.Intent(android.content.Intent.ACTION_VIEW,uri));}catch(android.content.ActivityNotFoundException ignored){}
+    }
+    return true;
    }
   });
   if(state==null||web.restoreState(state)==null)web.loadUrl(START);
+  ads.start();
  }
  @Override protected void onSaveInstanceState(Bundle state){web.saveState(state);super.onSaveInstanceState(state);}
  @Override public void onBackPressed(){if(web.canGoBack())web.goBack();else super.onBackPressed();}
- @Override protected void onPause(){web.onPause();super.onPause();}
- @Override protected void onResume(){super.onResume();if(web!=null)web.onResume();}
- @Override protected void onDestroy(){if(web!=null){web.stopLoading();web.destroy();}super.onDestroy();}
+ @Override protected void onPause(){if(ads!=null)ads.setForeground(false);web.onPause();super.onPause();}
+ @Override protected void onResume(){super.onResume();if(ads!=null)ads.setForeground(true);if(web!=null)web.onResume();}
+ @Override protected void onDestroy(){if(ads!=null)ads.destroy();if(web!=null){web.stopLoading();web.destroy();}super.onDestroy();}
 }

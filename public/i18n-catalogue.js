@@ -1,4 +1,6 @@
 window.NurbiEnglish={
+  "Datenschutz für Werbung": "Ad privacy choices",
+  "Datenschutzerklärung": "Privacy policy",
   "Systemsprache": "System language",
   "Sprache": "Language",
   "Deutsch": "Deutsch",

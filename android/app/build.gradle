@@ -1,15 +1,25 @@
 plugins { id 'com.android.application' }
 android {
- namespace 'app.slink.garden'
+ namespace 'com.thinkheim.nurbisgarden'
  compileSdk 36
- defaultConfig { applicationId 'app.slink.garden'; minSdk 27; targetSdk 35; versionCode 28; versionName '0.1.27-test' }
+ defaultConfig { applicationId 'com.thinkheim.nurbisgarden'; minSdk 27; targetSdk 35; versionCode 29; versionName '0.1.28-test' }
+ buildFeatures { buildConfig true }
+ buildTypes {
+  debug { manifestPlaceholders = [admobAppId: 'ca-app-pub-2541162065593575~6044976588'] }
+  release { manifestPlaceholders = [admobAppId: 'ca-app-pub-2541162065593575~6044976588'] }
+ }
  compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
  sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/webAssets'))
 }
 
 tasks.register('syncWebAssets', Sync) {
- from('../../public') { include 'puzzle-progression.js','player-settings.js','i18n.js','i18n-catalogue.js','nurbi-rewards.js','nurbi-reward-store.js','nurbi-reward-menu.js','nurbi-looks/*.webp','background-preview.js','background-preview-scene.js','background-preview.html','background-designs.js','game-background-catalogue.js','game-background-settings.js','journey-core.js','journey-store.js','journey-menu.js','journey.css','daily-puzzles.js','nurbi-brand.css','gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-expansion-levels.js','slink-design.js','game-prewarm.js','ad-policy.js','game-economy.js','game-audio.js','game-audio-controller.js','bloom-sounds.js','garden-sounds.js','audio/harp-glissando.wav','audio/level-up-03.mp3','audio/selected-sounds.txt','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
+ from('../../public') { include 'puzzle-progression.js','player-settings.js','i18n.js','i18n-catalogue.js','nurbi-rewards.js','nurbi-reward-store.js','nurbi-reward-menu.js','nurbi-looks/*.webp','background-preview.js','background-preview-scene.js','background-preview.html','background-designs.js','game-background-catalogue.js','game-background-settings.js','journey-core.js','journey-store.js','journey-menu.js','journey.css','daily-puzzles.js','nurbi-brand.css','gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-expansion-levels.js','slink-design.js','game-prewarm.js','privacy.html','native-ads.js','ad-policy.js','game-economy.js','game-audio.js','game-audio-controller.js','bloom-sounds.js','garden-sounds.js','audio/harp-glissando.wav','audio/level-up-03.mp3','audio/selected-sounds.txt','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
  from('../../THIRD_PARTY_THREE_LICENSE.txt')
  into(layout.buildDirectory.dir('generated/webAssets'))
 }
 tasks.named('preBuild').configure { dependsOn('syncWebAssets') }
+
+dependencies {
+ implementation 'com.google.android.gms:play-services-ads:25.5.0'
+ implementation 'com.google.android.ump:user-messaging-platform:4.0.0'
+}
