@@ -12,6 +12,6 @@ function fixture(native=true){const events={},calls=[];const c={Date,Math,Promis
  const i=p.show('interstitial'),iid=calls.at(-1)[1];send({id:iid,shown:false,rewarded:false});assert.equal((await i).shown,false);
  send({state:true,rewarded:false,interstitial:false,privacy:false});assert(!p.available('rewarded'));assert(!p.privacyRequired);assert.equal(await p.show('invalid'),null);
  const native=fs.readFileSync('android/app/src/main/java/com/thinkheim/nurbisgarden/NativeAds.java','utf8');assert(native.includes('consent.canRequestAds()'));assert(native.includes('BuildConfig.DEBUG?"ca-app-pub-3940256099942544/5224354917"'));assert(native.includes('earned=true'));assert(native.includes('shown&&earned'));assert(native.includes('MAX_AGE'));assert(native.includes('showPrivacyOptionsForm'));
- const gradle=fs.readFileSync('android/app/build.gradle','utf8');assert(gradle.includes("applicationId 'com.thinkheim.nurbisgarden'"));assert(gradle.includes("'native-ads.js'"));assert(gradle.includes("'privacy.html'"));
+ const gradle=fs.readFileSync('android/app/build.gradle','utf8');assert(gradle.includes("'com.thinkheim.nurbisgarden'"));assert(gradle.includes("'native-ads.js'"));assert(gradle.includes("'privacy.html'"));
  console.log('PASS native provider: browser absence, availability, requester isolation, cancellation/failure without reward, earned reward only, privacy status, debug test units and packaging.');
 })().catch(e=>{console.error(e);process.exitCode=1});

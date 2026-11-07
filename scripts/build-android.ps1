@@ -1,4 +1,4 @@
-param([switch]$Offline)
+param([switch]$Offline,[switch]$LegacyTransfer)
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path $PSScriptRoot -Parent
 $originalJavaHome=$env:JAVA_HOME
@@ -18,6 +18,7 @@ try {
   & $npmExe run build
   if($LASTEXITCODE -ne 0){throw 'Web build failed.'}
   $gradleArguments=@('-p','android','assembleDebug','lintDebug')
+  if($LegacyTransfer){$gradleArguments+= '-PlegacyTransfer=true'}
   if($Offline){$gradleArguments+= '--offline'}
   & './android/gradlew.bat' @gradleArguments
   if($LASTEXITCODE -ne 0){throw 'Android build/lint failed.'}

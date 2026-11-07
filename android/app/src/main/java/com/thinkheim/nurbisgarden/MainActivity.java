@@ -20,6 +20,7 @@ import java.io.ByteArrayInputStream;
 public class MainActivity extends Activity {
  private WebView web;
  private NativeAds ads;
+ private BackupIO backup;
  private static final String HOST = "appassets.androidplatform.net";
  private static final String START = "https://" + HOST + "/assets/gartenstudio.html";
  @Override public void onCreate(Bundle state) {
@@ -45,6 +46,8 @@ public class MainActivity extends Activity {
   settings.setSupportZoom(false);
   settings.setMediaPlaybackRequiresUserGesture(true);
   settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+  backup = new BackupIO(this,web);
+  web.addJavascriptInterface(backup,"NurbiBackupIO");
   ads = new NativeAds(this, web);
   web.addJavascriptInterface(ads, "NurbiNativeAds");
   web.setWebViewClient(new WebViewClient(){
@@ -75,9 +78,10 @@ public class MainActivity extends Activity {
   if(state==null||web.restoreState(state)==null)web.loadUrl(START);
   ads.start();
  }
+ @Override protected void onActivityResult(int request,int result,android.content.Intent data){if(backup!=null&&backup.result(request,result,data))return;super.onActivityResult(request,result,data);}
  @Override protected void onSaveInstanceState(Bundle state){web.saveState(state);super.onSaveInstanceState(state);}
  @Override public void onBackPressed(){if(web.canGoBack())web.goBack();else super.onBackPressed();}
  @Override protected void onPause(){if(ads!=null)ads.setForeground(false);web.onPause();super.onPause();}
  @Override protected void onResume(){super.onResume();if(ads!=null)ads.setForeground(true);if(web!=null)web.onResume();}
- @Override protected void onDestroy(){if(ads!=null)ads.destroy();if(web!=null){web.stopLoading();web.destroy();}super.onDestroy();}
+ @Override protected void onDestroy(){if(backup!=null)backup.destroy();if(ads!=null)ads.destroy();if(web!=null){web.stopLoading();web.destroy();}super.onDestroy();}
 }

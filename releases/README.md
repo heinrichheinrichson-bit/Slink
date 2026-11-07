@@ -48,3 +48,6 @@ SHA-256: 08CC1E9ABCA95D618BDC79614333B22FB6AF67CFA68E7139E45875FEE7F27339
 
 
 0.1.28/versionCode29: Nurbis-Garden-0.1.28-test.apk. First com.thinkheim.nurbisgarden package; installs SEPARATELY from app.slink.garden and does not copy its local progress. Native AdMob rewarded/interstitial test ads, UMP consent/privacy choices, dedicated bilingual privacy page. Full npm suite, bridge/economy focused tests, build/lint/signature and package label verified. Actual Android ad/consent smoke test pending (no connected device). SHA256: 0EAF09F5622FA159109482C301AA9CD6F725EF14AF11BED62D328E587F98033F. No Play upload.
+
+
+0.1.29/versionCode30: settings backup/transfer by JSON file or clipboard code, validated replacement with local recovery, fixed prepared-frame writers, native Android document picker/clipboard. Normal Nurbis-Garden-0.1.29-test.apk is com.thinkheim.nurbisgarden. Nurbis-Garden-0.1.29-transfer.apk updates the OLD app.slink.garden with matching debug signing certificate and distinct Transfer label; never uninstall old app before export. Both use test ads, no Play upload. Both build/lint/signatures/assets checked; browser import/export/recovery and test suite checked. Phone clipboard/SAF/install migration still pending. See docs/game-backup.md.
