@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.26-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode27, versionName0.1.26-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.27-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode28, versionName0.1.27-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all1200 puzzles in29 gardens and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -84,3 +84,6 @@ Update0.1.25: German/English/System language selection packaged offline, default
 
 
 Update0.1.26: approved compact player settings and fixed tested configuration; separate Help/About, journal-only cosmetics/backgrounds and external puzzle bookmark. Developer tuning/unlocks/ads/reviews absent from player entry points, old bypass flags ignored; developer pages/tools retained outside APK. Full npm test passed, browser DE/EN/live route checks passed, offline assemble/lint/signature and all packaged source equality/dependency/exclusion checks passed. Device testing pending. SHA256 B0E207AA74E1EBC5A57C04C324CC2AA7FA082ED6E0AFB3D844683FD8BC9D190E.
+
+
+Update0.1.27: per-garden first-three starter puzzles and predecessor unlocks, preserved prior completed IDs, shared access guard across menu/picker/bookmarks/Continue/direct game load. Daily and developer entry points remain separate. Full1200 difficulty metrics recomputed with no weak experts or order changes; report docs/difficulty-review-2026-11-07.json. Offline assemble/lint/signature and all APK source/dependency checks passed. Physical phone verification pending. SHA256 5D385F907BD67657F849257FBCB6F384E75E4ABCECC70D08D0D2AD820E602E0D.

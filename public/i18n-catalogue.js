@@ -318,5 +318,9 @@ window.NurbiEnglish={
   "Extra groß": "Extra large",
   "Rückweghilfe": "Backtracking guide",
   "Animationen reduzieren": "Reduce animations",
-  "Über die App": "About the app"
+  "Über die App": "About the app",
+  "Gesperrt": "Locked",
+  "gesperrt": "locked",
+  "Rätsel. Schritt für Schritt freischalten.": "puzzles. Unlock them step by step.",
+  "Die ersten drei Rätsel jedes Gartens sind frei. Weitere folgen nach ihrem Vorgänger.": "The first three puzzles in each garden are available. Solve the previous puzzle to unlock the next."
 };
