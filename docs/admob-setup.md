@@ -9,6 +9,6 @@ Created and visibly verified in the existing AdMob account:
 
 Public application/ad-unit identifiers are saved in android/admob-units.json; these are not authentication secrets. Both units are listed in the console. No banner or app-open unit was created. No emails were sent.
 
-The Play Console form is prepared with confirmed store name Nurbi: One Line Garden Puzzle, existing package app.slink.garden (availability verified), English/en-US, game, free. Final creation is pending direct user confirmation of the developer-program-policy and US-export declarations. Neither checkbox was checked; nothing was published or uploaded.
+User corrected the intended Play identity to Nurbi’s Garden, without Slink. The unsubmitted form now uses Nurbi’s Garden and proposed package com.thinkheim.nurbisgarden (availability verified), English/en-US, game, free. Existing Android test APKs still use app.slink.garden; no native package migration has been made. A new package installs separately and requires a progress migration decision before device transition. Final creation is pending direct user confirmation of the developer-program-policy and US-export declarations. Neither checkbox was checked; nothing was published or uploaded.
 
 SDK integration, consent-message setup, release signing and store release preparation remain outstanding. The existing APK0.1.27 does not yet contain a native ad SDK. Do not claim live advertising is integrated based on console setup alone.
