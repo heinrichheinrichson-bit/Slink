@@ -1,0 +1,11 @@
+# Shipped preferences and developer separation
+
+Approved2026-11-07 after phone playtest. The main menu and game expose only Language (system/de/en), Sound enabled/master volume, Haptics, Stopwatch visibility, Number size (normal/large/extra large), Backtracking guide and Reduced animations. Cosmetics/backgrounds stay in the Garden journal, with existing previews and earned unlocks. Help and About/sound credits are separate dialogs. Bookmark is a puzzle action outside preferences.
+
+`player-settings.js` owns persistent preferences (nurbi-player-settings-v1, separate preview key), shared by menu/prepared game through storage events. Its fixed configuration overrides obsolete developer tuning without deleting old test data: Nurbi enabled/100%, visitors enabled/bee160%/bumblebee190%, touch5/20/220, backtrack strength24%, head finale zoom160%/duration1.1s/delay0.6s, completion-delay setting1600ms. Preserve the existing normal completion animation gate; do not reinterpret the photographed1600ms setting as permission to cut the tested celebration/audio short. Reduced mode removes camera/celebration and freezes ambient activity while retaining accepted route movement.
+
+The shipped audio mix is bloom15%, completion45%, tail10%, fade start1.2s/duration0.8s/response2.4s, multiplied by the player's master volume. Older per-channel values no longer override it. Number size and the remaining personal preferences remain changeable without resetting the current route.
+
+The former settings screens are preserved at entwicklermenue.html and entwicklerspiel.html with dev-* settings/audio/prewarm scripts. Existing studies and source test tools remain intact. These entry points and scripts are NOT included in Android's allowlisted assets. Main game no longer packages touch/completion tuning scripts. Stale unlimited-hint/unlock-all flags do not activate bypasses in the player entry points. Developer entries retain these flags and old tuning data for tests.
+
+Verification: tests/player-settings.cjs checks fixed defaults against hostile stale tuning, retained palette/route, preference persistence and player/developer package separation. Browser verified both languages, separate Help/About, saved route while toggling stopwatch/reduced motion/number size, and clean console. APK device testing remains pending.

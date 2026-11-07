@@ -1,6 +1,6 @@
 # Android test app
 
-Deliverable: releases/SLINK-0.1.25-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode26, versionName0.1.25-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
+Deliverable: releases/SLINK-0.1.26-test.apk (signed debug/test build, applicationId app.slink.garden, versionCode27, versionName0.1.26-test). Android8.1/API27 or later; built with compileSDK36 and targetSDK35. Intended for the user's Galaxy S22 playtest. No actual device installation/runtime test was performed here.
 
 The app bundles the current menu, all1200 puzzles in29 gardens and existing renderers/assets locally. It starts on the home screen. A minimal hardware-accelerated native Android WebView hosts the existing app. Requests map only the reserved HTTPS appassets.androidplatform.net/assets/ origin to packaged AssetManager files, using a native WebViewClient interceptor. Path traversal and external requests are rejected. File/content access and mixed content are disabled; DOM storage is enabled. No INTERNET permission is requested. VIBRATE supports the existing optional haptics. Same-origin local hosting follows the Android guidance: https://developer.android.com/develop/ui/views/layout/webapps/load-local-content . There is no localhost/server dependency or third-party web runtime.
 
@@ -81,3 +81,6 @@ Update0.1.24: all36 approved Nurbi looks and achievement/choice unlocks, compact
 
 
 Update0.1.25: German/English/System language selection packaged offline, default System language. Same applicationId/debug certificate preserves update compatibility. Source tests passed in4185834; offline build/lint/signature and ZIP localization asset equality passed. Physical phone language switching remains pending. SHA256 C26EA57C7B55F10C498CF216C9A1F9E4213CBAF2B486700FB54297834C6649A4.
+
+
+Update0.1.26: approved compact player settings and fixed tested configuration; separate Help/About, journal-only cosmetics/backgrounds and external puzzle bookmark. Developer tuning/unlocks/ads/reviews absent from player entry points, old bypass flags ignored; developer pages/tools retained outside APK. Full npm test passed, browser DE/EN/live route checks passed, offline assemble/lint/signature and all packaged source equality/dependency/exclusion checks passed. Device testing pending. SHA256 B0E207AA74E1EBC5A57C04C324CC2AA7FA082ED6E0AFB3D844683FD8BC9D190E.

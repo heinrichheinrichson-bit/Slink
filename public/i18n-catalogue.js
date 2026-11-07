@@ -1,4 +1,3 @@
-/* German source text -> English; IDs and saved data remain stable. */
 window.NurbiEnglish={
   "Systemsprache": "System language",
   "Sprache": "Language",
@@ -312,5 +311,12 @@ window.NurbiEnglish={
   "Wähle einen Hintergrund.": "Choose a background.",
   "Vorschau laden …": "Loading preview …",
   "Vorschau wird vorbereitet …": "Preparing preview …",
-  "Freude erneut abspielen": "Replay celebration"
+  "Freude erneut abspielen": "Replay celebration",
+  "Zahlengröße": "Number size",
+  "Normal": "Normal",
+  "Groß": "Large",
+  "Extra groß": "Extra large",
+  "Rückweghilfe": "Backtracking guide",
+  "Animationen reduzieren": "Reduce animations",
+  "Über die App": "About the app"
 };
