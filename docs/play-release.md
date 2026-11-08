@@ -41,3 +41,11 @@ At the user's request, reused existing bundle31 (0.1.30) from Play's library in 
 Internal opt-in/install link: https://play.google.com/apps/internaltest/4701620587560586053 . Google says rollout can take up to one hour or longer. Before app review, the listing can display the temporary name `com.thinkheim.nurbisgarden (unreviewed)`.
 
 This does not start or publish the closed Alpha test; the user still intends to provide that tester list later. It does not establish AdMob store linking or confirm real ad delivery. Export progress from a debug APK before replacing it with the Play-signed installation; restore afterwards.
+
+## Closed test submission — 2026-11-08
+
+User supplied twelve RealAppTesters email addresses specifically for this test. Created `Nurbi’s Garden – RealAppTesters` (12 members), verified every supplied address and selected/saved only this list in the closed Alpha track. Personal addresses are intentionally not copied into repository documentation. Internal list and other apps' lists are unchanged.
+
+Publishing validation exposed the required advertising-ID declaration after bundle upload. Saved Yes for the Mobile Ads SDK, purposes advertising/marketing, analytics and fraud prevention/security/compliance, consistent with the merged AD_ID manifest permission and SDK disclosure.
+
+Submitted the17 pending changes (closed Alpha31, all countries, tester list, EN/DE listing and app declarations) for Google review. Console visibly shows **Changes being reviewed** with automatic preliminary checks running; those checks must complete before Google's review starts. No approval or tester installation availability confirmed yet. Production was not submitted. Closed opt-in link: https://play.google.com/apps/testing/com.thinkheim.nurbisgarden . The14-day clock cannot be claimed to have started from merely listing12 addresses.
