@@ -18,3 +18,8 @@ android/local.properties
 
 # Noncommercial candidate: local study only, not redistributed.
 public/audio/happy-harp.wav
+
+# Release credentials stay outside the repository.
+*.credentials.xml
+android/signing.properties
+!releases/*.aab

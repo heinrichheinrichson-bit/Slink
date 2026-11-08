@@ -33,3 +33,5 @@ Backup tests cover roundtrip across progress/stats/rewards/hints/preferences, ba
 Actual browser checks: normal112-completion export validates; isolated127.0.0.1 origin imports a two-completion fixture and English settings, restarts at puzzle3, then restores original zero-completion/German state. File download works; invalid JSON cannot reveal Restore.360×740 phone layout checked. A transient observer error in a document being torn down was fixed with startup target guards; import and recovery were repeated with no console errors. Actual Android file picker/clipboard/install migration remain phone smoke tests (no attached device). Both builds/lint/signatures, package identities and matching packaged JS verified.
 
 Public policy was extended with manual backup/transfer, website commit f6a6b3a.
+
+2026-11-07: user confirmed the phone backup/transfer test worked. This supersedes the pending phone-test note above. The Play-signed build uses a different signing certificate from debug APKs; export first before replacing a debug installation with the same package, then restore after installing through Play.

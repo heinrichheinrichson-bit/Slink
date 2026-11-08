@@ -1,13 +1,24 @@
 plugins { id 'com.android.application' }
 def legacyTransfer = providers.gradleProperty('legacyTransfer').isPresent()
+def uploadStore = providers.environmentVariable('NURBI_UPLOAD_KEYSTORE').orNull
 android {
  namespace 'com.thinkheim.nurbisgarden'
  compileSdk 36
- defaultConfig { applicationId (legacyTransfer ? 'app.slink.garden' : 'com.thinkheim.nurbisgarden'); minSdk 27; targetSdk 35; versionCode 30; versionName (legacyTransfer ? '0.1.29-transfer' : '0.1.29-test') }
+ defaultConfig { applicationId (legacyTransfer ? 'app.slink.garden' : 'com.thinkheim.nurbisgarden'); minSdk 27; targetSdk 36; versionCode 31; versionName (legacyTransfer ? '0.1.30-transfer' : '0.1.30') }
  buildFeatures { buildConfig true }
+ signingConfigs {
+  if (uploadStore) {
+   upload {
+    storeFile file(uploadStore)
+    storePassword providers.environmentVariable('NURBI_UPLOAD_STORE_PASSWORD').get()
+    keyAlias providers.environmentVariable('NURBI_UPLOAD_KEY_ALIAS').getOrElse('nurbi-upload')
+    keyPassword providers.environmentVariable('NURBI_UPLOAD_KEY_PASSWORD').get()
+   }
+  }
+ }
  buildTypes {
   debug { manifestPlaceholders = [appLabel: legacyTransfer ? 'Nurbi’s Garden · Transfer' : 'Nurbi’s Garden', admobAppId: 'ca-app-pub-2541162065593575~6044976588'] }
-  release { manifestPlaceholders = [appLabel: 'Nurbi’s Garden', admobAppId: 'ca-app-pub-2541162065593575~6044976588'] }
+  release { if (uploadStore) signingConfig signingConfigs.upload; manifestPlaceholders = [appLabel: 'Nurbi’s Garden', admobAppId: 'ca-app-pub-2541162065593575~6044976588'] }
  }
  compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
  sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/webAssets'))
@@ -26,5 +37,6 @@ dependencies {
 }
 
 gradle.taskGraph.whenReady { graph ->
+ if (!uploadStore && graph.allTasks.any { it.name in ['bundleRelease','assembleRelease','packageReleaseBundle'] }) throw new GradleException("Release signing credentials are required; use build-aab.ps1.")
  if (legacyTransfer && graph.allTasks.any { it.name.toLowerCase().contains("release") }) throw new GradleException("Legacy transfer package is debug-only.")
 }

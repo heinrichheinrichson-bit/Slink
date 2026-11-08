@@ -77,10 +77,14 @@ public class MainActivity extends Activity {
   });
   if(state==null||web.restoreState(state)==null)web.loadUrl(START);
   ads.start();
+  if(Build.VERSION.SDK_INT>=33)getOnBackInvokedDispatcher().registerOnBackInvokedCallback(android.window.OnBackInvokedDispatcher.PRIORITY_DEFAULT,this::navigateBack);
  }
  @Override protected void onActivityResult(int request,int result,android.content.Intent data){if(backup!=null&&backup.result(request,result,data))return;super.onActivityResult(request,result,data);}
  @Override protected void onSaveInstanceState(Bundle state){web.saveState(state);super.onSaveInstanceState(state);}
- @Override public void onBackPressed(){if(web.canGoBack())web.goBack();else super.onBackPressed();}
+ private void navigateBack(){if(web!=null&&web.canGoBack())web.goBack();else finish();}
+ // Pre-33 fallback only; API33+ uses the platform OnBackInvokedDispatcher registered above.
+ @android.annotation.SuppressLint("GestureBackNavigation")
+ @Override public void onBackPressed(){navigateBack();}
  @Override protected void onPause(){if(ads!=null)ads.setForeground(false);web.onPause();super.onPause();}
  @Override protected void onResume(){super.onResume();if(ads!=null)ads.setForeground(true);if(web!=null)web.onResume();}
  @Override protected void onDestroy(){if(backup!=null)backup.destroy();if(ads!=null)ads.destroy();if(web!=null){web.stopLoading();web.destroy();}super.onDestroy();}
