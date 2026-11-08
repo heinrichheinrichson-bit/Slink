@@ -33,3 +33,11 @@ Release preview initially reported missing countries (blocking), no testers (war
 The user confirmed the manual backup/transfer phone test worked. Play-signed installation cannot update a debug-signed APK with the same package: export from the test app before replacing it, then restore into the Play version. Keep the old transfer app until migration is verified.
 
 Full npm test suite passed again for this release. Build helper PowerShell syntax/version parsing and git diff whitespace checks passed.
+
+## Internal test — 2026-11-08
+
+At the user's request, reused existing bundle31 (0.1.30) from Play's library in a separate internal release `0.1.30 – Internal test`. Published only to the internal track; console shows **Available to internal testers**. Created and selected `Nurbi’s Garden – Interner Test` containing the user's explicitly supplied phone Google account (one tester). Other apps' lists are unchanged. Access changes visibly saved.
+
+Internal opt-in/install link: https://play.google.com/apps/internaltest/4701620587560586053 . Google says rollout can take up to one hour or longer. Before app review, the listing can display the temporary name `com.thinkheim.nurbisgarden (unreviewed)`.
+
+This does not start or publish the closed Alpha test; the user still intends to provide that tester list later. It does not establish AdMob store linking or confirm real ad delivery. Export progress from a debug APK before replacing it with the Play-signed installation; restore afterwards.
