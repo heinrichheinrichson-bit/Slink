@@ -1,4 +1,13 @@
 window.NurbiEnglish={
+  "Bei 1 geht’s los": "Start at 1",
+  "Beginne bei 1 und ziehe über benachbarte Felder.": "Start at 1 and drag across neighbouring tiles.",
+  "Der Reihe nach": "In order",
+  "Besuche die Zahlen in der richtigen Reihenfolge.": "Visit the numbers in the right order.",
+  "Alles wird grün": "Turn it all green",
+  "Begrüne alle Erdfelder, bevor du die letzte Zahl erreichst.": "Turn every soil tile green before reaching the last number.",
+  "Los geht’s": "Let’s play",
+  "Einführung ansehen": "View introduction",
+  "Überspringen": "Skip",
   "Gelöste Rätsel": "Solved puzzles",
   "Gelöste Tagesrätsel": "Solved daily puzzles",
   "Sichern & übertragen": "Back up & transfer",
