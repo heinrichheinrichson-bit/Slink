@@ -1,5 +1,6 @@
-param([switch]$Offline,[switch]$LegacyTransfer)
+param([switch]$Offline,[switch]$LegacyTransfer,[switch]$PhoneTest)
 $ErrorActionPreference='Stop'
+if($LegacyTransfer -and $PhoneTest){throw 'Choose either LegacyTransfer or PhoneTest.'}
 $projectRoot=Split-Path $PSScriptRoot -Parent
 $originalJavaHome=$env:JAVA_HOME
 try {
@@ -19,6 +20,7 @@ try {
   if($LASTEXITCODE -ne 0){throw 'Web build failed.'}
   $gradleArguments=@('-p','android','assembleDebug','lintDebug')
   if($LegacyTransfer){$gradleArguments+= '-PlegacyTransfer=true'}
+  if($PhoneTest){$gradleArguments+= '-PphoneTest=true'}
   if($Offline){$gradleArguments+= '--offline'}
   & './android/gradlew.bat' @gradleArguments
   if($LASTEXITCODE -ne 0){throw 'Android build/lint failed.'}
@@ -27,6 +29,7 @@ try {
   & (Join-Path $tools.FullName 'apksigner.bat') verify $apk
   if($LASTEXITCODE -ne 0){throw 'APK signature verification failed.'}
   $metadata=Get-Content (Join-Path $projectRoot 'android/app/build/outputs/apk/debug/output-metadata.json') -Raw | ConvertFrom-Json
+  if($PhoneTest -and $metadata.applicationId -ne 'com.thinkheim.nurbisgarden.test'){throw 'Unexpected phone test application ID.'}
   $version=$metadata.elements[0].versionName
   if($version -notmatch '^[A-Za-z0-9.-]+$'){throw 'Invalid versionName.'}
   $releaseDir=Join-Path $projectRoot 'releases'
