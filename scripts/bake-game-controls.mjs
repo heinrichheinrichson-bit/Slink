@@ -6,7 +6,7 @@ globalThis.document={createElement:element};
 function html(e){const attrs={...e.attributes};for(const [k,v]of Object.entries(e.dataset))attrs['data-'+k.replace(/[A-Z]/g,c=>'-'+c.toLowerCase())]=v;return '<'+e.tag+Object.entries(attrs).map(([k,v])=>' '+k+'="'+escape(v)+'"').join('')+'>'+((e.raw||'')+(e.text||'')+e.children.map(html).join(''))+'</'+e.tag+'>'}
 const path=new URL('../public/slink.html',import.meta.url);let page=await readFile(path,'utf8');
 for(const [id,action,compact] of [['home','home',true],['settings','settings',true],['undo','undo',false],['hint','hint',false],['reset','reset',false]]){
- const skin=html(createIvoryControl({action,compact,variant:'satin',ink:'#704a2c',engraved:true,deep:false}));
+ const skin=html(createIvoryControl({action,compact,label:action==='undo'?'Schritt zurück':undefined,variant:'satin',ink:'#704a2c',engraved:true,deep:false}));
  const regex=new RegExp('<(button|a)([^>]*\\bid="'+id+'"[^>]*)>[\\s\\S]*?</\\1>');
  page=page.replace(regex,(_,tag,attrs)=>{attrs=attrs.replace(/\stype="[^"]*"/g,'').replace(/\sclass="[^"]*"/g,'').replace(/\sdata-(?:action|variant|gold|engraved|deep)="[^"]*"/g,'');const opening=skin.slice(0,skin.indexOf('>')).replace('<button','<'+tag).replace(/ aria-label="[^"]*"/,'');return opening+attrs+'>'+skin.slice(skin.indexOf('>')+1,-9)+(id==='hint'?'<span id="hintBalance" class="hint-badge" aria-hidden="true">3</span>':'')+'</'+tag+'>'});
 }

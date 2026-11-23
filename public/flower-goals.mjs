@@ -354,9 +354,9 @@ function createFlowerGoal({ species = "daisy", number = 1, state = "closed", lay
     current = s;
     target = s === "bloom" ? 1 : 0;
   }
-  function update(time, delta = 0.016) {
-    marker.update(time, delta);
-    openness += (target - openness) * Math.min(1, delta * 7);
+  function update(time, delta = 0.016, settled = false) {
+    marker.update(time, settled ? 1 : delta);
+    openness = settled ? target : openness + (target - openness) * Math.min(1, delta * 7);
     const o = openness;
     bud.scale.multiplyScalar(1 - o);
     bud.visible = o < 0.999;

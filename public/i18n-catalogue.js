@@ -1,4 +1,6 @@
 window.NurbiEnglish={
+  "Im Rätsel „Später versuchen“ wählen.": "Choose “Save for later” in a puzzle.",
+  "Schritt zurück": "Undo",
   "Bei 1 geht’s los": "Start at 1",
   "Beginne bei 1 und ziehe über benachbarte Felder.": "Start at 1 and drag across neighbouring tiles.",
   "Der Reihe nach": "In order",

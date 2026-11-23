@@ -1,0 +1,8 @@
+/* Unpackaged QA controls: exercise real WebGL loss/restoration through explicit UI. */
+(()=>{
+ const frame=document.querySelector('iframe'),status=document.getElementById('status'),lose=document.getElementById('lose'),restore=document.getElementById('restore');let extension;
+ frame.addEventListener('load',()=>{const canvas=frame.contentDocument.getElementById('terrain3d');extension=canvas?.getContext('webgl2')?.getExtension('WEBGL_lose_context');lose.disabled=!extension;restore.disabled=true;status.textContent=extension?'Prüfrätsel bereit; eigener Vorschau-Spielstand.':'Grafikprüfung hier nicht verfügbar.';canvas?.addEventListener('webglcontextlost',()=>{lose.disabled=true;restore.disabled=false;status.textContent='Grafikkontext unterbrochen. Weg in der Ersatzansicht prüfen.'});canvas?.addEventListener('webglcontextrestored',()=>{lose.disabled=false;restore.disabled=true;status.textContent='Grafikkontext wiederhergestellt. Weg und Uhr bleiben erhalten.'})});
+ document.getElementById('lose').onclick=()=>{const canvas=frame.contentDocument.getElementById('terrain3d');extension=canvas?.getContext('webgl2')?.getExtension('WEBGL_lose_context');if(!extension){status.textContent='Grafikprüfung hier nicht verfügbar.';return}extension.loseContext();status.textContent='Grafikkontext unterbrochen. Weg in der Ersatzansicht prüfen.'};
+ document.getElementById('restore').onclick=()=>{extension?.restoreContext();status.textContent='Wiederherstellung angefordert. Weg und Uhr müssen erhalten bleiben.'};
+ document.getElementById('back').onclick=()=>{status.textContent=frame.contentWindow.NurbiHandleBack()?'Dialog geschlossen; Rätsel bleibt offen.':'Kein Dialog offen; Android würde zur vorherigen Seite wechseln.'};
+})();

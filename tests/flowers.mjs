@@ -35,3 +35,9 @@ for(const seed of [17,24,31,38,51,58]){
  assert(near/5400<.1,'Visitors remain clustered');assert(motion.agents[0].leg>25&&motion.agents[1].leg>12,'Agents get stuck or share one behaviour');
 }
 console.log('PASS: flower states, visitor sizes/fur, clearance, disposal and independent bounded steering; no persistent clustering over six 90-second runs.');
+
+for(const species of Object.keys(FLOWER_SPECIES)){
+ const g=createFlowerGoal({species,state:'closed'}),flower=g.group.children.at(-1);g.setState('bloom');g.update(0,0,true);assert(flower.visible&&flower.scale.x===1,'Reduced animation must settle into bloom');g.setState('closed');g.update(0,0,true);assert(!flower.visible&&g.group.children[0].visible,'Reduced undo must restore the bud');g.setState('bloom');g.update(0,0,true);assert(flower.visible);g.dispose();
+}
+assert((await import('node:fs')).readFileSync('src/renderer/world-catalogue-entry.js','utf8').includes('c.goal.update(ambient,reduce?0:.033,reduce)'));
+console.log('PASS reduced-motion flower/undo states settle instantly in all four species and are wired into the real renderer.');

@@ -71,8 +71,8 @@ export function createFlowerGoal({species='daisy',number=1,state='closed',layout
  }
  let current=state,target=state==='bloom'?1:0,openness=target;
  function setState(s){marker.setState(s);current=s;target=s==='bloom'?1:0}
- function update(time,delta=.016){
-  marker.update(time,delta);openness+=(target-openness)*Math.min(1,delta*7);const o=openness;
+ function update(time,delta=.016,settled=false){
+  marker.update(time,settled?1:delta);openness=settled?target:openness+(target-openness)*Math.min(1,delta*7);const o=openness;
   bud.scale.multiplyScalar(1-o);bud.visible=o<.999;
   blossom.visible=o>.001;blossom.scale.setScalar(o);for(const hinge of petals)hinge.rotation.x=-(1-o)*1.1;heart.scale.y=2.7*(.8+.2*o);
   visitors.visible=insectsEnabled&&current==='bloom'&&o>.94;

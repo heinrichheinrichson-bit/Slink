@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
  private WebView web;
  private NativeAds ads;
  private BackupIO backup;
+ private boolean navigatingBack;
  private static final String HOST = "appassets.androidplatform.net";
  private static final String START = "https://" + HOST + "/assets/gartenstudio.html";
  @Override public void onCreate(Bundle state) {
@@ -81,11 +82,18 @@ public class MainActivity extends Activity {
  }
  @Override protected void onActivityResult(int request,int result,android.content.Intent data){if(backup!=null&&backup.result(request,result,data))return;super.onActivityResult(request,result,data);}
  @Override protected void onSaveInstanceState(Bundle state){web.saveState(state);super.onSaveInstanceState(state);}
- private void navigateBack(){if(web!=null&&web.canGoBack())web.goBack();else finish();}
+ private void navigateBack(){
+  if(web==null){finish();return;}if(navigatingBack)return;navigatingBack=true;
+  web.evaluateJavascript("(function(){try{return window.NurbiHandleBack?window.NurbiHandleBack():false}catch(e){return false}})()",handled->{
+   navigatingBack=false;if(isFinishing()||isDestroyed())return;
+   if(!"true".equals(handled)){if(web.canGoBack())web.goBack();else finish();}
+  });
+ }
+ private void lifecycleEvent(String name){if(web!=null)web.evaluateJavascript("(function send(w){try{w.dispatchEvent(new Event('"+name+"'));for(let i=0;i<w.frames.length;i++)send(w.frames[i]);}catch(e){}})(window)",null);}
  // Pre-33 fallback only; API33+ uses the platform OnBackInvokedDispatcher registered above.
  @android.annotation.SuppressLint("GestureBackNavigation")
  @Override public void onBackPressed(){navigateBack();}
- @Override protected void onPause(){if(ads!=null)ads.setForeground(false);web.onPause();super.onPause();}
- @Override protected void onResume(){super.onResume();if(ads!=null)ads.setForeground(true);if(web!=null)web.onResume();}
+ @Override protected void onPause(){if(ads!=null)ads.setForeground(false);lifecycleEvent("nurbi-native-pause");web.onPause();super.onPause();}
+ @Override protected void onResume(){super.onResume();if(ads!=null)ads.setForeground(true);if(web!=null){web.onResume();lifecycleEvent("nurbi-native-resume");}}
  @Override protected void onDestroy(){if(backup!=null)backup.destroy();if(ads!=null)ads.destroy();if(web!=null){web.stopLoading();web.destroy();}super.onDestroy();}
 }
