@@ -34,3 +34,4 @@ const entries={
 for(let [entry,name]of Object.entries(entries))await build({entryPoints:['src/renderer/'+entry+'.js'],bundle:true,minify:true,format:'iife',outfile:'public/'+name+'.js'});
 await build({entryPoints:['src/renderer/flower-goals.js'],bundle:true,format:'esm',external:['three','three/*'],outfile:'public/flower-goals.mjs'});
 console.log('Built '+Object.keys(entries).length+' local renderer/study bundles.');
+await import('./build-intro-study.mjs');
