@@ -384,3 +384,4 @@ Object.assign(window.NurbiEnglish,{
  'Die 3D-Ansicht konnte nicht geladen werden. Bitte lade die Vorschau neu.':'The 3D view could not be loaded. Please reload.'
 });
 Object.assign(window.NurbiEnglish,{'Neu beginnen':'Restart','Einführung':'Tutorial','Dein Lernrätsel':'Your practice puzzle','Lernrätsel: mit Pfeiltasten von Feld zu Feld ziehen':'Practice puzzle: use the arrow keys to move between tiles','Einführung:':'Tutorial:'});
+Object.assign(window.NurbiEnglish,{'Spielregeln':'Game rules'});
