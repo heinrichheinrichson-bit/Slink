@@ -1,5 +1,7 @@
 # Introduction: learning gardens (24 November 2026)
 
+Update: following approval of the revised wording/gesture and the user's APK request, the embedded lessons now replace the old introduction in APK 0.1.32-test. The browser review wrapper remains separate. See phone-test-0.1.32.md for current integration, packaging and safeguards; earlier study-only notes below are historical.
+
 Separate proposal at `einfuehrung-ansehen.html`, with the interactive lesson in `einfuehrung-lernspiel.html`. The rejected golden-ring overlay and vague neighbour/number prompts are superseded in this study only. The shipped introduction, normal game, APK and catalogue remain unchanged pending user review.
 
 1. Five cells, two numbered flowers: move Nurbi over every brown cell. The meadow appears on the player's own route. Completion requires every cell, not just the numbers.

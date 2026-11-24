@@ -5,9 +5,10 @@
   {title:'Zahlen der Reihe nach',copy:'Verbinde wieder alle Erdfelder. Führe Nurbi dabei zuerst zur 2 und anschließend zur 3.',success:'Garten abgeschlossen.',next:'Weiter'},
   {title:'Den Weg korrigieren',copy:'Besuche jedes Erdfeld genau einmal. Zum Korrigieren ziehst du Nurbi auf seinem bisherigen Weg zurück.',success:'Garten abgeschlossen.',next:'Einführung abschließen'}
  ];
+ const embedded=new URLSearchParams(location.search).has('embedded')&&parent!==window;
  let stage=0,game,gestureStarted=0,gestureTouched=false,lastFeedback='',ready=false;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- window.NurbiPlayerSettings={value:{reduce:reduced.matches}};
+ window.NurbiPlayerSettings={value:{reduce:reduced.matches||(embedded&&parent.NurbiPlayerSettings?.value.reduce===true)}};
  reduced.addEventListener?.('change',e=>{window.NurbiPlayerSettings.value.reduce=e.matches});
  function outline(l){const cells=new Set(l.solution),has=(x,y)=>x>=0&&x<l.n&&y>=0&&y<l.n&&cells.has(y*l.n+x),edges=[];
   for(const i of cells){const x=i%l.n,y=Math.floor(i/l.n),a=20+x*80,b=20+y*80;if(!has(x,y-1))edges.push([[a,b],[a+80,b]]);if(!has(x+1,y))edges.push([[a+80,b],[a+80,b+80]]);if(!has(x,y+1))edges.push([[a+80,b+80],[a,b+80]]);if(!has(x-1,y))edges.push([[a,b+80],[a,b]])}
@@ -33,7 +34,7 @@
  function load(index){stage=index;game=NurbiIntroStudy.create(index);$('finished').hidden=true;for(const child of document.querySelector('.lesson').children)child.inert=false;$('lessonTitle').textContent=lessons[index].title;$('lessonCopy').textContent=lessons[index].copy;document.querySelectorAll('.step').forEach((n,i)=>{n.classList.toggle('active',i===stage);n.classList.toggle('done',i<stage);n.textContent=i<stage?'✓':String(i+1);if(i===stage)n.setAttribute('aria-current','step');else n.removeAttribute('aria-current')});gestureTouched=false;gestureStarted=performance.now();$('gesture').hidden=true;lastFeedback=null;feedback('');render();}
  $('continue').onclick=()=>{if(!game.complete)return;if(stage<2)load(stage+1);else finish()};
  $('reset').onclick=()=>load(stage);$('undo').onclick=()=>{const p=game.path;if(p.length>1)move(p.at(-2))};
- function finish(){$('gesture').hidden=true;$('finished').hidden=false;for(const child of document.querySelector('.lesson').children)if(child!==$('finished'))child.inert=true;$('again').focus({preventScroll:true})}
+ function finish(){if(embedded){parent.postMessage({type:'nurbi-intro-finish'},location.origin);return}$('gesture').hidden=true;$('finished').hidden=false;for(const child of document.querySelector('.lesson').children)if(child!==$('finished'))child.inert=true;$('again').focus({preventScroll:true})}
  $('skip').onclick=finish;$('again').onclick=()=>load(0);
  addEventListener('message',e=>{if(e.origin===location.origin&&e.source===parent&&e.data?.type==='intro-study-restart')load(0)});
  $('board').addEventListener('keydown',e=>{const offsets={ArrowLeft:-1,ArrowRight:1,ArrowUp:-game.level.n,ArrowDown:game.level.n};if(e.key in offsets){e.preventDefault();if(!game.path.length)move(game.level.marks[0]);else move(game.path.at(-1)+offsets[e.key])}else if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!game.path.length)move(game.level.marks[0])}else if(e.key==='Backspace'){e.preventDefault();$('undo').click()}});

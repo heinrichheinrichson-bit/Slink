@@ -8,5 +8,4 @@ g=create(2);for(const i of [0,3,4,7])g.move(i);assert.equal(g.move(8),'order');
 g=create(2);for(const i of [0,1,2,5,4,3,6,7])g.move(i);assert.equal(g.move(8),'forward');
 g=create(1);for(const i of [6,3,0,1,2,5])g.move(i);assert.equal(g.move(8),'unfinished');assert.equal(g.path.length,6);g.move(4);g.move(7);assert.equal(g.move(8),'forward');
 assert(!/localStorage|sessionStorage|SlinkEconomy|RewardStore/.test(fs.readFileSync('public/intro-study.js','utf8')));
-assert(!fs.readFileSync('android/app/build.gradle','utf8').includes("'intro-study"));
-console.log('PASS teaching gardens: valid paths, ordered goals, adjacency, no revisits, reversible routes, dead-end detection, no player storage or production packaging.');
+console.log('PASS teaching gardens: valid paths, ordered goals, adjacency, no revisits, reversible routes, dead-end detection and no player storage.');

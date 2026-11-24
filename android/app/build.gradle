@@ -6,7 +6,7 @@ def uploadStore = providers.environmentVariable('NURBI_UPLOAD_KEYSTORE').orNull
 android {
  namespace 'com.thinkheim.nurbisgarden'
  compileSdk 36
- defaultConfig { applicationId (legacyTransfer ? 'app.slink.garden' : 'com.thinkheim.nurbisgarden'); minSdk 27; targetSdk 36; versionCode 32; versionName (legacyTransfer ? '0.1.31-transfer' : '0.1.31') }
+ defaultConfig { applicationId (legacyTransfer ? 'app.slink.garden' : 'com.thinkheim.nurbisgarden'); minSdk 27; targetSdk 36; versionCode 33; versionName (legacyTransfer ? '0.1.32-transfer' : '0.1.32') }
  buildFeatures { buildConfig true }
  signingConfigs {
   if (uploadStore) {
@@ -30,7 +30,7 @@ android {
 }
 
 tasks.register('syncWebAssets', Sync) {
- from('../../public') { include 'puzzle-progression.js','puzzle-session.js','player-settings.js','i18n.js','i18n-catalogue.js','nurbi-rewards.js','nurbi-reward-store.js','nurbi-reward-menu.js','nurbi-looks/*.webp','background-preview.js','background-preview-scene.js','background-preview.html','background-designs.js','game-background-catalogue.js','game-background-settings.js','journey-core.js','journey-store.js','journey-menu.js','journey.css','daily-puzzles.js','nurbi-brand.css','gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-expansion-levels.js','slink-design.js','game-prewarm.js','first-steps.js','backup-core.js','backup-ui.js','privacy.html','native-ads.js','native-back.js','ad-policy.js','game-economy.js','game-audio.js','game-audio-controller.js','bloom-sounds.js','garden-sounds.js','audio/harp-glissando.wav','audio/level-up-03.mp3','audio/selected-sounds.txt','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
+ from('../../public') { include 'einfuehrung-lernspiel.html','intro-study-core.js','intro-study-world.js','intro-study.css','intro-study.js','puzzle-progression.js','puzzle-session.js','player-settings.js','i18n.js','i18n-catalogue.js','nurbi-rewards.js','nurbi-reward-store.js','nurbi-reward-menu.js','nurbi-looks/*.webp','background-preview.js','background-preview-scene.js','background-preview.html','background-designs.js','game-background-catalogue.js','game-background-settings.js','journey-core.js','journey-store.js','journey-menu.js','journey.css','daily-puzzles.js','nurbi-brand.css','gartenstudio.html','gartenstudio.css','gartenstudio.js','slink.html','slink.css','slink.js','slink-levels.js','slink-fence-levels.js','slink-expansion-levels.js','slink-design.js','game-prewarm.js','first-steps.js','backup-core.js','backup-ui.js','privacy.html','native-ads.js','native-back.js','ad-policy.js','game-economy.js','game-audio.js','game-audio-controller.js','bloom-sounds.js','garden-sounds.js','audio/harp-glissando.wav','audio/level-up-03.mp3','audio/selected-sounds.txt','win-portrait.js','game-completion.js','menu-shell.js','*.webp','slink-world-3d.js','ivory-controls.js','ivory-controls.css','game-ivory-controls.js','game-ivory-controls.css','*.png' }
  from('../../THIRD_PARTY_THREE_LICENSE.txt')
  into(layout.buildDirectory.dir('generated/webAssets'))
 }

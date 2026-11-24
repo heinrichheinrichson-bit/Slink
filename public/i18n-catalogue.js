@@ -360,3 +360,27 @@ window.NurbiEnglish={
   "Rätsel. Schritt für Schritt freischalten.": "puzzles. Unlock them step by step.",
   "Die ersten drei Rätsel jedes Gartens sind frei. Weitere folgen nach ihrem Vorgänger.": "The first three puzzles in each garden are available. Solve the previous puzzle to unlock the next."
 };
+Object.assign(window.NurbiEnglish,{
+ 'Ein Weg über alle Felder':'One path through every tile',
+ 'Halte Nurbi bei 1 gedrückt und ziehe ihn bis zur 2. Dein Weg muss durch alle Erdfelder führen.':'Press and hold Nurbi at 1, then drag to 2. Your path must pass through every soil tile.',
+ 'Zahlen der Reihe nach':'Numbers in order',
+ 'Verbinde wieder alle Erdfelder. Führe Nurbi dabei zuerst zur 2 und anschließend zur 3.':'Connect every soil tile again. Guide Nurbi to 2 first, then to 3.',
+ 'Den Weg korrigieren':'Changing your path',
+ 'Besuche jedes Erdfeld genau einmal. Zum Korrigieren ziehst du Nurbi auf seinem bisherigen Weg zurück.':'Visit every soil tile exactly once. To undo moves, drag Nurbi back along the path you have taken.',
+ 'Garten abgeschlossen.':'Garden complete.',
+ 'Einführung abschließen':'Finish tutorial',
+ 'Sackgasse. Ziehe Nurbi auf seinem Weg zurück und wähle eine andere Richtung.':'Dead end. Drag Nurbi back along your path and try another direction.',
+ 'Dein Weg führt noch nicht durch alle Erdfelder. Ergänze die fehlenden Felder vor dem Ziel.':'Your path does not cover every soil tile yet. Include the remaining tiles before reaching the final number.',
+ 'Dieses Feld gehört bereits zu deinem Weg. Rückgängig machst du die Schritte in umgekehrter Reihenfolge.':'This tile is already part of your path. Retrace your steps in reverse order to undo them.',
+ 'Starte auf dem Feld mit der 1.':'Start on the tile marked 1.',
+ 'Die Spielregeln':'The rules',
+ 'Ein Weg durch alle Erdfelder.':'One path through every soil tile.',
+ 'Jedes Feld genau einmal.':'Every tile exactly once.',
+ 'Die Zahlen der Reihe nach.':'Visit the numbers in order.',
+ 'Die letzte Zahl erst am Ende.':'Reach the final number last.',
+ 'Noch einmal spielen':'Play again',
+ 'Feldern grün':'tiles green',
+ 'Besuche zuerst die':'Visit',
+ 'Die 3D-Ansicht konnte nicht geladen werden. Bitte lade die Vorschau neu.':'The 3D view could not be loaded. Please reload.'
+});
+Object.assign(window.NurbiEnglish,{'Neu beginnen':'Restart','Einführung':'Tutorial','Dein Lernrätsel':'Your practice puzzle','Lernrätsel: mit Pfeiltasten von Feld zu Feld ziehen':'Practice puzzle: use the arrow keys to move between tiles','Einführung:':'Tutorial:'});
