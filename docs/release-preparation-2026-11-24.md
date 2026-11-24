@@ -16,7 +16,7 @@ Compiled release NativeAds methods contain the real rewarded and interstitial ID
 
 Nurbi app dashboard shows production inactive and all closed-test prerequisites fulfilled. The production-access form has been filled through its final step, with user-confirmed recruitment difficulty Easy, written-report evidence and actual implemented changes. No claim that all features or requested devices were individually tested. Install forecast Unknown rather than unsupported numbers. Exact prepared text: production-access-2026-11-24.md.
 
-The final Übernehmen action has not been activated. The AAB is prepared locally, not uploaded to a new release track. Production release cannot yet be created while access is pending. Do not describe a production application as a published release.
+After explicit user approval, Übernehmen was activated on 24 November 2026 at 10:35. Google confirms receipt of the production-access request; review is pending, normally up to seven days and sometimes longer. The account holder will receive the result by email. The AAB is prepared locally, not uploaded to a new release track. Production release cannot yet be created while access is pending. Do not describe a production application as a published release.
 
 ## AdMob
 

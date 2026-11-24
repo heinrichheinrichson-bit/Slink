@@ -1,6 +1,6 @@
 # Produktionszugriff: vorbereitete Antworten
 
-Stand 24. November 2026: in der Play Console ausgefüllt, noch nicht abgesendet. Google zeigt alle drei Test-Voraussetzungen als erfüllt an: geschlossener Release, mindestens zwölf angemeldete Tester und mindestens vierzehn Tage Test. Produktionszugriff ist noch nicht erteilt; es gibt keine Produktionsveröffentlichung.
+Stand 24. November 2026: nach ausdrücklicher Nutzerfreigabe um 10:35 in der Play Console abgesendet. Google bestätigt den Eingang und prüft die Angaben; Ergebnis per E-Mail an den Kontoinhaber, normalerweise innerhalb von bis zu sieben Tagen, gegebenenfalls länger. Google zeigt alle drei Test-Voraussetzungen als erfüllt an: geschlossener Release, mindestens zwölf angemeldete Tester und mindestens vierzehn Tage Test. Produktionszugriff ist noch nicht erteilt; es gibt keine Produktionsveröffentlichung.
 
 ## Geschlossener Test
 
